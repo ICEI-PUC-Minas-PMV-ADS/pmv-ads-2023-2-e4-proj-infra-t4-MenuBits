@@ -10,10 +10,12 @@ Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo de
 
 ## Integrantes
 
-* Nome completo do aluno 1
-* Nome completo do aluno 2
-* Nome completo do aluno 3
-* Nome completo do aluno 4
+* <a href="https://www.linkedin.com/in/gisellenrosa/">Giselle Nepomuceno Rosa</a>
+* <a href="https://github.com/Andre98B">André Barone</a>
+* <a href="https://www.linkedin.com/in/philipe-rocha-0684021b2">Philipe Rocha</a>
+* <a href="https://github.com/PedroVictor022">Pedro Victor</a>
+* <a href="https://github.com/GabrieldeAlmeidaCarvalho">Gabriel de Almeida</a>
+* <a href="https://github.com/RafaelPereira7L">Rafael Pereira</a>
 
 ## Orientador
 
