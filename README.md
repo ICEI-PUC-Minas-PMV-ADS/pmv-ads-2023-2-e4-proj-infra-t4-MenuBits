@@ -1,10 +1,10 @@
 # TÍTULO DO PROJETO
 
-`CURSO`
+`Tecnologia em Análise e Desenvolvimento de Sistemas`
 
-`DISCIPLINA`
+`Projeto: Desenvolvimento de uma Aplicação Mobile`
 
-`SEMESTRE`
+`4º semestre`
 
 Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo desenvolvido.
 
