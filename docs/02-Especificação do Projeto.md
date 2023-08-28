@@ -79,8 +79,18 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 |ID    | Descrição do Requisito  | Prioridade |
 |------|-----------------------------------------|----|
-|RF-001| Permitir que o usuário cadastre tarefas | ALTA | 
-|RF-002| Emitir um relatório de tarefas no mês   | MÉDIA |
+|RF-001| A aplicação possuirá uma breve introdução do objetivo | BAIXA | 
+|RF-002| A aplicação permitirá que o restaurante realize um cadastro | ALTA |
+|RF-003| A aplicação permitirá que o cliente do restaurante não necessite de um cadastro ou autentificação | ALTA |
+|RF-004| A aplicação permitirá que o restaurante realize cadastro do cardápio | ALTA |
+|RF-005| A aplicação permitirá que sejam cadastrados, alterados ou removidos itens no cardápio | ALTA |
+|RF-006| A aplicação permitirá que o restaurante organize os itens cadatrados em categorias | MÉDIA |
+|RF-007| A aplicação deve gerar um QR Code para o acesso ao cardápio | MÉDIA |
+|RF-008| A aplicação permitirá que o cliente pesquise o restaurante pelo nome para acessar o cardápio | BAIXO |
+|RF-009| A aplicação permitirá que o restaurante exiba o endereço, telefone e instagram | BAIXA |
+|RF-010| A aplicação permitirá que o restaurante visualize dados sobre os pratos mais e menos escolhidos | MÉDIA |
+|RF-011| A aplicação agrupará os pratos selecionados pelo cliente do restaurante | BAIXA |
+
 
 ### Requisitos não Funcionais
 
