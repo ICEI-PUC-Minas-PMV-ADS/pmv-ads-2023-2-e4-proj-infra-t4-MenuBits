@@ -8,19 +8,27 @@ Apresente uma visão geral do que será abordado nesta parte do documento, enume
 
 ## Personas
 
-Pedro Paulo tem 26 anos, é arquiteto recém-formado e autônomo. Pensa em se desenvolver profissionalmente através de um mestrado fora do país, pois adora viajar, é solteiro e sempre quis fazer um intercâmbio. Está buscando uma agência que o ajude a encontrar universidades na Europa que aceitem alunos estrangeiros.
+|    `Nome`: Rodrigo   | `Profissão`: Dono de PUB       |     `Idade`: 29 Anos    |
+|--------------------|------------------------------------|----------------------------------------|
+| <img width="450" alt="image" src="https://www.theselfemployed.com/wp-content/uploads/2019/03/small-business-owner.jpg">| `Motivações`: <br>Melhorar quantidade de vendas, <br> Aumentar carteira de clientes | `Frustrações`: Pouca coleta de informações, <br> Baixo alcance aos clientes <br>                    
+|  `Hobbies`: |   `História`:  | `Personalidade`:  |
+| <br> Culinária, <br> Academia <br>     | Rodrigo é um pequeno empresário que possui um pub promissor em Belo Horizonte, consegue atrair clientes com bons pratos e boas bebidas, além de um ótimo atendimento e está tentando ampliar seu negócio, buscando por dados que o informe sobre como melhorar as opções fornecidas  <br> | Focado <br> Ambicioso  |
 
-Enumere e detalhe as personas da sua solução. Para tanto, baseie-se tanto nos documentos disponibilizados na disciplina e/ou nos seguintes links:
+<br>
 
-> **Links Úteis**:
-> - [Rock Content](https://rockcontent.com/blog/personas/)
-> - [Hotmart](https://blog.hotmart.com/pt-br/como-criar-persona-negocio/)
-> - [O que é persona?](https://resultadosdigitais.com.br/blog/persona-o-que-e/)
-> - [Persona x Público-alvo](https://flammo.com.br/blog/persona-e-publico-alvo-qual-a-diferenca/)
-> - [Mapa de Empatia](https://resultadosdigitais.com.br/blog/mapa-da-empatia/)
-> - [Mapa de Stalkeholders](https://www.racecomunicacao.com.br/blog/como-fazer-o-mapeamento-de-stakeholders/)
->
-Lembre-se que você deve ser enumerar e descrever precisamente e personalizada todos os clientes ideais que sua solução almeja.
+|    `Nome`: Bruno  | `Profissão`: Dono de restaurante       |     `Idade`: 35 Anos    |
+|--------------------|------------------------------------|----------------------------------------|
+| <img width="450" alt="image" src="https://thumbs.dreamstime.com/b/cozinheiro-chefe-afro-americano-consider%C3%A1vel-que-est%C3%A1-o-contador-de-cozinha-pr%C3%B3ximo-118802567.jpg">| `Motivações`: <br>Praticidade, <br> Melhorar a exibição de informação para clientes | `Frustrações`: <br>Mudança constante em pratos disponíveis, <br> Alterações constantes em preços <br>                    
+|  `Hobbies`: |   `História`:  | `Personalidade`:  |
+| <br> Correr, <br> Tecnologia | Bruno é um dono de restaurante em Florianópolis que possui clientes consolidados e fiéis, mas enfrenta problemas com seus cardápios físicos, uma vez que há uma alta rotatividade de pratos e preços no restaurante  <br> | Animado <br> Inovador  |
+
+<br>
+
+|    `Nome`: Cláudia  | `Profissão`: Dona de restaurante       |     `Idade`: 35 Anos    |
+|--------------------|------------------------------------|----------------------------------------|
+| <img width="450" alt="image" src="https://image.freepik.com/fotos-gratis/mulher-restaurante-veneza_1303-10401.jpg">| `Motivações`: <br>Organização nos menus, <br> Disponibilidade de cardápios | `Frustrações`: <br>Desgaste dos cardápios físicos, <br>Estilização arcaica dos cardápios físicos, <br> Falta de menus disponíveis                 
+|  `Hobbies`: |   `História`:  | `Personalidade`:  |
+| <br> Pintura | Cláudia é uma dona de restaurante em São Paulo que recebe muitos clientes diferentes de diversos lugares todos os dias, ela consegue boas vendas, mas recentemente tem buscado uma solução para lidar com seus cardápios físicos que, muitas vezes não são suficientes pra todos os clientes, além de alto indíce de perca e desgaste dos mesmos, tornando a exibição dos itens desagradável  <br> | Pacífica <br> Extrovertida  |
 
 ## Histórias de Usuários
 
