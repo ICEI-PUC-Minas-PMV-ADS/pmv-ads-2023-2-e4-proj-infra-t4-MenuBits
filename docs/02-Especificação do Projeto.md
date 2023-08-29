@@ -24,11 +24,21 @@ Apresente uma visão geral do que será abordado nesta parte do documento, enume
 
 <br>
 
-|    `Nome`: Cláudia  | `Profissão`: Dona de restaurante       |     `Idade`: 35 Anos    |
+|    `Nome`: Cláudia  | `Profissão`: Dona de restaurante       |     `Idade`: 27 Anos    |
 |--------------------|------------------------------------|----------------------------------------|
 | <img width="450" alt="image" src="https://image.freepik.com/fotos-gratis/mulher-restaurante-veneza_1303-10401.jpg">| `Motivações`: <br>Organização nos menus, <br> Disponibilidade de cardápios | `Frustrações`: <br>Desgaste dos cardápios físicos, <br>Estilização arcaica dos cardápios físicos, <br> Falta de menus disponíveis                 
 |  `Hobbies`: |   `História`:  | `Personalidade`:  |
 | <br> Pintura | Cláudia é uma dona de restaurante em São Paulo que recebe muitos clientes diferentes de diversos lugares todos os dias, ela consegue boas vendas, mas recentemente tem buscado uma solução para lidar com seus cardápios físicos que, muitas vezes não são suficientes pra todos os clientes, além de alto indíce de perca e desgaste dos mesmos, tornando a exibição dos itens desagradável  <br> | Pacífica <br> Extrovertida  |
+
+<br>
+
+|    `Nome`: Leonardo  | `Profissão`: Dono de lanchonete       |     `Idade`: 24 Anos    |
+|--------------------|------------------------------------|----------------------------------------|
+| <img width="450" alt="image" src="https://th.bing.com/th/id/OIP.4tfwnCjjatr2wIQq3bA_6QHaFS?pid=ImgDet&rs=1">| `Motivações`: <br>Praticidade, <br> Facilidade aos clientes <br> Utilizar cardápios em publicações | `Frustrações`: <br>Baixa integração entre itens do menu e publicidade, <br>Cardápios físicos arcaicos, <br> Concorrência do mercado digital                
+|  `Hobbies`: |   `História`:  | `Personalidade`:  |
+| <br> Influencer | Leonardo possui uma lanchonete no Rio de Janeiro onde agrega grande parte dos clientes através de POSTs e publicidade no instagram, mas por possuir apenas cardápios físicos, não consegue integrar e enviar para os clientes o cardápio de casa, inviabilizando entregas e popularização dos itens via mídia  <br> | Empolgado <br> Ambicioso  |
+
+
 
 ## Histórias de Usuários
 
