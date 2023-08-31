@@ -95,17 +95,18 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 |ID    | Descrição do Requisito  | Prioridade |
 |------|-----------------------------------------|----|
-|RF-001| A aplicação possuirá uma breve introdução do objetivo | BAIXA | 
-|RF-002| A aplicação permitirá que o restaurante realize um cadastro | ALTA |
-|RF-003| A aplicação permitirá que o cliente do restaurante não necessite de um cadastro ou autentificação | ALTA |
-|RF-004| A aplicação permitirá que o restaurante realize cadastro do cardápio | ALTA |
+|RF-001| A aplicação possuirá uma mensagem de auxílio sobre o funcionamento do sistema | BAIXA | 
+|RF-002| A aplicação permitirá que o restaurante realize seu cadastro | ALTA |
+|RF-003| A aplicação permitirá que o cliente do restaurante realize seu cadastro de forma opcional | MÉDIA |
+|RF-004| A aplicação permitirá que o restaurante realize o cadastro do cardápio | ALTA |
 |RF-005| A aplicação permitirá que sejam cadastrados, alterados ou removidos itens no cardápio | ALTA |
-|RF-006| A aplicação permitirá que o restaurante organize os itens cadatrados em categorias | MÉDIA |
+|RF-006| A aplicação permitirá que o restaurante organize os itens cadatrados em categorias no cardápio | MÉDIA |
 |RF-007| A aplicação deve gerar um QR Code para o acesso ao cardápio | MÉDIA |
 |RF-008| A aplicação permitirá que o cliente pesquise o restaurante pelo nome para acessar o cardápio | BAIXO |
-|RF-009| A aplicação permitirá que o restaurante exiba o endereço, telefone e instagram | BAIXA |
-|RF-010| A aplicação permitirá que o restaurante visualize dados sobre os pratos mais e menos escolhidos | MÉDIA |
-|RF-011| A aplicação agrupará os pratos selecionados pelo cliente do restaurante | BAIXA |
+|RF-009| A aplicação exibirá ao cliente cadastrado um histórico dos últimos cardápios acessados | BAIXA |
+|RF-010| A aplicação permitirá que o restaurante visualize dados sobre os pratos mais e menos escolhidos | ALTA |
+|RF-011| A aplicação agrupará os pratos selecionados pelo cliente do restaurante | MÉDIA |
+|RF-012| A aplicação possuirá uma aba com os cardápios favoritados pelo cliente cadastrado | BAIXA |
 
 
 ### Requisitos não Funcionais
@@ -115,9 +116,10 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |RNF-001| A aplicação deve operar em navegadores Web |  ALTA | 
 |RNF-002| A aplicação deve operar em dispositivos móveis no ANDROID, IOS | ALTA | 
 |RNF-003| A aplicação possuirá responsividade para atender todos os tipos de dispositivos | MÉDIA | 
-|RNF-004| A aplicação deve ter bom nível de contraste entre os elementos da tela em conformidade | BAIXA |
+|RNF-004| A aplicação deve ter bom nível de contraste entre os elementos da tela | BAIXA |
 |RNF-005| A aplicação deverá seguir as normas da LGPD | MÉDIA |
 |RNF-006| A aplicação deve realizar a integração com a câmera do cliente | MÉDIA |
+|RNF-007| A aplicação não deverá exigir autenticação do cliente do restaurante para acesso dos cardápios | ALTA |
 
 
 Com base nas Histórias de Usuário, enumere os requisitos da sua solução. Classifique esses requisitos em dois grupos:
