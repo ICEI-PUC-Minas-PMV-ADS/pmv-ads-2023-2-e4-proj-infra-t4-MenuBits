@@ -38,7 +38,13 @@ Apresente uma visão geral do que será abordado nesta parte do documento, enume
 |  `Hobbies`: |   `História`:  | `Personalidade`:  |
 | <br> Influencer | Leonardo possui uma lanchonete no Rio de Janeiro onde agrega grande parte dos clientes através de POSTs e publicidade no instagram, mas por possuir apenas cardápios físicos, não consegue integrar e enviar para os clientes o cardápio de casa, inviabilizando entregas e popularização dos itens via mídia  <br> | Empolgado <br> Ambicioso  |
 
+<br>
 
+|    `Nome`: Joana  | `Profissão`: Cliente do restaurante       |     `Idade`: 24 Anos    |
+|--------------------|------------------------------------|----------------------------------------|
+| <img width="450" alt="image" src="https://www.agoramt.com.br/wp-content/uploads/2019/10/pessoa-no-celular.jpg">| `Motivações`: <br>Praticidade | `Frustrações`: <br>Cardápios indisponíveis, <br>Cardápios sujos, <br> Impressões mal feitas / Má visualização das informações                
+|  `Hobbies`: |   `História`:  | `Personalidade`:  |
+| <br> Estudante | Joana faz faculdade e mora fora de casa, tendo que diariamente utilizar restaurantes para comprar comida, frequentemente ela se encontra esperando alguém liberar o cardápio em horários de pico, que estão em péssimas condições higiênicas e até mesmo de desgaste, o que faz com que ela busque por uma solução contornar essas situações <br> |Esforçada |
 
 ## Histórias de Usuários
 
@@ -54,6 +60,7 @@ Com base na análise das personas forma identificadas as seguintes histórias de
 |Cláudia  | Configurar e ordernar os itens no cardápio | Ter um cardápio atrativo que envolva os clientes |
 |Leonardo  | Fornecer o cardápio através de um QRCODE | Integrar posts na mídia com o cardápio |
 |Leonardo  | Exibir contato do WhatsApp Business no cardápio | Facilitar o delivery dos itens |
+|Joana | Acessar cardápios digitais | Não esperar a disponibilidade do cardápio físico |
 
 
 ## Modelagem do Processo de Negócio 
@@ -115,7 +122,7 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |-------|-------------------------|----|
 |RNF-001| A aplicação deve operar em navegadores Web |  ALTA | 
 |RNF-002| A aplicação deve operar em dispositivos móveis no ANDROID, IOS | ALTA | 
-|RNF-003| A aplicação possuirá responsividade para atender todos os tipos de dispositivos | MÉDIA | 
+|RNF-003| A aplicação possuirá responsividade para atender todos os dispositivos homologados | MÉDIA | 
 |RNF-004| A aplicação deve ter bom nível de contraste entre os elementos da tela | BAIXA |
 |RNF-005| A aplicação deverá seguir as normas da LGPD | MÉDIA |
 |RNF-006| A aplicação deve realizar a integração com a câmera do cliente | MÉDIA |
