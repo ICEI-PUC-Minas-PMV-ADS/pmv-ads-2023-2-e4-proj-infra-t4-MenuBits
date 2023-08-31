@@ -40,7 +40,7 @@ Apresente uma visão geral do que será abordado nesta parte do documento, enume
 
 <br>
 
-|    `Nome`: Joana  | `Profissão`: Cliente do restaurante       |     `Idade`: 24 Anos    |
+|    `Nome`: Joana  | `Profissão`: Cliente do restaurante       |     `Idade`: 20 Anos    |
 |--------------------|------------------------------------|----------------------------------------|
 | <img width="450" alt="image" src="https://www.agoramt.com.br/wp-content/uploads/2019/10/pessoa-no-celular.jpg">| `Motivações`: <br>Praticidade | `Frustrações`: <br>Cardápios indisponíveis, <br>Cardápios sujos, <br> Impressões mal feitas / Má visualização das informações                
 |  `Hobbies`: |   `História`:  | `Personalidade`:  |
