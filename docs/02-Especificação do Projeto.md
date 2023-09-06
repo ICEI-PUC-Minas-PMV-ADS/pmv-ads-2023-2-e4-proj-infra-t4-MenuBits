@@ -203,7 +203,6 @@ O gerenciamento adequado de tarefas contribuirá para que o projeto alcance alto
 <img width="722" alt="image" src="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t4-cardapio-digital/assets/55036173/a4188ff1-c72c-412f-9419-1a4773d16ebb">
 
 
-![Simple Project Timeline](img/02-project-timeline.png)
 
 ## Gestão de Orçamento
 
