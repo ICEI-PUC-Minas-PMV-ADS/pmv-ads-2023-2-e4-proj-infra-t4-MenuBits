@@ -7,16 +7,15 @@ A metodologia contempla as definições de ferramental utilizado pela equipe tan
 
 ## Relação de Ambientes de Trabalho
 
-Os artefatos do projeto são desenvolvidos a partir de diversas plataformas e a relação dos ambientes com seu respectivo propósito é apresentada na tabela que se segue. 
-
+Os artefatos do projeto são desenvolvidos a partir de diversas plataformas e a relação dos ambientes com seu respectivo propósito é apresentada na tabela que segue. 
 
 
 |     Ambiente  |    Plataforma      |     Link    |
 |--------------------|------------------------------------|----------------------------------------|
-| Repositório de código fonte | GitHub | https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-1-e3-proj-mov-t6-bicos-prestacao-de-servicos/
-|  Gerenciamento do Projeto |   GitHub  | https://app.clickup.com/37019511/v/l/139qvq-83 |  
-|  Projeto de Interface e  Wireframes  | Figma  | https://www.figma.com/file/H1LvDAe39TLO9qtRYDHXs0/BICOS---SERVI%C3%87OS?node-id=20-3&t=VgLMmtXZ72w3Om8A-0   |
-|  Reuniões  |  Google Meets  | https://meet.google.com/cwj-wvoi-voj |
+| Repositório de código fonte | GitHub | https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t4-cardapio-digital |
+|  Gerenciamento do Projeto |   ClickUp  | https://app.clickup.com/37019511/v/l/s/90090485021 |  
+|  Projeto de Interface e  Wireframes  | Figma  |    |
+|  Reuniões  |  Google Meets  | https://meet.google.com / https://teams.microsoft.com/_#/school/teams-grid/General?ctx=teamsGrid |
 
 
 ## Controle de Versão
@@ -76,14 +75,16 @@ As ferramentas empregadas no projeto são:
 
 #### Editores de código: 
 
-- Visual Studio Code: Ferramenta utilizada para o desenvolvimento do código utilizando React Native. Esta possui integração com GitHub
+- Visual Studio Code: Ferramenta utilizada para o desenvolvimento do código utilizando React Native para mobile e React para o frontend em Web, também sendo utilizado para o backend. Esta possui integração com GitHub
 - GitHub:  Plataforma de hospedagem de código-fonte e arquivos com controle de versão usando o Git.
 
 #### Comunicação e organização:
 
 - Google Meets: Ferramenta utilizada para reuniões.
+- Teams Microsoft: Ferramenta utilizada para reuniões.
 - GitHub Projects: Ferramenta utilizada para a organização e distribuição de tarefas do projeto.
 
 #### Ferramentas de Design (wireframing):
 
 - Figma: Ferramenta para criação e edição de wirefremes, esta permite a edição de múltiplas pessoas ao mesmo tempo.
+- FigJam: Ferramenta para criação de diagramas diversos.
