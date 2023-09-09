@@ -157,7 +157,7 @@ Enumere as restrições à sua solução. Lembre-se de que as restrições geral
 
 ## Diagrama de Casos de Uso
 
-![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t4-cardapio-digital/assets/68014636/549a9be5-1a41-4a9a-bf18-c928be51c4ae)
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t4-cardapio-digital/assets/68014636/c3e5ade7-7a24-41bd-8297-5529e2afcc2a)
 
 
 # Matriz de Rastreabilidade
