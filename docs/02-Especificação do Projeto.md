@@ -102,7 +102,7 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 |ID    | Descrição do Requisito  | Prioridade |
 |------|-----------------------------------------|----|
-|RF-001| A aplicação possuirá uma mensagem de auxílio sobre o funcionamento do sistema | BAIXA | 
+|RF-001| A aplicação possuirá um help de auxílio sobre o funcionamento do sistema | BAIXA | 
 |RF-002| A aplicação permitirá que o restaurante realize seu cadastro | ALTA |
 |RF-003| A aplicação permitirá que o cliente do restaurante realize seu cadastro de forma opcional | MÉDIA |
 |RF-004| A aplicação permitirá que o restaurante realize o cadastro do cardápio | ALTA |
