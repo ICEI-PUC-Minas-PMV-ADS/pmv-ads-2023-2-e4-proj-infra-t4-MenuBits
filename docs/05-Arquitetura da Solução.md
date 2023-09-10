@@ -1,8 +1,7 @@
 # Arquitetura da Solução
 
-<span style="color:red">Pré-requisitos: <a href="3-Projeto de Interface.md"> Projeto de Interface</a></span>
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t4-cardapio-digital/assets/105240089/44ce26b1-8aa7-46b3-b8f0-6db6780c8d23)
 
-Definição de como o software é estruturado em termos dos componentes que fazem parte da solução e do ambiente de hospedagem da aplicação.
 
 ![Arquitetura da Solução](img/02-mob-arch.png)
 
