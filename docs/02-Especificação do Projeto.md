@@ -160,13 +160,8 @@ A matriz de rastreabilidade é uma ferramenta usada para facilitar a visualizaç
 
 A matriz deve contemplar todos os elementos relevantes que fazem parte do sistema, conforme a figura meramente ilustrativa apresentada a seguir.
 Link para a Matriz: https://docs.google.com/spreadsheets/d/1ALuf_42xETT02UImc3_kanIa8k1lbYCNFUL7z5fC_Do/edit#gid=0
+
 ![Exemplo de matriz de rastreabilidade](img/MatrizDeRastreabilidade.png)
-
-> **Links Úteis**:
-> - [Artigo Engenharia de Software 13 - Rastreabilidade](https://www.devmedia.com.br/artigo-engenharia-de-software-13-rastreabilidade/12822/)
-> - [Verificação da rastreabilidade de requisitos usando a integração do IBM Rational RequisitePro e do IBM ClearQuest Test Manager](https://developer.ibm.com/br/tutorials/requirementstraceabilityverificationusingrrpandcctm/)
-> - [IBM Engineering Lifecycle Optimization – Publishing](https://www.ibm.com/br-pt/products/engineering-lifecycle-optimization/publishing/)
-
 
 # Gerenciamento de Projeto
 
@@ -185,13 +180,10 @@ O gráfico de Gantt ou diagrama de Gantt também é uma ferramenta visual utiliz
 <img width="729" alt="image" src="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t4-cardapio-digital/assets/55036173/3bc224a0-adb2-4ca5-9e9f-4287853d386c">
 
 
-
-
 ## Gerenciamento de Equipe
 
 O gerenciamento adequado de tarefas contribuirá para que o projeto alcance altos níveis de produtividade. Por isso, é fundamental que ocorra a gestão de tarefas e de pessoas, dentro deste pensamento todo o time estará em comum acordo no desenvolvimento. E as tarefas serão dividas de forma que o desenvolvimento ocorrerá em comum conjunto. Sendo dividido apenas tarefas pequenas e focais por meio do clickUP
 <img width="722" alt="image" src="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t4-cardapio-digital/assets/55036173/a4188ff1-c72c-412f-9419-1a4773d16ebb">
-
 
 
 ## Gestão de Orçamento
