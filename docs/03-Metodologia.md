@@ -12,7 +12,7 @@ Os artefatos do projeto são desenvolvidos a partir de diversas plataformas e a 
 |--------------------|------------------------------------|----------------------------------------|
 | Repositório de código fonte | GitHub | https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t4-cardapio-digital |
 |  Gerenciamento do Projeto |   ClickUp  | https://app.clickup.com/37019511/v/l/s/90090485021 |  
-|  Projeto de Interface e  Wireframes  | Figma  |    |
+|  Projeto de Interface e  Wireframes  | Figma  | https://www.figma.com/file/4XoEXsBqEWpJKWVgzHpXoQ/Untitled?type=design&node-id=101-226&mode=design&t=z5KevhYv5NzKK2e2-0 |
 |  Reuniões  |  Google Meets  | https://meet.google.com / https://teams.microsoft.com/_#/school/teams-grid/General?ctx=teamsGrid |
 
 
