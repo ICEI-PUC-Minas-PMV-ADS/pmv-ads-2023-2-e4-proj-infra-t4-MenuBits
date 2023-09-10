@@ -1,5 +1,21 @@
 # Arquitetura da Solução
 
+A arquitetura de solução  do nosso projeto será fluido e o mais organizado possível.
+
+Selecionamos as seguintes tecnologias:
+
+HTML: É uma tecnologia cujo código utilizado serve para estruturar uma página web e seu conteúdo.
+
+CSS: É uma tecnologia cujo código utilizado serve para estilizar uma página web e seu conteúdo.
+
+Javascript: É uma linguagem de programação interpretada com tipagem dinâmica fraca e multiparadigma. Juntamente com HTML e CSS, o JavaScript é uma das três principais tecnologias da World Wide Web.
+
+ReactNative: É uma estrutura de desenvolvimento de aplicativos móveis que permite criar aplicativos nativos para iOS e Android usando JavaScript e React, que é uma biblioteca de interface de usuário
+
+JSON API: É uma tecnologia utilizada em desenvolvimento de software para trocar informações estruturadas e configurar dados em aplicativos, sistemas e serviços da web.
+
+Segue abaixo a lógica da arquitetura:
+
 ![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t4-cardapio-digital/assets/105240089/44ce26b1-8aa7-46b3-b8f0-6db6780c8d23)
 
 
