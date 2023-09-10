@@ -75,7 +75,7 @@ Percebemos que no dia a dia muitos restaurantes não possuem uma digitalização
 
 A aplicação tem como foco todos os restaurantes e lanchonetes que possuem algum tipo de menu, seja físico para digitalizá-los ou até já digitalizados mas com funções superficiais, a ideia é fornecer um cardápio facilmente manipulável para o dono do restaurante possibilitando alteração de itens e preços, contando também com a coleta de estatísticas e exibindo ao cliente do restaurante um cardápio com itens bem dispostos e organizados.
 
-### Processo 1 – Fluxo principal da aplicação (Criação e acesso de cardápios)
+### Processo 1 – Criação e acesso de cardápios (Fluxo principal da aplicação)
 
 Apresente aqui o nome e as oportunidades de melhorias para o processo 1. Em seguida, apresente o modelo do processo 1, descrito no padrão BPMN. 
 
