@@ -8,7 +8,7 @@ HTML: É uma tecnologia cujo código utilizado serve para estruturar uma página
 
 CSS: É uma tecnologia cujo código utilizado serve para estilizar uma página web e seu conteúdo.
 
-Javascript: É uma linguagem de programação interpretada com tipagem dinâmica fraca e multiparadigma. Juntamente com HTML e CSS, o JavaScript é uma das três principais tecnologias da World Wide Web.
+Javascript: É uma linguagem de programação interpretada com tipagem dinâmica fraca e multiparadigma. Juntamente com HTML e o CSS, é uma das três principais tecnologias da World Wide Web.
 
 ReactNative: É uma estrutura de desenvolvimento de aplicativos móveis que permite criar aplicativos nativos para iOS e Android usando JavaScript e React, que é uma biblioteca de interface de usuário
 
