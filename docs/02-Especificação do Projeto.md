@@ -77,8 +77,6 @@ A aplicação tem como foco todos os restaurantes e lanchonetes que possuem algu
 
 ### Processo 1 – Criação e acesso de cardápios (Fluxo principal da aplicação)
 
-Apresente aqui o nome e as oportunidades de melhorias para o processo 1. Em seguida, apresente o modelo do processo 1, descrito no padrão BPMN. 
-
 ![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t4-cardapio-digital/assets/68014636/e7999ea1-122a-4063-9522-03ef55c7d35e)
 
 ## Indicadores de Desempenho
