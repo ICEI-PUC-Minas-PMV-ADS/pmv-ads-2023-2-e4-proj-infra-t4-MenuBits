@@ -67,23 +67,19 @@ Com base na análise das personas forma identificadas as seguintes histórias de
 
 ### Análise da Situação Atual
 
-Apresente aqui os problemas existentes que viabilizam sua proposta. Apresente o modelo do sistema como ele funciona hoje. Caso sua proposta seja inovadora e não existam processos claramente definidos, apresente como as tarefas que o seu sistema pretende implementar são executadas atualmente, mesmo que não se utilize tecnologia computacional. 
+Atualmente com o mundo cada vez mais digital, os cardápios não poderiam ficar de fora, justamente pelos problemas que um cardápio físico pode trazer, como sua própria indisponibilidade que pode acontecer dependendo da quantidade de pessoas no restaurante, o desgaste no uso diário deles, onde ficam sujos, amassados e com informações não visíveis, facilitando até a mudança de itens no menu e a alteração de preços, que num cardápio físico exigiria novas impressões.
+
+Percebemos que no dia a dia muitos restaurantes não possuem uma digitalização para seus cardápios e os que possuem são soluções simplese superficiais que não exploram todo o potencial da digitalização do cardápio, que é o que o MenuBits busca fazer, desde fornecer cardápios digitais através de QRCode até coletar estatísticas de acesso dos itens do menu para o dono do restaurante.
 
 ### Descrição Geral da Proposta
 
-Apresente aqui uma descrição da sua proposta abordando seus limites e suas ligações com as estratégias e objetivos do negócio. Apresente aqui as oportunidades de melhorias.
+A aplicação tem como foco todos os restaurantes e lanchonetes que possuem algum tipo de menu, seja físico para digitalizá-los ou até já digitalizados mas com funções superficiais, a ideia é fornecer um cardápio facilmente manipulável para o dono do restaurante possibilitando alteração de itens e preços, contando também com a coleta de estatísticas e exibindo ao cliente do restaurante um cardápio com itens bem dispostos e organizados.
 
-### Processo 1 – NOME DO PROCESSO
+### Processo 1 – Fluxo principal da aplicação (Criação e acesso de cardápios)
 
 Apresente aqui o nome e as oportunidades de melhorias para o processo 1. Em seguida, apresente o modelo do processo 1, descrito no padrão BPMN. 
 
-![Processo 1](img/02-bpmn-proc1.png)
-
-### Processo 2 – NOME DO PROCESSO
-
-Apresente aqui o nome e as oportunidades de melhorias para o processo 2. Em seguida, apresente o modelo do processo 2, descrito no padrão BPMN.
-
-![Processo 2](img/02-bpmn-proc2.png)
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t4-cardapio-digital/assets/68014636/e7999ea1-122a-4063-9522-03ef55c7d35e)
 
 ## Indicadores de Desempenho
 
