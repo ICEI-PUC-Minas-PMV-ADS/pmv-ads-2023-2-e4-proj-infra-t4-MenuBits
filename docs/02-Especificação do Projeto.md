@@ -69,7 +69,7 @@ Com base na análise das personas forma identificadas as seguintes histórias de
 
 Atualmente com o mundo cada vez mais digital, os cardápios não poderiam ficar de fora, justamente pelos problemas que um cardápio físico pode trazer, como sua própria indisponibilidade que pode acontecer dependendo da quantidade de pessoas no restaurante, o desgaste no uso diário deles, onde ficam sujos, amassados e com informações não visíveis, facilitando até a mudança de itens no menu e a alteração de preços, que num cardápio físico exigiria novas impressões.
 
-Percebemos que no dia a dia muitos restaurantes não possuem uma digitalização para seus cardápios e os que possuem são soluções simplese superficiais que não exploram todo o potencial da digitalização do cardápio, que é o que o MenuBits busca fazer, desde fornecer cardápios digitais através de QRCode até coletar estatísticas de acesso dos itens do menu para o dono do restaurante.
+Percebemos que no dia a dia muitos restaurantes não possuem uma digitalização para seus cardápios e os que possuem são soluções simples e superficiais que não exploram todo o potencial da digitalização do cardápio, que é o que o MenuBits busca fazer, desde fornecer cardápios digitais através de QRCode até coletar estatísticas de acesso dos itens do menu para o dono do restaurante.
 
 ### Descrição Geral da Proposta
 
