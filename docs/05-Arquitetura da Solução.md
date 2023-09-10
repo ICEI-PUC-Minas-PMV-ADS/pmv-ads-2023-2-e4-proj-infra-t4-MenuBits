@@ -3,8 +3,6 @@
 ![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t4-cardapio-digital/assets/105240089/44ce26b1-8aa7-46b3-b8f0-6db6780c8d23)
 
 
-![Arquitetura da Solução](img/02-mob-arch.png)
-
 ## Diagrama de Classes
 
 O diagrama de classes ilustra graficamente como será a estrutura do software, e como cada uma das classes da sua estrutura estarão interligadas. Essas classes servem de modelo para materializar os objetos que executarão na memória.
