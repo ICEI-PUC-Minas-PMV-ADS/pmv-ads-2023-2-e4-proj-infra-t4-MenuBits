@@ -75,6 +75,10 @@ A aplicação tem como foco todos os restaurantes e lanchonetes que possuem algu
 
 ![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t4-cardapio-digital/assets/68014636/e7999ea1-122a-4063-9522-03ef55c7d35e)
 
+### Processo 2 – Acesso de estatísticas para dono do restaurante
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t4-cardapio-digital/assets/68014636/1b58160a-3c14-4bb6-8ebe-825c3a7c4bf7)
+
+
 ## Indicadores de Desempenho
 
 Apresente aqui os principais indicadores de desempenho e algumas metas para o processo. Atenção: as informações necessárias para gerar os indicadores devem estar contempladas no diagrama de classe. Colocar no mínimo 5 indicadores. 
