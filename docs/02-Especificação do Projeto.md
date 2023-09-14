@@ -106,7 +106,7 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |RF-008| A aplicação permitirá que o cliente pesquise o restaurante pelo nome para acessar o cardápio | BAIXO |
 |RF-009| A aplicação exibirá ao cliente cadastrado um histórico dos últimos cardápios acessados | BAIXA |
 |RF-010| A aplicação permitirá que o restaurante visualize dados sobre os pratos mais e menos escolhidos | ALTA |
-|RF-011| A aplicação agrupará os pratos selecionados pelo cliente do restaurante | MÉDIA |
+|RF-011| A aplicação agrupará os pedidos selecionados pelo cliente do restaurante | MÉDIA |
 |RF-012| A aplicação possuirá uma aba com os cardápios favoritados pelo cliente cadastrado | BAIXA |
 
 
