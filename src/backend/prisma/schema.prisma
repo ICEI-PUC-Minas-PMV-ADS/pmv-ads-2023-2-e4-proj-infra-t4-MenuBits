@@ -10,11 +10,68 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model User {
-  id        String   @id @default(uuid())
-  email     String   @unique
-  name      String
-  password  String
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+model Users {
+  id          Int   @id @default(autoincrement())
+  email       String   @unique
+  name        String
+  password    String @db.VarChar(100)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  bookmarks   Bookmarks[]
 }
+
+model Restaurants {
+  id          Int   @id @default(autoincrement())
+  email       String   @unique
+  name        String @db.VarChar(50)
+  password    String @db.VarChar(100)
+  phone       String @db.VarChar(30)
+  imageUrl    String?
+  city        String
+  UF          String
+  location    String
+  description String @db.VarChar(255)
+  createdAt   DateTime @default(now())
+  menus       Menus[]
+}
+
+model Menus {
+  id            Int   @id @default(autoincrement())
+  title         String @db.VarChar(255)
+  restaurantId  Int
+  createdAt     DateTime @default(now())
+  items         Items[]
+  restaurant    Restaurants @relation(fields: [restaurantId], references: [id])
+  bookmarks     Bookmarks[]
+}
+
+model Groups {
+  id        Int    @id @default(autoincrement())
+  name      String @unique
+  imageUrl  String?
+  items     Items[]
+}
+
+model Items {
+  id          Int   @id @default(autoincrement())
+  name        String
+  price       Float
+  imageUrl    String?
+  description String? @db.VarChar(255)
+  groupId     Int
+  createdAt   DateTime @default(now())
+  isItemOfDay Boolean @default(false) //Prato do dia
+  menus       Menus[]
+  group       Groups @relation(fields: [groupId], references: [id])
+}
+
+model Bookmarks { //Tabela de favoritos (relacionamento não obrigatório de muito pra muitos)
+  id  Int   @id @default(autoincrement())
+  userId    Int
+  menuId    Int
+  menus     Menus @relation(fields: [menuId], references: [id])
+  users     Users @relation(fields: [userId], references: [id])
+}
+
+
+
