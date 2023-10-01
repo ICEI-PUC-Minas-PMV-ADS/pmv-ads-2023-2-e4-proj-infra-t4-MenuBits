@@ -6,9 +6,16 @@ class RestauranteService {
   }
 
   async findById(id) {
-    return await prisma.restaurants.findUniqueOrThrow({
-      where: { id },
+    const restaurant = await prisma.restaurants.findUnique({
+      where: {
+        id: parseInt(id),
+      },
     });
+    if (restaurant === null) {
+      return restaurant
+    } else {
+      return restaurant;
+    }
   }
 
   async create(payload) {
