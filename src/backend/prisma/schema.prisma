@@ -17,7 +17,7 @@ model Users {
   password    String @db.VarChar(100)
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
-  bookmarks   Bookmarks[]
+  users_menus Users_Menus[]
 }
 
 model Restaurants {
@@ -33,6 +33,7 @@ model Restaurants {
   description String @db.VarChar(255)
   createdAt   DateTime @default(now())
   menus       Menus[]
+  items       Items[]
 }
 
 model Menus {
@@ -42,7 +43,8 @@ model Menus {
   createdAt     DateTime @default(now())
   items         Items[]
   restaurant    Restaurants @relation(fields: [restaurantId], references: [id])
-  bookmarks     Bookmarks[]
+  users_menus   Users_Menus[]
+  items_menus   Items_Menus[]
 }
 
 model Groups {
@@ -53,24 +55,35 @@ model Groups {
 }
 
 model Items {
-  id          Int   @id @default(autoincrement())
-  name        String
-  price       Float
-  imageUrl    String?
-  description String? @db.VarChar(255)
-  groupId     Int
-  createdAt   DateTime @default(now())
-  isItemOfDay Boolean @default(false) //Prato do dia
-  menus       Menus[]
-  group       Groups @relation(fields: [groupId], references: [id])
+  id            Int   @id @default(autoincrement())
+  name          String
+  price         Float
+  imageUrl      String?
+  description   String? @db.VarChar(255)
+  groupId       Int
+  restaurantId  Int
+  createdAt     DateTime @default(now())
+  isItemOfDay   Boolean @default(false) //Prato do dia
+  menus         Menus[]
+  items_menus   Items_Menus[]
+  group         Groups @relation(fields: [groupId], references: [id])
+  restaurant    Restaurants @relation(fields: [restaurantId], references: [id])
 }
 
-model Bookmarks { //Tabela de favoritos (relacionamento não obrigatório de muito pra muitos)
+model Users_Menus { //Tabela de favoritos
   id  Int   @id @default(autoincrement())
   userId    Int
   menuId    Int
-  menus     Menus @relation(fields: [menuId], references: [id])
   users     Users @relation(fields: [userId], references: [id])
+  menus     Menus @relation(fields: [menuId], references: [id])
+}
+
+model Items_Menus { //Tabela de itens de cada menu
+  id  Int   @id @default(autoincrement())
+  itemId    Int
+  menuId    Int
+  items     Items @relation(fields: [itemId], references: [id])
+  menus     Menus @relation(fields: [menuId], references: [id])
 }
 
 
