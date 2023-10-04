@@ -2,6 +2,7 @@ import { Router } from 'express';
 import UserController from '../controllers/user.controller.js';
 import ItemsMenusController from '../controllers/items_menus.controller.js';
 import itemsController from '../controllers/items.controller.js';
+import restauranteController from '../controllers/restaurante.controller.js';
 const router = Router();
 
 router.get('/', (req, res) => {
@@ -21,5 +22,12 @@ router.get('/api/items/menus/:menuId', itemsController.findAllItensByMenuId)
 //Items_Menus endpoints
 router.post('/api/menus/items', ItemsMenusController.createRelationItemToMenu);
 router.delete('/api/menus/:menuId/items/:itemId', ItemsMenusController.deleteRelationItemToMenu);
+
+//Restaurants endpoints
+router.get('/api/restaurante', restauranteController.findAll);
+router.get('/api/restaurante/:id', restauranteController.findById);
+router.post('/api/restaurante', restauranteController.create);
+router.put('/api/restaurante/:id', restauranteController.update);
+router.delete('/api/restaurante/:id', restauranteController.delete);
 
 export default router;
