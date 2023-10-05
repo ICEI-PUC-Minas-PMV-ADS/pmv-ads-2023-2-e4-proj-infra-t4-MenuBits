@@ -18,6 +18,19 @@ class RestauranteService {
     }
   }
 
+  async findByEmail(email) {
+    const restaurant = await prisma.restaurants.findUnique({
+      where: {
+        email: email,
+      },
+    });
+    if (restaurant === null) {
+      return restaurant
+    } else {
+      return restaurant;
+    }
+  }
+
   async create(payload) {
     return await prisma.restaurants.create({
       data: payload,

@@ -1,7 +1,6 @@
-import { prisma } from "../database/prisma.provider.js";
-import restauranteService from "../services/restaurante.service.js";
-import RestauranteService from "../services/restaurante.service.js";
 import bcrypt from "bcryptjs";
+import { prisma } from "../database/prisma.provider.js";
+import { default as RestauranteService, default as restauranteService } from "../services/restaurante.service.js";
 
 class RestauranteController {
   async findAll(request, response) {
@@ -38,17 +37,38 @@ class RestauranteController {
     }
   }
 
+  async findByEmail(request, response) {
+    console.log("[+] Find by Email");
+    const { email } = request.params;
+    try {
+      const restaurant = await RestauranteService.findByEmail(email);
+      if (restaurant === null) {
+        return response.status(404).json({
+          status: "Not Found",
+          message: "Restaurante não encontrado.",
+        });
+      } else {
+        return response.status(200).json({
+          restaurant,
+        });
+      }
+    } catch (err) {
+      console.error("Erro ao encontrar o restaurante:", err);
+      return response.status(500).json({ error: "Erro interno do servidor." });
+    }
+  }
+
   async create(request, response) {
     try {
-     
+
       const {
-        email, 
-        name, 
+        email,
+        name,
         password,
-        phone, 
-        city, 
-        uf, 
-        location, 
+        phone,
+        city,
+        uf,
+        location,
         description
       } = request.body
       const hash = await bcrypt.hash(password, 10);
