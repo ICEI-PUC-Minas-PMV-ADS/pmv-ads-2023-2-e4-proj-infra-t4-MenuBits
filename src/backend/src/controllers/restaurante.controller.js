@@ -1,6 +1,7 @@
 import { prisma } from "../database/prisma.provider.js";
 import restauranteService from "../services/restaurante.service.js";
 import RestauranteService from "../services/restaurante.service.js";
+import bcrypt from "bcryptjs";
 
 class RestauranteController {
   async findAll(request, response) {
@@ -39,11 +40,38 @@ class RestauranteController {
 
   async create(request, response) {
     try {
-      const user = await RestauranteService.create(request.body);
-      console.log("CREATE RESTAURANT");
+     
+      const {
+        email, 
+        name, 
+        password,
+        phone, 
+        city, 
+        uf, 
+        location, 
+        description
+      } = request.body
+      const hash = await bcrypt.hash(password, 10);
+      const findRestaurant = await prisma.restaurants.findUnique({where: {
+        email
+      }})
+      if(findRestaurant) {
+        return res.json({ error: "Restaurant already exists" })
+      }
+      const restaurant = await prisma.restaurants.create({
+        data: {
+          email,
+          name,
+          password: hash,
+          phone,
+          city,
+          uf,
+          location,
+          description
+        }
+      })
       return response.status(201).json({
-        success: true,
-        data: user,
+        restaurant
       });
     } catch (error) {
       return response.status(500).json({ error: error.message });
