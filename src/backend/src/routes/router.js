@@ -1,6 +1,7 @@
 import { Router } from 'express';
 import itemsController from '../controllers/items.controller.js';
 import ItemsMenusController from '../controllers/items_menus.controller.js';
+import menusController from '../controllers/menus.controller.js';
 import restauranteController from '../controllers/restaurante.controller.js';
 import UserController from '../controllers/user.controller.js';
 const router = Router();
