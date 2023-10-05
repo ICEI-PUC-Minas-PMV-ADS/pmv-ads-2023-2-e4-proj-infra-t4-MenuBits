@@ -336,12 +336,12 @@
         }
       }
     },
-    "/api/restaurante/email/{email}": {
+    "/api/restaurante/name/{name}": {
       "get": {
         "description": "",
         "parameters": [
           {
-            "name": "email",
+            "name": "name",
             "in": "path",
             "required": true,
             "type": "string"

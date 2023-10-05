@@ -37,11 +37,11 @@ class RestauranteController {
     }
   }
 
-  async findByEmail(request, response) {
+  async findByName(request, response) {
     console.log("[+] Find by Email");
-    const { email } = request.params;
+    const { name } = request.params;
     try {
-      const restaurant = await RestauranteService.findByEmail(email);
+      const restaurant = await RestauranteService.findByName( name);
       if (restaurant === null) {
         return response.status(404).json({
           status: "Not Found",

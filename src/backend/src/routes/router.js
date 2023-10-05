@@ -32,7 +32,7 @@ router.delete('/api/menus/:menuId/items/:itemId', ItemsMenusController.deleteRel
 //Restaurants endpoints
 router.get('/api/restaurante', restauranteController.findAll);
 router.get('/api/restaurante/:id', restauranteController.findById);
-router.get('/api/restaurante/email/:email', restauranteController.findByEmail);
+router.get('/api/restaurante/name/:name', restauranteController.findByName);
 router.post('/api/restaurante', restauranteController.create);
 router.put('/api/restaurante/:id', restauranteController.update);
 router.delete('/api/restaurante/:id', restauranteController.delete);

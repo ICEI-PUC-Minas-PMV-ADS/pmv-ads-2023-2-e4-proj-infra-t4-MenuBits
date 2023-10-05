@@ -18,10 +18,10 @@ class RestauranteService {
     }
   }
 
-  async findByEmail(email) {
-    const restaurant = await prisma.restaurants.findUnique({
+  async findByName(name) {
+    const restaurant = await prisma.restaurants.findMany({
       where: {
-        email: email,
+        name: name,
       },
     });
     if (restaurant === null) {
