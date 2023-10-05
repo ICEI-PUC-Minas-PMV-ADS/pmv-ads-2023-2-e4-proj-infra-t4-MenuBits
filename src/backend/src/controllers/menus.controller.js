@@ -5,12 +5,10 @@ class MenusController {
 		const { restaurantId } = request.params;
 		console.log();
 		try {
-			// Chame a função do serviço para buscar itens de menu com base no ID do restaurante.
 			const menu = await MenusService.findMenuByRestaurantId(
-				restaurantId, // Certifique-se de converter o ID para um número.
+				restaurantId,
 			);
 
-			// Verifique se há itens de menu encontrados.
 			if (menu.length === 0) {
 				return response.status(404).json({
 					status: "Not Found",
@@ -18,7 +16,6 @@ class MenusController {
 				});
 			}
 
-			// Retorne os itens de menu encontrados em uma resposta JSON.
 			return response.status(200).json({
 				menu,
 			});
