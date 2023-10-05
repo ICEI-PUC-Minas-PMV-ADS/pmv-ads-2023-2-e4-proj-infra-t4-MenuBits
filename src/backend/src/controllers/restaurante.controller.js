@@ -38,7 +38,7 @@ class RestauranteController {
   }
 
   async findByName(request, response) {
-    console.log("[+] Find by Email");
+    console.log("[+] Find Restaurant by Name");
     const { name } = request.params;
     try {
       const restaurant = await RestauranteService.findByName( name);
