@@ -48,6 +48,8 @@ As referências abaixo irão auxiliá-lo na geração do artefato “Esquema Rel
 
 Modelo do banco de dados relacional criado:
 
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t4-MenuBits/assets/68014636/24148581-e034-445c-bbd0-4da801c455de)
+
 [Clique aqui para acessar](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t4-MenuBits/blob/main/src/backend/src/bd.sql)
 
 O arquivo serve apenas para visualização dos dados, o banco de dados real já está na nuvem, portanto, não é preciso executar nada.
