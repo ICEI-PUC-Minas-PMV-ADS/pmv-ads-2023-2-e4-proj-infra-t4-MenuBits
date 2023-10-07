@@ -16,9 +16,11 @@ router.get('/api/users/:id', UserController.findById);
 router.post('/api/users', UserController.create);
 router.put('/api/users/:id', UserController.update);
 router.delete('/api/users/:id', UserController.delete);
+router.get('/api/user-history/:id', UserController.getUserHistory);
 
 //Items endpoints
 router.get('/api/items/menus/:menuId', ItemsController.findAllItensByMenuId);
+router.get('/api/menus/:menuId/items/:itemId', ItemsMenusController.findItemByMenuId);
 router.put('/api/items/itemofday/:id', ItemsController.setItemOfDay);
 
 // Menu endpoint

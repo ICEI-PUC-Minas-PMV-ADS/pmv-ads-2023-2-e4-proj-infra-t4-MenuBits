@@ -1,8 +1,13 @@
 import { prisma } from "../database/prisma.provider.js";
+import mongoService from "./mongo.service.js";
 
 class RestauranteService {
   async findUsers() {
-    return await prisma.restaurants.findMany();
+    const restaurants = await prisma.restaurants.findMany();
+
+    await mongoService.storeManyCustomerHistory(restaurants, { id: 1, name: 'teste' });
+
+    return restaurants;
   }
 
   async findById(id) {
@@ -14,6 +19,7 @@ class RestauranteService {
     if (restaurant === null) {
       return restaurant
     } else {
+      await mongoService.storeCustomerHistory(restaurant, { id: 1, name: 'teste' });
       return restaurant;
     }
   }
@@ -27,6 +33,7 @@ class RestauranteService {
     if (restaurant === null) {
       return restaurant
     } else {
+      await mongoService.storeCustomerHistory(restaurant, { id: 1, name: 'teste' });
       return restaurant;
     }
   }
