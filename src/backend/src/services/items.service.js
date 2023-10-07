@@ -7,6 +7,12 @@ class ItemsService {
     });
   }
 
+  async findItemsByRestaurantId(restaurantId) {
+    return await prisma.items.findMany({
+        where: { restaurantId },
+    });
+  }
+
   async create(payload) {
     return await prisma.items.create({
       data: payload,

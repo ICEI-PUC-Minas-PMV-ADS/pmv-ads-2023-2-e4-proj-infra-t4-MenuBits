@@ -1,4 +1,3 @@
-
 import { compare } from "bcryptjs";
 import { sign } from "jsonwebtoken";
 import { prisma } from "../database/prisma.provider.js";
