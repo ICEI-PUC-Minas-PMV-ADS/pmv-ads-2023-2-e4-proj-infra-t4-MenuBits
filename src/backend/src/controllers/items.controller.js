@@ -6,12 +6,10 @@ class ItemsController {
     async findAllItensByMenuId(request, response) {
         try {
 
-            const itemsMenu = await ItemsMenusService.findItemsByMenuId(parseInt(request.params.menuId));
-            const items = [];
+            const ItemsMenu = await ItemsMenusService.findItemsByMenuId(parseInt(request.params.menuId));
+            const itemsIds = ItemsMenu.map(item => item.itemId);
 
-            for (let i = 0; i < itemsMenu.length; i++) {
-                items.unshift(await ItemsService.findItemById(itemsMenu[i].itemId))
-            }
+            const items = await ItemsService.findItemById(itemsIds);
             
             return response.status(200).json({
                 status: 200,
@@ -21,8 +19,7 @@ class ItemsController {
 
         } catch (error) {
             return response.status(500).json({
-                message: `Não foi possível localizar os itens do cardápio`,
-                error: error.message
+                error: `Não foi possível localizar os itens do cardápio ${error.message}`
             });
         }
     }
