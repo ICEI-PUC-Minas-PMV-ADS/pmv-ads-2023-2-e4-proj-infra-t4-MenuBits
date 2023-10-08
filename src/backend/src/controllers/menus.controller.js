@@ -1,6 +1,41 @@
 import MenusService from "../services/menus.service.js";
 
 class MenusController {
+
+	async create(request, response) {
+		try {
+			const { title, date } = request.body;
+			const menu = await MenusService.createMenu(title, date);
+			response.json(menu);
+		} catch (error) {
+			console.error("Erro ao criar o cardápio:", error);
+			response.status(500).json({ error: "Erro interno do servidor." });
+		}
+	}
+
+	async update(request, response) {
+		try {
+			const { menuId } = request.params;
+			const { title, date } = request.body;
+			const updatedMenu = await MenusService.updateMenu(menuId, title, date);
+			response.json(updatedMenu);
+		} catch (error) {
+			console.error("Erro ao atualizar o cardápio:", error);
+			response.status(500).json({ error: "Erro interno do servidor." });
+		}
+	}
+
+	async delete(request, response) {
+		try {
+			const { menuId } = request.params;
+			await MenusService.deleteMenu(menuId);
+			response.json({ message: "Cardápio excluído com sucesso." });
+		} catch (error) {
+			console.error("Erro ao excluir o cardápio:", error);
+			response.status(500).json({ error: "Erro interno do servidor." });
+		}
+	}
+
 	async getMenusByRestaurantId(request, response) {
 		const { restaurantId } = request.params;
 		try {
