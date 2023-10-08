@@ -1,5 +1,3 @@
-import dotenv from "dotenv";
-dotenv.config();
 import express, { json } from "express";
 import cors from "cors";
 import { serve, setup } from "swagger-ui-express";
