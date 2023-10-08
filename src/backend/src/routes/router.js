@@ -18,8 +18,11 @@ router.delete('/api/users/:id', UserController.delete);
 
 //Items endpoint
 router.get('/api/items/menus/:menuId', itemsController.findAllItensByMenuId)
+router.post('/api/items/', itemsController.create);
+router.put('/api/items/:id', itemsController.update);
+router.delete('/api/items/:id', itemsController.delete);
 
-// Manu endpoint
+//Menu endpoint
 router.get(
 	'/api/menus/restaurant/:restaurantId',
 	menusController.getItemsByRestaurantId,
