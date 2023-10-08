@@ -18,8 +18,11 @@ router.put('/api/users/:id', UserController.update);
 router.delete('/api/users/:id', UserController.delete);
 router.get('/api/user-history/:id', UserController.getUserHistory);
 
-//Items endpoints
-router.get('/api/items/menus/:menuId', ItemsController.findAllItensByMenuId);
+//Items endpoint
+router.get('/api/items/menus/:menuId', itemsController.findAllItensByMenuId);
+router.post('/api/items/', itemsController.create);
+router.put('/api/items/:id', itemsController.update);
+router.delete('/api/items/:id', itemsController.delete);
 router.get('/api/menus/:menuId/items/:itemId', ItemsMenusController.findItemByMenuId);
 router.put('/api/items/itemofday/:id', ItemsController.setItemOfDay);
 
