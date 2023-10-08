@@ -1,14 +1,18 @@
 import swaggerAutogen from 'swagger-autogen';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const port = process.env.PORT || 8080;
+const host = process.env.HOST_URL || `localhost:${port}`;
 
 const doc = {
     info: {
         title: 'MenuBits API',
-        description: '',
+        description: 'API Endpoints for MenuBits',
     },
-    host: 'localhost:' + port,
-    schemes: ['http'],
+    host,
+    schemes: process.env.HOST_URL ? ['https'] : ['http'],
 };
 
 const outputFile = './src/document/swagger.json';

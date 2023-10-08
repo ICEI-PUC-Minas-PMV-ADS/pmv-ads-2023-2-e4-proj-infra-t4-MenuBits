@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "title": "MenuBits API",
-    "description": "",
+    "description": "API Endpoints for MenuBits",
     "version": "1.0.0"
   },
   "host": "localhost:8080",
