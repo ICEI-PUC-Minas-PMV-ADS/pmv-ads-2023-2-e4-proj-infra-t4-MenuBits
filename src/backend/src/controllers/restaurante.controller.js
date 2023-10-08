@@ -9,12 +9,16 @@ import {
 class RestauranteController {
   async findAll(request, response) {
     try {
-      const users = await RestauranteService.findUsers();
-
+      // const users = await RestauranteService.findUsers();
+      const users = await prisma.restaurants.findMany();
       return response.json({
-        success: true,
-        data: users,
+        users,
       });
+
+      // return response.json({
+      //   success: true,
+      //   data: users,
+      // });
     } catch (error) {
       return response.status(404).json({ error: error.message });
     }
@@ -75,20 +79,19 @@ class RestauranteController {
         location,
         description,
       } = request.body;
-      const hash_password = await hash(password, 10);
-      console.log(hash_password);
 
+      const hash_password = await hash(password, 10);
       const findRestaurant = await prisma.restaurants.findUnique({
         where: {
           email,
         },
       });
       if (findRestaurant) {
-        return res.json({ error: "Restaurant already exists" });
+        return response.json({ error: "Restaurant already exists" });
       }
       const restaurant = await prisma.restaurants.create({
         data: {
-         email,
+          email,
           name,
           password: hash_password,
           phone,
@@ -126,7 +129,9 @@ class RestauranteController {
   async delete(request, response) {
     const { id } = request.params;
     try {
-      await RestauranteService.delete(parseInt(id));
+      await prisma.restaurants.delete({
+        where: { id: Number(id) },
+      });
 
       return response.status(204).json({
         message: "DELETADO COM SUCESSO",
