@@ -5,6 +5,7 @@ import MenusController from '../controllers/menus.controller.js';
 import RestaurantController from '../controllers/restaurante.controller.js';
 import UserController from '../controllers/user.controller.js';
 import UsersMenusController from '../controllers/users_menus.controller.js'
+import GroupsController from '../controllers/groups.controller.js'
 const router = Router();
 
 router.get('/', (req, res) => {
@@ -26,10 +27,17 @@ router.delete('/api/items/:id', itemsController.delete);
 router.get('/api/menus/:menuId/items/:itemId', ItemsMenusController.findItemByMenuId);
 router.put('/api/items/itemofday/:id', ItemsController.setItemOfDay);
 
+//Groups endpoints
+router.get('/api/groups', GroupsController.findAll);
+router.get('/api/groups/:id', GroupsController.findById);
+router.post('/api/groups', GroupsController.create);
+router.put('/api/groups/:id', GroupsController.update);
+router.delete('/api/groups/:id', GroupsController.delete);
+
 // Menu endpoint
 router.get(
 	'/api/menus/restaurant/:restaurantId',
-	MenusController.getItemsByRestaurantId,
+	MenusController.getMenusByRestaurantId,
 );
 router.post('/api/menus', MenusController.createMenu);
 router.put('/api/menus/:menuId', MenusController.updateMenu);

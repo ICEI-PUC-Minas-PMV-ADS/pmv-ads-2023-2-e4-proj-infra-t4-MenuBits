@@ -37,7 +37,6 @@ class MenusService {
 	}
 
 	async findMenuByRestaurantId(restaurantId) {
-		console.log(restaurantId);
 		return await prisma.menus.findMany({
 			where: { restaurantId: parseInt(restaurantId) },
 		});
