@@ -9,7 +9,7 @@ import {
 class RestauranteController {
   async findAll(request, response) {
     try {
-      const users = await RestauranteService.findUsers();
+      const users = await RestauranteService.findUsers(request.user);
 
       return response.json({
         success: true,
@@ -24,7 +24,7 @@ class RestauranteController {
     console.log("[+] Find by ID");
     const { id } = request.params;
     try {
-      const restaurant = await RestauranteService.findById(id);
+      const restaurant = await RestauranteService.findById(id, request.user);
       if (restaurant === null) {
         return response.status(404).json({
           status: "Not Found",
@@ -45,7 +45,7 @@ class RestauranteController {
     console.log("[+] Find Restaurant by Name");
     const { name } = request.params;
     try {
-      const restaurant = await RestauranteService.findByName(name);
+      const restaurant = await RestauranteService.findByName(name, request.user);
       if (restaurant === null) {
         return response.status(404).json({
           status: "Not Found",

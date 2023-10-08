@@ -1,6 +1,6 @@
-const { compare } = require("bcryptjs");
-const { prisma } = require("../database/prisma.provider");
-const { sign } = require("jsonwebtoken");
+import bcryptjs from "bcryptjs";
+import { prisma } from "../database/prisma.provider.js";
+import jsonwebtoken from "jsonwebtoken";
 
 class AuthController {
   async authenticate(req, res) {
@@ -13,8 +13,8 @@ class AuthController {
     if (!user) {
       return res.json({ error: "User not found" });
     }
-    const isValuePass = await compare(password, user.password);
-    const authToken = sign({ id: user.id }, "secret", {
+    const isValuePass = await bcryptjs.compare(password, user.password);
+    const authToken = jsonwebtoken.sign({ id: user.id, name: user.name }, "secret", {
       expiresIn: "1d",
     });
     const { id } = user;
@@ -22,4 +22,4 @@ class AuthController {
   }
 }
 
-export default AuthController;
+export default new AuthController();
