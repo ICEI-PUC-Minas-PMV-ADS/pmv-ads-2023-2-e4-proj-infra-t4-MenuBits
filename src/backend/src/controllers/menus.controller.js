@@ -1,9 +1,8 @@
 import MenusService from "../services/menus.service.js";
 
 class MenusController {
-	async getItemsByRestaurantId(request, response) {
+	async getMenusByRestaurantId(request, response) {
 		const { restaurantId } = request.params;
-		console.log();
 		try {
 			const menu = await MenusService.findMenuByRestaurantId(
 				restaurantId,
@@ -20,7 +19,6 @@ class MenusController {
 				menu,
 			});
 		} catch (error) {
-			console.error("Erro ao buscar itens de menu:", error);
 			return response.status(500).json({ error: "Erro interno do servidor." });
 		}
 	}
