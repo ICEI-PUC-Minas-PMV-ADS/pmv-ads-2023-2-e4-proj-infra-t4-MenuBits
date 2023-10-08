@@ -1,6 +1,10 @@
-import bcrypt from "bcryptjs";
+import pkg from "bcryptjs";
+const { hash } = pkg;
 import { prisma } from "../database/prisma.provider.js";
-import { default as RestauranteService, default as restauranteService } from "../services/restaurante.service.js";
+import {
+  default as RestauranteService,
+  default as restauranteService,
+} from "../services/restaurante.service.js";
 
 class RestauranteController {
   async findAll(request, response) {
@@ -41,7 +45,7 @@ class RestauranteController {
     console.log("[+] Find Restaurant by Name");
     const { name } = request.params;
     try {
-      const restaurant = await RestauranteService.findByName( name);
+      const restaurant = await RestauranteService.findByName(name);
       if (restaurant === null) {
         return response.status(404).json({
           status: "Not Found",
@@ -60,38 +64,43 @@ class RestauranteController {
 
   async create(request, response) {
     try {
-
       const {
         email,
         name,
         password,
         phone,
+        imageUrl,
         city,
-        uf,
+        UF,
         location,
-        description
-      } = request.body
-      const hash = await bcrypt.hash(password, 10);
-      const findRestaurant = await prisma.restaurants.findUnique({where: {
-        email
-      }})
-      if(findRestaurant) {
-        return res.json({ error: "Restaurant already exists" })
+        description,
+      } = request.body;
+      const hash_password = await hash(password, 10);
+      console.log(hash_password);
+
+      const findRestaurant = await prisma.restaurants.findUnique({
+        where: {
+          email,
+        },
+      });
+      if (findRestaurant) {
+        return res.json({ error: "Restaurant already exists" });
       }
       const restaurant = await prisma.restaurants.create({
         data: {
-          email,
+         email,
           name,
-          password: hash,
+          password: hash_password,
           phone,
+          imageUrl,
           city,
-          uf,
+          UF,
           location,
-          description
-        }
-      })
+          description,
+        },
+      });
       return response.status(201).json({
-        restaurant
+        restaurant,
       });
     } catch (error) {
       return response.status(500).json({ error: error.message });
