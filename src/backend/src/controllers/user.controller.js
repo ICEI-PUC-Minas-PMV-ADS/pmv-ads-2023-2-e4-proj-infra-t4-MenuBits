@@ -1,5 +1,8 @@
+import pkg from "bcryptjs";
+const { hash } = pkg;
 import mongoService from "../services/mongo.service.js";
 import UserService from "../services/user.service.js";
+import { prisma } from "../database/prisma.provider.js";
 
 class UserController {
   async findAll(request, response) {
@@ -29,18 +32,27 @@ class UserController {
   }
 
   async create(request, response) {
+    const { name, email, password } = request.body;
     try {
-      const payload = {
-        name: request.body.name,
-        email: request.body.email,
-        password: request.body.password,
+      const hash_password = await hash(password, 10);
+
+      const findUser = await prisma.users.findUnique({
+        where: { email },
+      });
+      if (findUser) {
+        return response.json({
+          error: "Usuário já cadastrado",
+        });
       }
-
-      const user = await UserService.create(payload);
-
+      const user = await prisma.users.create({
+        data: {
+          name,
+          email,
+          password: hash_password,
+        },
+      });
       return response.status(201).json({
-        success: true,
-        data: user,
+        user,
       });
     } catch (error) {
       return response.status(500).json({ error: error.message });
@@ -53,7 +65,7 @@ class UserController {
         name: request.body.name,
         email: request.body.email,
         password: request.body.password,
-      }
+      };
 
       const user = await UserService.update(request.params.id, payload);
 
@@ -78,11 +90,13 @@ class UserController {
 
   async getUserHistory(request, response) {
     try {
-      const accessHistory = await mongoService.getUserAccessHistory(request.params.id);
+      const accessHistory = await mongoService.getUserAccessHistory(
+        request.params.id
+      );
 
       return response.json({
         success: true,
-        message: 'Histórico de restaurantes acessados pelo usuário',
+        message: "Histórico de restaurantes acessados pelo usuário",
         data: accessHistory,
       });
     } catch (error) {

@@ -5,7 +5,7 @@ import pki from "jsonwebtoken"
 const { sign } = pki;
 import { prisma } from "../database/prisma.provider.js";
 
-class AuthController {
+class AuthRestaurantController {
   async authenticate(req, res) {
     const { email, password } = req.body;
     const restaurant = await prisma.restaurants.findUnique({
@@ -19,6 +19,10 @@ class AuthController {
     
     const isValuePass = await compare(password, restaurant.password);
 
+    if(!isValuePass) {
+      return res.json({ error: "Password invalid" });
+    }
+
     const authToken = sign({ id: restaurant.id }, "secret", {
       expiresIn: "1d",
     });
@@ -27,4 +31,4 @@ class AuthController {
   }
 }
 
-export default AuthController;
+export default AuthRestaurantController;
