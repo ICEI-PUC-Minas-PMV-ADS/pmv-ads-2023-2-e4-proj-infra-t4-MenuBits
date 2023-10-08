@@ -5,7 +5,7 @@ class RestauranteService {
   async findUsers(requestUserData) {
     const restaurants = await prisma.restaurants.findMany();
 
-    await mongoService.storeManyCustomerHistory(restaurants, requestUserData);
+    if(requestUserData) await mongoService.storeManyCustomerHistory(restaurants, requestUserData);
 
     return restaurants;
   }
@@ -19,7 +19,7 @@ class RestauranteService {
     if (restaurant === null) {
       return restaurant
     } else {
-      await mongoService.storeCustomerHistory(restaurant, requestUserData);
+      if(requestUserData) await mongoService.storeCustomerHistory(restaurant, requestUserData);
       return restaurant;
     }
   }
@@ -33,7 +33,7 @@ class RestauranteService {
     if (restaurant === null) {
       return restaurant
     } else {
-      await mongoService.storeCustomerHistory(restaurant, requestUserData);
+      if(requestUserData) await mongoService.storeCustomerHistory(restaurant, requestUserData);
       return restaurant;
     }
   }
