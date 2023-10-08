@@ -28,6 +28,9 @@ router.get(
 	'/api/menus/restaurant/:restaurantId',
 	MenusController.getItemsByRestaurantId,
 );
+router.post('/api/menus', MenusController.createMenu);
+router.put('/api/menus/:menuId', MenusController.updateMenu);
+router.delete('/api/menus/:menuId', MenusController.deleteMenu);
 
 //Items_Menus endpoints
 router.post('/api/menus/items', ItemsMenusController.createRelationItemToMenu);
