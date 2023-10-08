@@ -1,6 +1,8 @@
 import ItemsService from "../services/items.service.js";
 import ItemsMenusService from "../services/items_menus.service.js";
+import GroupsService from "../services/groups.service.js";
 import { prisma } from "../database/prisma.provider.js";
+import restauranteService from "../services/restaurante.service.js";
 
 class ItemsController {
 
@@ -39,10 +41,20 @@ class ItemsController {
 
           if (!name || !price || !groupId || !restaurantId) {
             return response.status(400).json({
-              status:400,
+              status: 400,
               message: "Estão faltando campos obrigatórios a serem informados."
             })
           } 
+
+          const restaurantValidation = await restauranteService.findById(restaurantId)
+          const groupValidation = await GroupsService.findById(groupId)
+
+          if(!restaurantValidation || !groupValidation) {
+            return response.status(404).json({
+              status: 404,
+              message: 'Restaurante ou grupo informados não existem'
+            });
+          }
 
           const Item = await prisma.Items.create({
             data: {
@@ -63,10 +75,20 @@ class ItemsController {
       }
     
       async update(request, response) {
-        const { id } = request.params;
-        const data = request.body;
-    
         try {
+
+          const id = parseInt(request.params.id);
+          const data = request.body;
+
+          const itemValidation = await ItemsService.findById(id)
+
+          if(!itemValidation) {
+            return response.status(404).json({
+              status: "Not Found",
+              message: "Item especificado não existe",
+            });
+          }
+
           const Item = await ItemsService.update(parseInt(id), data);
           return response.status(200).json({
             data: Item,
@@ -77,12 +99,21 @@ class ItemsController {
       }
     
       async delete(request, response) {
-        const { id } = request.params;
         try {
+          const id = parseInt(request.params.id);
+          const itemValidation = await ItemsService.findById(id)
+
+          if(!itemValidation) {
+            return response.status(404).json({
+              status: "Not Found",
+              message: "Item especificado não existe",
+            });
+          }
+
           await ItemsService.delete(parseInt(id));
     
           return response.status(204).json({
-            message: "DELETADO COM SUCESSO",
+            message: "Item excluído com sucesso.",
           });
         } catch (error) {
           return response.status(500).json({ error: error.message });

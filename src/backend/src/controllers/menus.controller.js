@@ -1,38 +1,82 @@
 import MenusService from "../services/menus.service.js";
+import RestaurantsService from "../services/restaurante.service.js";
 
 class MenusController {
 
 	async create(request, response) {
 		try {
-			const { title, date } = request.body;
-			const menu = await MenusService.createMenu(title, date);
-			response.json(menu);
+			const { title, restaurantId } = request.body;
+
+			if(!title || !restaurantId) {
+				return response.status(400).json({
+					status: 400,
+					message: "O campo de 'title' e 'restaurantId' precisam ser informados",
+				});
+			}
+
+			const restaurant = await RestaurantsService.findById(restaurantId)
+
+			if(!restaurant) {
+				return response.status(404).json({
+					status: "Not Found",
+					message: "Restaurante especificado não existe",
+				});
+			}
+
+			const menu = await MenusService.createMenu(title, restaurantId);
+
+			return response.status(201).json({
+                status: 201,
+                success: true,
+                data: menu
+            });
 		} catch (error) {
-			console.error("Erro ao criar o cardápio:", error);
-			response.status(500).json({ error: "Erro interno do servidor." });
+			response.status(500).json({ error: error.message });
 		}
 	}
 
 	async update(request, response) {
 		try {
-			const { menuId } = request.params;
-			const { title, date } = request.body;
-			const updatedMenu = await MenusService.updateMenu(menuId, title, date);
-			response.json(updatedMenu);
+			const id = parseInt(request.params.id);
+
+			const menuValidation = await MenusService.findMenuById(id)
+
+			if(!menuValidation) {
+				return response.status(404).json({
+					status: "Not Found",
+					message: "Cardápio especificado não existe",
+				});
+			}
+			const updatedMenu = await MenusService.updateMenu(id, request.body);
+
+			return response.status(201).json({
+                status: 201,
+                success: true,
+                data: updatedMenu
+            });
 		} catch (error) {
-			console.error("Erro ao atualizar o cardápio:", error);
-			response.status(500).json({ error: "Erro interno do servidor." });
+			response.status(500).json({ error: error.message });
 		}
 	}
 
 	async delete(request, response) {
 		try {
-			const { menuId } = request.params;
-			await MenusService.deleteMenu(menuId);
-			response.json({ message: "Cardápio excluído com sucesso." });
+			const id = parseInt(request.params.id);
+
+			const menuValidation = await MenusService.findMenuById(id)
+		
+			  if(!menuValidation) {
+				return response.status(404).json({
+				  status: 404,
+				  message: 'Menu especificado não existe'
+				});
+			  }	
+
+			await MenusService.deleteMenu(id);
+
+			response.status(204).json({ message: "Cardápio excluído com sucesso." });
 		} catch (error) {
-			console.error("Erro ao excluir o cardápio:", error);
-			response.status(500).json({ error: "Erro interno do servidor." });
+			response.status(500).json({ error: error.message });
 		}
 	}
 
@@ -54,7 +98,7 @@ class MenusController {
 				menu,
 			});
 		} catch (error) {
-			return response.status(500).json({ error: "Erro interno do servidor." });
+			return response.status(500).json({ error: error.message });
 		}
 	}
 }

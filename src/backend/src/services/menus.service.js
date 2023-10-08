@@ -1,37 +1,32 @@
 import { prisma } from "../database/prisma.provider.js";
 
 class MenusService {
-	async createMenu(title, date) {
-		return await prisma.menu.create({
+	async createMenu(title, restaurantId) {
+		return await prisma.menus.create({
 		  data: {
-			title,
-			date,
+			title: title,
+			restaurantId: restaurantId,
 		  },
 		});
 	  }
 	
-	  async updateMenu(menuId, title, date) {
-		return await prisma.menu.update({
-		  where: {
-			id: menuId,
-		  },
-		  data: {
-			title,
-			date,
-		  },
+	  async updateMenu(id, payload) {
+		return await prisma.menus.update({
+			where: { id },
+			data: payload,
 		});
 	  }
 	
-	  async deleteMenu(menuId) {
-		return await prisma.menu.delete({
+	  async deleteMenu(id) {
+		return await prisma.menus.delete({
 		  where: {
-			id: menuId,
+			id: id,
 		  },
 		});
 	  }
 	  
 	async findMenuById(id) {
-		return await prisma.menus.findUniqueOrThrow({
+		return await prisma.menus.findUnique({
 			where: { id },
 		});
 	}

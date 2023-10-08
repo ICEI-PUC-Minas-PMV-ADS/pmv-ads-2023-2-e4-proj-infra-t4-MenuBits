@@ -2,6 +2,13 @@ import { prisma } from "../database/prisma.provider.js";
 import mongoService from "./mongo.service.js";
 
 class ItemsService {
+
+	async findById(id) {
+		return await prisma.items.findFirst({
+			where: { id: id },
+		});
+	}
+
   async findItemById(_id) {
     let items = await prisma.items.findMany({
       where: { id: { in: _id } },

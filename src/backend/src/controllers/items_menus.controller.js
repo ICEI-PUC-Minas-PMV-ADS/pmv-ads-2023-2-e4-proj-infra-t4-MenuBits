@@ -45,7 +45,7 @@ class ItemsMenusController {
         });
       }
 
-      const item = await ItemsService.findItemById(request.body.itemId)
+      const item = await ItemsService.findById(request.body.itemId)
       const menu = await MenusService.findMenuById(request.body.menuId)
 
       if(item.restaurantId !== menu.restaurantId) {

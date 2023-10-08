@@ -21,7 +21,6 @@ class RestauranteController {
   }
 
   async findById(request, response) {
-    console.log("[+] Find by ID");
     const { id } = request.params;
     try {
       const restaurant = await RestauranteService.findById(id);
@@ -36,13 +35,11 @@ class RestauranteController {
         });
       }
     } catch (err) {
-      console.error("Erro ao encontrar o restaurante:", err);
       return response.status(500).json({ error: "Erro interno do servidor." });
     }
   }
 
   async findByName(request, response) {
-    console.log("[+] Find Restaurant by Name");
     const { name } = request.params;
     try {
       const restaurant = await RestauranteService.findByName(name);
@@ -57,7 +54,6 @@ class RestauranteController {
         });
       }
     } catch (err) {
-      console.error("Erro ao encontrar o restaurante:", err);
       return response.status(500).json({ error: "Erro interno do servidor." });
     }
   }
@@ -76,7 +72,6 @@ class RestauranteController {
         description,
       } = request.body;
       const hash_password = await hash(password, 10);
-      console.log(hash_password);
 
       const findRestaurant = await prisma.restaurants.findUnique({
         where: {
@@ -112,9 +107,7 @@ class RestauranteController {
     const data = request.body;
 
     try {
-      console.log("[+] Update restaurant");
       const restaurant = await restauranteService.update(parseInt(id), data);
-      console.log(restaurant);
       return response.status(200).json({
         data: restaurant,
       });

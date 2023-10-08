@@ -20,10 +20,10 @@ router.delete('/api/users/:id', UserController.delete);
 router.get('/api/user-history/:id', UserController.getUserHistory);
 
 //Items endpoint
-router.get('/api/items/menus/:menuId', itemsController.findAllItensByMenuId);
-router.post('/api/items/', itemsController.create);
-router.put('/api/items/:id', itemsController.update);
-router.delete('/api/items/:id', itemsController.delete);
+router.get('/api/items/menus/:menuId', ItemsController.findAllItensByMenuId);
+router.post('/api/items/', ItemsController.create);
+router.put('/api/items/:id', ItemsController.update);
+router.delete('/api/items/:id', ItemsController.delete);
 router.get('/api/menus/:menuId/items/:itemId', ItemsMenusController.findItemByMenuId);
 router.put('/api/items/itemofday/:id', ItemsController.setItemOfDay);
 
@@ -39,9 +39,9 @@ router.get(
 	'/api/menus/restaurant/:restaurantId',
 	MenusController.getMenusByRestaurantId,
 );
-router.post('/api/menus', MenusController.createMenu);
-router.put('/api/menus/:menuId', MenusController.updateMenu);
-router.delete('/api/menus/:menuId', MenusController.deleteMenu);
+router.post('/api/menus', MenusController.create);
+router.put('/api/menus/:id', MenusController.update);
+router.delete('/api/menus/:id', MenusController.delete);
 
 //Items_Menus endpoints
 router.post('/api/menus/items', ItemsMenusController.createRelationItemToMenu);
