@@ -3,6 +3,25 @@ import ItemsService from "../services/items.service.js";
 import MenusService from "../services/menus.service.js";
 
 class ItemsMenusController {
+  async findItemByMenuId(request, response) {
+    try {
+      const item = await ItemsMenusService.findItem(
+        Number(request.params.menuId),
+        Number(request.params.itemId)
+      );
+
+      return response.status(200).json({
+        status: 200,
+        success: true,
+        data: item,
+      });
+    } catch (error) {
+      return response.status(500).json({
+        message: `Não foi possível localizar os itens do cardápio`,
+        error: error.message
+      });
+    }
+  }
 
   async createRelationItemToMenu(request, response) {
     try {

@@ -16,7 +16,7 @@ JSON API: É uma tecnologia utilizada em desenvolvimento de software para trocar
 
 Segue abaixo a lógica da arquitetura:
 
-![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t4-cardapio-digital/assets/105240089/44ce26b1-8aa7-46b3-b8f0-6db6780c8d23)
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t4-MenuBits/assets/105240089/613fb228-f661-4590-8539-f6e7c9be35e4)
 
 
 ## Diagrama de Classes
@@ -46,7 +46,13 @@ As referências abaixo irão auxiliá-lo na geração do artefato “Esquema Rel
 
 ## Modelo Físico
 
-Entregar um arquivo banco.sql contendo os scripts de criação das tabelas do banco de dados. Este arquivo deverá ser incluído dentro da pasta src\bd.
+Modelo do banco de dados relacional criado:
+
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t4-MenuBits/assets/68014636/24148581-e034-445c-bbd0-4da801c455de)
+
+[Clique aqui para acessar](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t4-MenuBits/blob/main/src/backend/src/bd.sql)
+
+O arquivo serve apenas para visualização dos dados, o banco de dados real já está na nuvem, portanto, não é preciso executar nada.
 
 ## Tecnologias Utilizadas
 

@@ -7,7 +7,7 @@ class UserService {
 
 	async findById(id) {
 		return await prisma.users.findUniqueOrThrow({
-			where: { id },
+			where: { id: Number(id) },
 		});
 	}
 
@@ -19,14 +19,14 @@ class UserService {
 
 	async update(id, payload) {
 		return await prisma.users.update({
-			where: { id },
+			where: { id: Number(id) },
 			data: payload,
 		});
 	}
 
 	async delete(id) {
 		return await prisma.users.delete({
-			where: { id },
+			where: { id: Number(id) },
 		});
 	}
 }
