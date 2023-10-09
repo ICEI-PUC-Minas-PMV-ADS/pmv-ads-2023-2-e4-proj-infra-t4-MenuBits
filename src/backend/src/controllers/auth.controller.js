@@ -1,25 +1,34 @@
-const { compare } = require("bcryptjs");
-const { prisma } = require("../database/prisma.provider");
-const { sign } = require("jsonwebtoken");
+import pkg from "bcryptjs"
+const { compare } = pkg;
+// import {sign} from "jsonwebtoken";
+import pki from "jsonwebtoken"
+const { sign } = pki;
+import { prisma } from "../database/prisma.provider.js";
 
-class AuthController {
+class AuthRestaurantController {
   async authenticate(req, res) {
     const { email, password } = req.body;
-    const user = await prisma.users.findUnique({
+    const restaurant = await prisma.restaurants.findUnique({
       where: {
         email,
       },
     });
-    if (!user) {
-      return res.json({ error: "User not found" });
+    if (!restaurant) {
+      return res.json({ error: "Restaurant not found" });
     }
-    const isValuePass = await compare(password, user.password);
-    const authToken = sign({ id: user.id }, "secret", {
+    
+    const isValuePass = await compare(password, restaurant.password);
+
+    if(!isValuePass) {
+      return res.json({ error: "Password invalid" });
+    }
+
+    const authToken = sign({ id: restaurant.id }, "secret", {
       expiresIn: "1d",
     });
-    const { id } = user;
-    return res.json({ user: { id, email }, authToken });
+    const { id } = restaurant;
+    return res.json({ restaurant: { id, email }, authToken });
   }
 }
 
-export default AuthController;
+export default AuthRestaurantController;
