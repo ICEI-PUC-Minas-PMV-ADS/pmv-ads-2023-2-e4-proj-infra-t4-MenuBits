@@ -21,12 +21,10 @@ Segue abaixo a lógica da arquitetura:
 
 ## Diagrama de Classes
 
-O diagrama de classes ilustra graficamente como será a estrutura do software, e como cada uma das classes da sua estrutura estarão interligadas. Essas classes servem de modelo para materializar os objetos que executarão na memória.
+Nosso diagrama de classe representa as classes principais do sistema, como o Usuário, Restaurante, Menu, e item do Menu. Essas classes estariam conectadas por relacionamentos, como associações, para mostrar como os usuários fazem pedidos de itens de menu em restaurantes.
 
-As referências abaixo irão auxiliá-lo na geração do artefato “Diagrama de Classes”.
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t4-MenuBits/assets/105240089/e0735a3e-cc09-4c6f-a1b6-3b146b3fa4f0)
 
-> - [Diagramas de Classes - Documentação da IBM](https://www.ibm.com/docs/pt-br/rational-soft-arch/9.6.1?topic=diagrams-class)
-> - [O que é um diagrama de classe UML? | Lucidchart](https://www.lucidchart.com/pages/pt/o-que-e-diagrama-de-classe-uml)
 
 ## Modelo ER
 
