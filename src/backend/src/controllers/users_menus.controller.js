@@ -9,7 +9,7 @@ class UsersMenusController {
   async createRelationUserToMenu(request, response) {
     try {
 
-      if(!request.body.userId || !request.body.menuId) {
+      if (!request.body.userId || !request.body.menuId) {
         return response.status(400).json({
           status: 400,
           message: "É necessário informar o 'userId' e o 'menuId'"
@@ -22,7 +22,7 @@ class UsersMenusController {
 
       } catch (error) {
 
-        return response.status(404).json({ 
+        return response.status(404).json({
           status: 404,
           message: 'Dados não encontrados para realizar o relacionamento',
           error: error.message
@@ -30,11 +30,11 @@ class UsersMenusController {
       }
 
       const relationMenuToUser = await UsersMenusService.findRelation(
-        request.body.userId, 
+        request.body.userId,
         request.body.menuId
       )
 
-      if(relationMenuToUser) {
+      if (relationMenuToUser) {
         return response.status(400).json({
           status: 400,
           message: 'O usuário já tem esse cardápio como favorito'
@@ -50,18 +50,18 @@ class UsersMenusController {
       });
 
     } catch (error) {
-      return response.status(500).json({ 
+      return response.status(500).json({
         status: 500,
         message: 'Não foi possível favoritar o cardápio',
         error: error.message
-    });
+      });
     }
   }
 
   async deleteRelationUserToMenu(request, response) {
     try {
 
-      if(!request.params.userId || !request.params.menuId) {
+      if (!request.params.userId || !request.params.menuId) {
         return response.status(400).json({
           status: 400,
           message: "É necessário informar o 'userId' e o 'menuId'"
@@ -73,7 +73,7 @@ class UsersMenusController {
         parseInt(request.params.menuId)
       )
 
-      if(!relationMenuToUser) {
+      if (!relationMenuToUser) {
         return response.status(404).json({
           status: 404,
           message: 'Vínculo de cardápio favorito não encontrado para esse usuário'
@@ -86,9 +86,9 @@ class UsersMenusController {
 
       return response.sendStatus(204);
     } catch (error) {
-      return response.status(500).json({ 
-        error: `Não foi possível excluir vínculo de cardápio favorito ${error.message}` 
-    });
+      return response.status(500).json({
+        error: `Não foi possível excluir vínculo de cardápio favorito ${error.message}`
+      });
     }
   }
 }

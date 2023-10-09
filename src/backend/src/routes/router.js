@@ -1,16 +1,17 @@
-import { Router } from "express";
-import ItemsController from "../controllers/items.controller.js";
-import ItemsMenusController from "../controllers/items_menus.controller.js";
-import MenusController from "../controllers/menus.controller.js";
-import RestaurantController from "../controllers/restaurante.controller.js";
-import UserController from "../controllers/user.controller.js";
-import UsersMenusController from "../controllers/users_menus.controller.js";
+import { Router } from 'express';
+import ItemsController from '../controllers/items.controller.js';
+import ItemsMenusController from '../controllers/items_menus.controller.js';
+import MenusController from '../controllers/menus.controller.js';
+import RestaurantController from '../controllers/restaurante.controller.js';
+import UserController from '../controllers/user.controller.js';
+import UsersMenusController from '../controllers/users_menus.controller.js'
+import GroupsController from '../controllers/groups.controller.js'
 import AuthRestaurantController from "../controllers/auth.controller.js";
 import AuthUserController from "../controllers/auth.user.controller.js";
 import { AuthMiddlewares } from "../middlewares/auth.js";
 
 const authUserController = new AuthUserController();
-
+const authRestaurantController = new AuthRestaurantController();
 const router = Router();
 
 router.get("/", (req, res) => {
@@ -26,19 +27,30 @@ router.get("/api/user-history/:id", UserController.getUserHistory);
 router.post("/api/user/auth", authUserController.authenticate);
 
 
-//Items endpoints
-router.get("/api/items/menus/:menuId", ItemsController.findAllItensByMenuId);
-router.get(
-  "/api/menus/:menuId/items/:itemId",
-  ItemsMenusController.findItemByMenuId
-);
-router.put("/api/items/itemofday/:id", ItemsController.setItemOfDay);
+//Items endpoint
+router.get('/api/items/menus/:menuId', ItemsController.findAllItensByMenuId);
+router.post('/api/items/', ItemsController.create);
+router.put('/api/items/:id', ItemsController.update);
+router.delete('/api/items/:id', ItemsController.delete);
+router.get('/api/menus/:menuId/items/:itemId', ItemsMenusController.findItemByMenuId);
+router.put('/api/items/itemofday/:id', ItemsController.setItemOfDay);
+
+
+//Groups endpoints
+router.get('/api/groups', GroupsController.findAll);
+router.get('/api/groups/:id', GroupsController.findById);
+router.post('/api/groups', GroupsController.create);
+router.put('/api/groups/:id', GroupsController.update);
+router.delete('/api/groups/:id', GroupsController.delete);
 
 // Menu endpoint
 router.get(
-  "/api/menus/restaurant/:restaurantId",
-  MenusController.getItemsByRestaurantId
+	'/api/menus/restaurant/:restaurantId',
+	MenusController.getMenusByRestaurantId,
 );
+router.post('/api/menus', MenusController.create);
+router.put('/api/menus/:id', MenusController.update);
+router.delete('/api/menus/:id', MenusController.delete);
 
 //Items_Menus endpoints
 router.post("/api/menus/items", ItemsMenusController.createRelationItemToMenu);
@@ -54,7 +66,6 @@ router.delete(
   UsersMenusController.deleteRelationUserToMenu
 );
 
-const authRestaurantController = new AuthRestaurantController();
 //Restaurants endpoints
 router.get("/api/restaurante", AuthMiddlewares, RestaurantController.findAll);
 router.get("/api/restaurante/:id", AuthMiddlewares, RestaurantController.findById);

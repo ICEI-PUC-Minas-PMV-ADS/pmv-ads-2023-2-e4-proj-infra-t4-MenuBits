@@ -1,5 +1,8 @@
 import ItemsService from "../services/items.service.js";
 import ItemsMenusService from "../services/items_menus.service.js";
+import GroupsService from "../services/groups.service.js";
+import { prisma } from "../database/prisma.provider.js";
+import restauranteService from "../services/restaurante.service.js";
 
 class ItemsController {
 
@@ -23,6 +26,99 @@ class ItemsController {
             });
         }
     }
+
+
+    async create(request, response) {
+        try {
+          const {
+            name,
+            price,
+            description,
+            groupId,
+            restaurantId,
+            imageUrl            
+          } = request.body
+
+          if (!name || !price || !groupId || !restaurantId) {
+            return response.status(400).json({
+              status: 400,
+              message: "Estão faltando campos obrigatórios a serem informados."
+            })
+          } 
+
+          const restaurantValidation = await restauranteService.findById(restaurantId)
+          const groupValidation = await GroupsService.findById(groupId)
+
+          if(!restaurantValidation || !groupValidation) {
+            return response.status(404).json({
+              status: 404,
+              message: 'Restaurante ou grupo informados não existem'
+            });
+          }
+
+          const Item = await prisma.Items.create({
+            data: {
+              name,
+              price,
+              description,
+              groupId,
+              restaurantId,
+              imageUrl
+            }
+          })
+          return response.status(201).json({
+            Item
+          });
+        } catch (error) {
+          return response.status(500).json({ error: error.message });
+        }
+      }
+    
+      async update(request, response) {
+        try {
+
+          const id = parseInt(request.params.id);
+          const data = request.body;
+
+          const itemValidation = await ItemsService.findById(id)
+
+          if(!itemValidation) {
+            return response.status(404).json({
+              status: "Not Found",
+              message: "Item especificado não existe",
+            });
+          }
+
+          const Item = await ItemsService.update(parseInt(id), data);
+          return response.status(200).json({
+            data: Item,
+          });
+        } catch (error) {
+          return response.status(500).json({ error: error.message });
+        }
+      }
+    
+      async delete(request, response) {
+        try {
+          const id = parseInt(request.params.id);
+          const itemValidation = await ItemsService.findById(id)
+
+          if(!itemValidation) {
+            return response.status(404).json({
+              status: "Not Found",
+              message: "Item especificado não existe",
+            });
+          }
+
+          await ItemsService.delete(parseInt(id));
+    
+          return response.status(204).json({
+            message: "Item excluído com sucesso.",
+          });
+        } catch (error) {
+          return response.status(500).json({ error: error.message });
+        }
+      }
 
     async setItemOfDay(request, response) {
         try {
@@ -49,6 +145,7 @@ class ItemsController {
             });
         }
     }
+
 }
 
 export default new ItemsController();

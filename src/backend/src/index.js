@@ -1,11 +1,11 @@
-import dotenv from "dotenv";
-dotenv.config();
 import express, { json } from "express";
 import cors from "cors";
 import { serve, setup } from "swagger-ui-express";
 import router from "./routes/router.js";
 import { readFile } from "fs/promises";
 import mongoose from "mongoose";
+import dotenv from "dotenv";
+dotenv.config();
 
 const swaggerDocument = JSON.parse(
   await readFile(new URL("./document/swagger.json", import.meta.url))
