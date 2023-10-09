@@ -54,10 +54,42 @@ O arquivo serve apenas para visualização dos dados, o banco de dados real já 
 
 ## Tecnologias Utilizadas
 
-Descreva aqui qual(is) tecnologias você vai usar para resolver o seu problema, ou seja, implementar a sua solução. Liste todas as tecnologias envolvidas, linguagens a serem utilizadas, serviços web, frameworks, bibliotecas, IDEs de desenvolvimento, e ferramentas.
+As tecnologias utilizadas no desenvolvimento do BACKEND foram:
 
-Apresente também uma figura explicando como as tecnologias estão relacionadas ou como uma interação do usuário com o sistema vai ser conduzida, por onde ela passa até retornar uma resposta ao usuário.
+**Visual Studio CODE**:
+   Utilizado para programar o backend, e escrever os códigos.
+   
+**Javascript + Node.js**:
+   Utilizado para programar a lógica dos endpoints a linguagem Javascript, que através do Node.js pode ser usada para o backend.
 
+**Express**
+   Utilizado juntamente ao node para a construção do servidor Web, realizando as conexões necessárias.
+
+**Prisma**
+   Utilizado para realizar a conexão do banco de dados, no caso da aplicação, tanto a conexão ao banco relacional quanto ao banco não relacional.
+   O prisma oferece uma sintaxe simples para trabalhar com a estrutura do banco e um fácil gerenciamento das middlewares.
+
+**Render**
+   O render (https://render.com/) foi utilizado para subir a API para a web, no caso, em produção.
+
+**MongoDB** 
+  O MongoDB foi o banco de dados não relacional selecionado para utilizarmos, a conexão e geração da estrutura é feita pelo PRISMA.
+
+**PostgreSQL**
+  O Postgree foi o banco de dados relacional utilizado para utilizarmos, a conexão e geração da estrutura é feita pelo PRISMA.
+
+**POSTMAN**
+  O Postman foi utilizado para os testes de API e verificação de funcionamento.
+
+**Swagger**
+  A documentação foi gerada dinamicamente pelo Swagger, que mantém uma atualização e organização dos endpoints.
+
+**bcrypt.js**
+  Biblioteca usada para criptografar as senhas geradas na aplicação.
+
+**jsonwebtoken**
+  Biblioteca usada para geração dos Tokens de autenticação da API
+  
 ## Hospedagem
 
 Explique como a hospedagem e o lançamento da plataforma foi feita.
