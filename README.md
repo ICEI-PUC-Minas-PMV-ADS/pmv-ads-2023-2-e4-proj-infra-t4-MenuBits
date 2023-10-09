@@ -2,7 +2,7 @@
 
 `Tecnologia em Análise e Desenvolvimento de Sistemas`
 
-`Projeto: Desenvolvimento de uma Aplicação Mobile`
+`Projeto: Desenvolvimento de uma Aplicação Backend com Frontend Web e Mobile`
 
 `4º semestre`
 
