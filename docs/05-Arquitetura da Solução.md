@@ -56,38 +56,38 @@ O arquivo serve apenas para visualização dos dados, o banco de dados real já 
 
 As tecnologias utilizadas no desenvolvimento do BACKEND foram:
 
-**Visual Studio CODE**:
+**Visual Studio CODE**<br />
    Utilizado para programar o backend, e escrever os códigos.
    
-**Javascript + Node.js**:
+**Javascript + Node.js**<br />
    Utilizado para programar a lógica dos endpoints a linguagem Javascript, que através do Node.js pode ser usada para o backend.
 
-**Express**
+**Express**<br />
    Utilizado juntamente ao node para a construção do servidor Web, realizando as conexões necessárias.
 
-**Prisma**
+**Prisma**<br />
    Utilizado para realizar a conexão do banco de dados, no caso da aplicação, tanto a conexão ao banco relacional quanto ao banco não relacional.
    O prisma oferece uma sintaxe simples para trabalhar com a estrutura do banco e um fácil gerenciamento das middlewares.
 
-**Render**
+**Render**<br />
    O render (https://render.com/) foi utilizado para subir a API para a web, no caso, em produção.
 
-**MongoDB** 
+**MongoDB** <br />
   O MongoDB foi o banco de dados não relacional selecionado para utilizarmos, a conexão e geração da estrutura é feita pelo PRISMA.
 
-**PostgreSQL**
+**PostgreSQL**<br />
   O Postgree foi o banco de dados relacional utilizado para utilizarmos, a conexão e geração da estrutura é feita pelo PRISMA.
 
-**POSTMAN**
+**POSTMAN**<br />
   O Postman foi utilizado para os testes de API e verificação de funcionamento.
 
-**Swagger**
+**Swagger**<br />
   A documentação foi gerada dinamicamente pelo Swagger, que mantém uma atualização e organização dos endpoints.
 
-**bcrypt.js**
+**bcrypt.js**<br />
   Biblioteca usada para criptografar as senhas geradas na aplicação.
 
-**jsonwebtoken**
+**jsonwebtoken**<br />
   Biblioteca usada para geração dos Tokens de autenticação da API
   
 ## Hospedagem
