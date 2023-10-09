@@ -30,11 +30,11 @@ As referências abaixo irão auxiliá-lo na geração do artefato “Diagrama de
 
 ## Modelo ER
 
-O Modelo ER representa através de um diagrama como as entidades (coisas, objetos) se relacionam entre si na aplicação interativa.]
+No contexto do nosso aplicativo de cardápio online, esse modelo descreve as principais entidades do sistema, como o Usuário, Restaurante, Menu, e item do Menu, juntamente com os relacionamentos entre elas.
 
-As referências abaixo irão auxiliá-lo na geração do artefato “Modelo ER”.
+Por exemplo, um restaurante pode oferecer vários itens de menu, o que estabelece uma relação um-para-muitos entre as entidades Restaurante e item de Menu. Usuários podem fazer pedidos, criando um relacionamento um-para-muitos entre Usuário e Menu.
 
-> - [Como fazer um diagrama entidade relacionamento | Lucidchart](https://www.lucidchart.com/pages/pt/como-fazer-um-diagrama-entidade-relacionamento)
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t4-MenuBits/blob/main/docs/img/ER%20MenuBits.png?raw=true)
 
 ## Esquema Relacional
 
