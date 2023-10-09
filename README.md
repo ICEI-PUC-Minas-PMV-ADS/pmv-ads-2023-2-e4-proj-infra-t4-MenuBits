@@ -23,7 +23,34 @@ Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo de
 
 ## Instruções de utilização
 
-Assim que a primeira versão do sistema estiver disponível, deverá complementar com as instruções de utilização. Descreva como instalar eventuais dependências e como executar a aplicação.
+**Nossa aplicação backend e os bancos de dados já se encontram disponíveis na nuvem** <br />
+
+-> Para acessar, você precisa: <br />
+
+  1 - Acesse o Swagger para visualizar os endpoints:<br />
+  https://menu-bits-backend.onrender.com/swagger/<br />
+
+  2 - Abra o Postman e envie os endpoints que deseje verificar!<br />
+  A URL base é: https://menu-bits-backend.onrender.com/<br />
+
+  Exemplo de Endpoint: <br />
+  (GET) https://menu-bits-backend.onrender.com/api/groups<br />
+
+**Execução LOCAL** <br />
+
+-> Para acessar a aplicação localmente, o passo-a-passo é:
+
+1 - Instale o Visual Studio Code (https://code.visualstudio.com/)<br />
+2 - Clone a aplicação com o **GIT CLONE**<br />
+3 - Navegue até a pasta **BACKEND** dentro da estrutura do projeto (Cd SRC, Cd backend)<br />
+4 - Execute o **NPM I** no terminal integrado<br />
+5 - Execute os comandos para ajustar o banco de dados:<br />
+    - npx prisma migrate dev<br />
+    - npx prisma generate<br />
+6 - Execute o NPM START, que a aplicação será iniciada.<br />
+
+[+] Caso deseje executar o Prisma Studio para verificar o armazenamento dos dados no BD relacional, execute:<br />
+    - npx prisma studio<br />
 
 # Documentação
 
