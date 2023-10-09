@@ -8,6 +8,11 @@ import { prisma } from "../database/prisma.provider.js";
 class AuthRestaurantController {
   async authenticate(req, res) {
     const { email, password } = req.body;
+
+    if(!email || !password ) {
+      return res.status(400).json({ error: "Informe o email e senha" });
+    }
+
     const restaurant = await prisma.restaurants.findUnique({
       where: {
         email,
