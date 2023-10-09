@@ -29,47 +29,49 @@ router.post("/api/user/auth", authUserController.authenticate);
 
 //Items endpoint
 router.get('/api/items/menus/:menuId', ItemsController.findAllItensByMenuId);
-router.post('/api/items/', ItemsController.create);
-router.put('/api/items/:id', ItemsController.update);
-router.delete('/api/items/:id', ItemsController.delete);
+router.post('/api/items/', AuthMiddlewares, ItemsController.create);
+router.put('/api/items/:id', AuthMiddlewares, ItemsController.update);
+router.delete('/api/items/:id', AuthMiddlewares, ItemsController.delete);
 router.get('/api/menus/:menuId/items/:itemId', ItemsMenusController.findItemByMenuId);
-router.put('/api/items/itemofday/:id', ItemsController.setItemOfDay);
+router.put('/api/items/itemofday/:id', AuthMiddlewares, ItemsController.setItemOfDay);
 
 
 //Groups endpoints
 router.get('/api/groups', GroupsController.findAll);
 router.get('/api/groups/:id', GroupsController.findById);
-router.post('/api/groups', GroupsController.create);
-router.put('/api/groups/:id', GroupsController.update);
-router.delete('/api/groups/:id', GroupsController.delete);
+router.post('/api/groups', AuthMiddlewares, GroupsController.create);
+router.put('/api/groups/:id', AuthMiddlewares, GroupsController.update);
+router.delete('/api/groups/:id', AuthMiddlewares, GroupsController.delete);
 
 // Menu endpoint
 router.get(
 	'/api/menus/restaurant/:restaurantId',
 	MenusController.getMenusByRestaurantId,
 );
-router.post('/api/menus', MenusController.create);
-router.put('/api/menus/:id', MenusController.update);
-router.delete('/api/menus/:id', MenusController.delete);
+router.post('/api/menus', AuthMiddlewares, MenusController.create);
+router.put('/api/menus/:id', AuthMiddlewares, MenusController.update);
+router.delete('/api/menus/:id', AuthMiddlewares, MenusController.delete);
 
 //Items_Menus endpoints
-router.post("/api/menus/items", ItemsMenusController.createRelationItemToMenu);
+router.post("/api/menus/items", AuthMiddlewares, ItemsMenusController.createRelationItemToMenu);
 router.delete(
   "/api/menus/:menuId/items/:itemId",
+  AuthMiddlewares,
   ItemsMenusController.deleteRelationItemToMenu
 );
 
 //Users_Menus endpoints (favoritar cardápio)
-router.post("/api/menus/users", UsersMenusController.createRelationUserToMenu);
+router.post("/api/menus/users", AuthMiddlewares, UsersMenusController.createRelationUserToMenu);
 router.delete(
   "/api/menus/:menuId/user/:userId",
+  AuthMiddlewares,
   UsersMenusController.deleteRelationUserToMenu
 );
 
 //Restaurants endpoints
 router.get("/api/restaurante", AuthMiddlewares, RestaurantController.findAll);
-router.get("/api/restaurante/:id", AuthMiddlewares, RestaurantController.findById);
-router.get("/api/restaurante/name/:name", AuthMiddlewares, RestaurantController.findByName);
+router.get("/api/restaurante/:id", RestaurantController.findById);
+router.get("/api/restaurante/name/:name", RestaurantController.findByName);
 router.post("/api/restaurante", RestaurantController.create);
 router.put("/api/restaurante/:id", AuthMiddlewares, RestaurantController.update);
 router.delete("/api/restaurante/:id", AuthMiddlewares, RestaurantController.delete);

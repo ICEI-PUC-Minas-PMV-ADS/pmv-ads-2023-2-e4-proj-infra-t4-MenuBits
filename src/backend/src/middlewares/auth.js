@@ -6,6 +6,7 @@ export async function AuthMiddlewares(req, res, next) {
   if (!authorization) {
     return res.json({ error: "Token not provided" });
   }
+
   const [, token] = authorization.split(" ");
   try {
     const decoded = verify(token, "secret");
