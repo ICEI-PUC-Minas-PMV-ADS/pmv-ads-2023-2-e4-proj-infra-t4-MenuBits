@@ -103,7 +103,7 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |RF-005| A aplicação permitirá que sejam cadastrados, alterados ou removidos itens no cardápio | ALTA |
 |RF-006| A aplicação permitirá que o restaurante defina o prato do dia | MÉDIA |
 |RF-007| A aplicação deve gerar um QR Code para o acesso ao cardápio | MÉDIA |
-|RF-008| A aplicação permitirá que o cliente pesquise o restaurante pelo nome para acessar o cardápio | BAIXO |
+|RF-008| A aplicação permitirá que o cliente pesquise o restaurante pelo nome para acessar o cardápio | BAIXA |
 |RF-009| A aplicação exibirá ao cliente cadastrado um histórico dos últimos cardápios acessados | BAIXA |
 |RF-010| A aplicação permitirá que o restaurante visualize dados sobre os pratos mais e menos escolhidos | ALTA |
 |RF-011| A aplicação agrupará os pedidos selecionados pelo cliente do restaurante | MÉDIA |
