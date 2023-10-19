@@ -49,6 +49,16 @@ Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo de
     - npx prisma generate<br />
 6 - Execute o NPM START, que a aplicação será iniciada.<br />
 
+ARQUIVO .ENV que precisa ser adicionado na pasta BACKEND
+<br />
+{
+PORT=8080
+DATABASE_URL="postgres://menubits_user:jSOuTiBLdPQN9pwadTAOJK8i0zcbX6Qb@dpg-ck71vunq54js73cabhkg-a.oregon-postgres.render.com/menubits"
+MONGO_DATABASE_URL="mongodb+srv://menubits:AmltDMmr9R6B17Iw@menubits.0tjqjw6.mongodb.net/?retryWrites=true&w=majority"
+}
+<br />
+<br />
+<br />
 [+] Caso deseje executar o Prisma Studio para verificar o armazenamento dos dados no BD relacional, execute:<br />
     - npx prisma studio<br />
 
