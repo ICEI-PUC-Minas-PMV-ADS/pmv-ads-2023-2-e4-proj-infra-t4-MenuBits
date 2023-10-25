@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './styles/index.css'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import Navbar from './components/Navbar/index.jsx'
+import Navbar from './components/Navbar'
 import HomePage from './pages/Homepage'
 import About from './pages/About'
 
