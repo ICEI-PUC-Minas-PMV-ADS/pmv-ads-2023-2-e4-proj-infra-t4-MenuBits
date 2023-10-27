@@ -5,7 +5,9 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import HomePage from './pages/Homepage'
 import About from './pages/About'
+import RestaurantHomePage from './pages/RestaurantHomePage'
 import MenuEditor from './pages/MenuEditor'
+
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -19,6 +21,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 
           {/* Restaurante */}
           <Route path="/menu-editor" element={<MenuEditor />} />
+          <Route path="/restaurant-homepage" element={<RestaurantHomePage />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,
