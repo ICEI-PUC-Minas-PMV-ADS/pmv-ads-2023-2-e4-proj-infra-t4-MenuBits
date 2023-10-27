@@ -11,8 +11,21 @@ export default function Navbar() {
           </a>
 
             <a href="/">
-              Inicio
+              Início
             </a>
+
+            <a href="/">
+              Favoritos
+            </a>
+
+            <a href="/">
+              Meu restaurante
+            </a>
+
+            <a href="/menu-editor">
+              Últimos acessos
+            </a>
+            
             <a href="/about">
               Sobre
             </a>
