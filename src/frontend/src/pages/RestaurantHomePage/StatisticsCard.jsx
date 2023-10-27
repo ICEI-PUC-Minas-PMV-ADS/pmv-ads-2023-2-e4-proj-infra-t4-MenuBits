@@ -7,14 +7,22 @@ import {
   UtensilsCrossed,
 } from "lucide-react";
 import "./style.css";
+import PropTypes from "prop-types";
 
-export default function StatisticsCard() {
+StatisticsCard.propTypes = {
+  restaurantData: PropTypes.object,
+  items: PropTypes.array,
+  menus: PropTypes.array,
+}
+
+
+export default function StatisticsCard({ restaurantData, items, menus }) {
   return (
     <>
       <div className="flex flex-col rounded-xl main-card h-full xl:w-2/4 md:w-full sm:w-full w-full">
         <div className="p-4 w-full h-16 bg-primary">
           <h4 className="text-center font-bold text-3xl text-white">
-            Restaurante
+            {restaurantData.name}
           </h4>
         </div>
 
@@ -32,7 +40,7 @@ export default function StatisticsCard() {
                 </h6>
                 <div className="bg-white border-solid border-2 border-red-900 w-3/4 rounded-2xl p-3 flex flex-row align-middle">
                   <UtensilsCrossed size={30} color="#C75B00" />
-                  <h1 className="mx-auto text-2xl font-bold">10</h1>
+                  <h1 className="mx-auto text-2xl font-bold">{items.length}</h1>
                 </div>
               </div>
 
@@ -42,7 +50,7 @@ export default function StatisticsCard() {
                 </h6>
                 <div className="bg-white border-solid border-2 border-red-900 w-3/4 rounded-2xl p-3 flex flex-row align-middle">
                   <ChefHat size={30} color="#C75B00" />
-                  <h1 className="mx-auto text-2xl font-bold">10</h1>
+                  <h1 className="mx-auto text-2xl font-bold">{menus.length}</h1>
                 </div>
               </div>
 
@@ -89,7 +97,9 @@ export default function StatisticsCard() {
             <div className="bg-cards p-10">
               <div className="flex flex-row justify-center gap-2 mb-2">
                 <TrendingDown size={30} color="#930000" />
-                <h6 className="text-center font-bold text-2xl">Menos Vendido</h6>
+                <h6 className="text-center font-bold text-2xl">
+                  Menos Vendido
+                </h6>
               </div>
 
               <div className="flex flex-col justify-between statistic-card rounded-2xl p-10 h-fit">
@@ -112,7 +122,7 @@ export default function StatisticsCard() {
                 </div>
               </div>
             </div>
-            </div>
+          </div>
         </section>
       </div>
     </>
