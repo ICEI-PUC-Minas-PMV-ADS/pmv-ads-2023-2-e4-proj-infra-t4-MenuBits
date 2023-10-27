@@ -1,8 +1,9 @@
 .navbar {
-  background-color: #c60404;
+  background-color: #930000;
   color: #fff;
   padding: 0.5rem;
   margin-bottom: 2rem;
+  border-bottom: 1px solid #ffc700;
 }
 
 .navbar-content {
@@ -25,9 +26,11 @@
 
 .links a {
   color: #fff;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
+  font-weight: 500;
   text-decoration: none;
   transition: all 0.15s ease-in-out;
+  padding-right: 2rem;
 }
 
 .links a:hover {
