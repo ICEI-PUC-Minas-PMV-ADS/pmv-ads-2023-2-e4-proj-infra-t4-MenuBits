@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Content = styled.div`
-	width: 40vw;
+	width: 30vw;
 	align-items: center;
 	align-self: center;
 	display: flex;

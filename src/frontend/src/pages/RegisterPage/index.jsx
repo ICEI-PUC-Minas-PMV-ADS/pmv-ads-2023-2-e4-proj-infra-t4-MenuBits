@@ -1,13 +1,29 @@
-import './style.js'
-
-import Content from '../../components/Content/index.jsx'
-import SignUpForm from '../../components/SignUpForm/index.jsx'
+import SignUpForm from "../../components/SignUpForm/index.jsx";
+import {
+  Button,
+  Container,
+  OtherSignUp,
+  RestaurantText,
+  SignText,
+  SignUp,
+  Text
+} from "./styles";
 
 export default function RegisterPage() {
-    return (
-      <Content>
-        eu to na pagina
-        <SignUpForm/>
-      </Content>
-    )
-  }
+	return (
+		<Container>
+			<OtherSignUp>
+				<Text>
+					Gostaria de <SignText>CADASTRAR</SignText>
+				</Text>
+				<Text>
+					seu
+					<RestaurantText> RESTAURANTE</RestaurantText>?
+				</Text>
+				<Button>Clique Aqui</Button>
+			</OtherSignUp>
+      <SignUp>			<SignUpForm />
+</SignUp>
+		</Container>
+	);
+}
