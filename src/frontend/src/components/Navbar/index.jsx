@@ -32,11 +32,11 @@ export default function Navbar() {
             </a>
         </div>
         <LoginArea>
-            <LoginEnter href="/registry-client">
+            <LoginEnter href="/register-client">
               Criar Conta
             </LoginEnter>
             <Button $variant="secondary">
-                <a href="/login">
+                <a href="/">
                 Entrar
                 </a>
             </Button>

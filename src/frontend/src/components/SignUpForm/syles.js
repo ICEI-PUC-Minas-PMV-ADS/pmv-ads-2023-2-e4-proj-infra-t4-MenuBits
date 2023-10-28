@@ -1,34 +1,15 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
-    display: flex;
-    flex-direction: column;
-    width: 21%;
-    height: 30rem;
-    background-color: #FFECCC;
-    border-radius: 25px;
-    padding-bottom: 1rem;
-    padding-top: 1rem;
-
-    > svg {
-        justify-self: end;
-        font-size: 3.5rem;
-        position: absolute;
-        padding-bottom: 1.5rem;
-    }
-
-`;
 
 export const Content = styled.div`
-    width: 90%;
-    height: 100%;
     align-items: center;
     align-self: center;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     text-align: center;
-
+    border: 1px solid #ccc;
+    border-radius: 10px;
     > button {
         width: 80%;
     }

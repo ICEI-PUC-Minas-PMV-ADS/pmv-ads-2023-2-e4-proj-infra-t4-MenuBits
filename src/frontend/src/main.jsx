@@ -4,7 +4,9 @@ import Navbar from './components/Navbar'
 import About from './pages/About'
 import HomePage from './pages/Homepage'
 import MenuEditor from './pages/MenuEditor'
+import RegisterPage from './pages/RegisterPage'
 import RestaurantHomePage from './pages/RestaurantHomePage'
+
 import './styles/index.css'
 
 
