@@ -1,5 +1,6 @@
 import { Button } from "../../components/Buttons";
 import './style.css';
+import { LoginEnter } from './syles';
 
 export default function Navbar() {
   return (
@@ -30,18 +31,19 @@ export default function Navbar() {
               Sobre
             </a>
         </div>
-        <LoginArea>
-          <Button $variant="secondary">
-              <a href="/about">
-              Entrar
-              </a>
-          </Button>
-          <a href="/menu-editor">
-            Criar Conta
-          </a>
-        {/* <UserCircle2 size={48}/> */}
+        <div>
+            <LoginEnter href="/registry-client">
+              Criar Conta
+            </LoginEnter>
+            <Button $variant="secondary">
+                <a href="/login">
+                Entrar
+                </a>
+            </Button>
+          {/* <UserCircle2 size={48}/> */}
         </div>
-      </LoginArea>
+      </div>
+
     </nav>
   );
 }
