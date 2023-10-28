@@ -6,26 +6,33 @@ export const Content = styled.div`
     align-self: center;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     text-align: center;
     border: 1px solid #ccc;
     border-radius: 10px;
-    > button {
-        width: 80%;
-    }
 `;
 
-export const ImageArea = styled.div`
+export const Input = styled.input`
+    padding: 10px;
+    border: 1px solid #C60404;
+    border-radius: 10px;
+    margin: 10px;
+`;
+export const ClientRegister = styled.div`
+    background-color: #930000;
+    align-items: center;
+    font-size: 25px;
+    color: white;
+    border-radius: 10px 10px 0 0;
     width: 100%;
-    height: 35%;
-    background-color: #FFFBF2;
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    height: 60px;
 
-    > svg {
-        font-size: 8rem;
-        align-self: center;
-    }
+`;
+
+
+const Button = styled.button`
+    background-color: #930000;
+    color: #fff;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
 `;
