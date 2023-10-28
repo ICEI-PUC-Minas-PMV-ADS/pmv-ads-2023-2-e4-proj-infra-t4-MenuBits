@@ -1,11 +1,12 @@
 import ReactDOM from 'react-dom/client'
-import './styles/index.css'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Navbar from './components/Navbar'
-import HomePage from './pages/Homepage'
 import About from './pages/About'
-import RestaurantHomePage from './pages/RestaurantHomePage'
+import HomePage from './pages/Homepage'
 import MenuEditor from './pages/MenuEditor'
+import RegistryPage from './pages/RegistryPage'
+import RestaurantHomePage from './pages/RestaurantHomePage'
+import './styles/index.css'
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -16,6 +17,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           {/* Cliente */}
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<About />} />
+          <Route path="/register-client" element={<RegistryPage />} />
+          <Route path="/register-restaurant" element={<RegistryPage  />} />
 
 
           {/* Restaurante */}
