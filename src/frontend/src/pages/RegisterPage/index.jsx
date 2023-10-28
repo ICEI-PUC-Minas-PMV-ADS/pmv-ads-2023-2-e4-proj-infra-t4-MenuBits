@@ -6,7 +6,7 @@ import {
   RestaurantText,
   SignText,
   SignUp,
-  Text
+  Text,
 } from "./styles";
 
 export default function RegisterPage() {
@@ -22,8 +22,10 @@ export default function RegisterPage() {
 				</Text>
 				<Button>Clique Aqui</Button>
 			</OtherSignUp>
-      <SignUp>			<SignUpForm />
-</SignUp>
+			<SignUp>
+				<SignUpForm />
+			</SignUp>
+			<OtherSignUp/>
 		</Container>
 	);
 }

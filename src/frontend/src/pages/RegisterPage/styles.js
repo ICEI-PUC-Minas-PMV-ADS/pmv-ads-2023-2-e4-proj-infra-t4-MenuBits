@@ -10,13 +10,17 @@ export const Container = styled.div`
 	margin-top: 60px;
 `;
 export const SignUp = styled.div`
+	display: flex;
 	justify-content: center;
 `;
 
 export const OtherSignUp = styled.div`
 	display: flex;
 	flex-direction: column;
+	margin-right: 100px;
+	align-items: center;
 	justify-content: end;
+	flex: 1;
 `;
 
 export const Text = styled.text`
@@ -37,5 +41,5 @@ export const Button = styled.button`
 	color: white;
 	padding: 10px;
 	border-radius: 7px;
-	margin: 10px 30%;
+	margin: 10px 10%;
 `;
