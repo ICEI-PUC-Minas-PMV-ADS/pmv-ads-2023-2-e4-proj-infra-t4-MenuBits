@@ -1,5 +1,6 @@
-import { UserCircle2 } from 'lucide-react';
-import './style.css'
+import { Button } from "../../components/Buttons";
+import './style.css';
+import { LoginArea, LoginEnter } from './syles';
 
 export default function Navbar() {
   return (
@@ -25,14 +26,25 @@ export default function Navbar() {
             <a href="/menu-editor">
               Últimos acessos
             </a>
-            
+
             <a href="/about">
               Sobre
             </a>
         </div>
+        <LoginArea>
+            <LoginEnter href="/register-client">
+              Criar Conta
+            </LoginEnter>
+            <Button $variant="secondary">
+                <a href="/">
+                Entrar
+                </a>
+            </Button>
+          {/* <UserCircle2 size={48}/> */}
+          </LoginArea>
 
-        <UserCircle2 size={48}/>
-      </div>
+        </div>
+
     </nav>
   );
 }
