@@ -9,7 +9,7 @@ import RegisterPage from './pages/RegisterPage'
 import RestaurantHomePage from './pages/RestaurantHomePage'
 import MeusPedidos from "./pages/pedidos"
 import './styles/index.css'
-
+// adicionar /:menuId? no menu-page e pegar por useParams
 ReactDOM.createRoot(document.getElementById("root")).render(
   <>
     <Navbar />
@@ -23,7 +23,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         {/* Cliente */}
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<About />} />
-        <Route path='/menu/:menuId?' element={<MenuPage />} />
+        <Route path='/menu-page' element={<MenuPage />} />
 
         <Route path="/order" element={<MeusPedidos />} />
 
