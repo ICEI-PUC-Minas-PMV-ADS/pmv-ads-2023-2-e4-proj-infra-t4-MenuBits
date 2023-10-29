@@ -1,31 +1,57 @@
+import SignUpFormClient from "../../components/SignUpFormClient/index.jsx";
 import SignUpFormRestaurant from "../../components/SignUpFormRestaurant/index.jsx";
+
 import {
-  Button,
-  Container,
-  OtherSignUp,
+  ButtonClient,
+  ButtonRestaurant,
+  ContainerClient,
+  ContainerRestaurant,
   RestaurantText,
   SignText,
   SignUp,
+  SignUpClient,
+  SignUpRestaurant,
   Text,
 } from "./styles";
 
-export default function RegisterPage() {
+export default function RegisterPage({profile}) {
 	return (
-		<Container>
-			<OtherSignUp>
-				<Text>
-					Gostaria de <SignText>CADASTRAR</SignText>
-				</Text>
-				<Text>
-					seu
-					<RestaurantText> RESTAURANTE</RestaurantText>?
-				</Text>
-				<Button>Clique Aqui</Button>
-			</OtherSignUp>
-			<SignUp>
-				<SignUpFormRestaurant />
-			</SignUp>
-			<OtherSignUp/>
-		</Container>
+		<>
+			{ profile  === "client" ? (
+				<ContainerClient>
+					<SignUpRestaurant>
+						<Text>
+							Gostaria de <SignText>CADASTRAR</SignText>
+						</Text>
+						<Text>
+							seu
+							<RestaurantText> RESTAURANTE</RestaurantText>?
+						</Text>
+						<ButtonRestaurant>Clique Aqui</ButtonRestaurant>
+					</SignUpRestaurant>
+					<SignUp>
+						<SignUpFormClient />
+					</SignUp>
+					<SignUpRestaurant />
+				</ContainerClient>
+			) : (
+				<ContainerRestaurant>
+					<SignUpClient>
+						<Text>
+							Gostaria de <SignText>CADASTRAR</SignText>
+						</Text>
+						<Text>
+							seu
+							<RestaurantText> CLIENTE</RestaurantText>?
+						</Text>
+						<ButtonClient>Clique Aqui</ButtonClient>
+					</SignUpClient>
+					<SignUp>
+						<SignUpFormRestaurant />
+					</SignUp>
+					<SignUpClient />
+				</ContainerRestaurant>
+			)}
+		</>
 	);
 }
