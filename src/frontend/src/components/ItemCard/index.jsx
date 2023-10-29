@@ -14,12 +14,12 @@ import {
     Price
 } from "./style"
 
-const ItemCard = ({description, editionMode = false}) => (
+const ItemCard = ({description, editionMode = false, closeButtonDisplay}) => (
     <Container>
 
     {
         editionMode? <>
-            <AiFillCloseCircle color="#C60404"/>
+            {closeButtonDisplay ? <AiFillCloseCircle color="#C60404"/> : <></>}
         </> : <></>
     } 
 
