@@ -21,9 +21,8 @@ export const ContainerClient = styled.div`
 `;
 
 export const SignUp = styled.div`
-	display: flex;
 	justify-content: center;
-	margin-top: 10px;
+	margin-top: 60px;
 `;
 export const SignUpRestaurant = styled.div`
 	display: flex;
