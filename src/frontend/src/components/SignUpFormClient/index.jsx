@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useCallback, useState } from "react";
+import { useNavigate } from 'react-router-dom';
 import {
 	Button,
 	ClientRegister,
@@ -13,15 +14,7 @@ import {
 } from "./syles";
 
 const SignUpFormClient = () => {
-	// const navigate = useNavigation();
-
-	// const handleToSign = useCallback(() => {
-	// 	if (profile === "restaurant") {
-	// 		navigate("/register-restaurant");
-	// 	} else if (client === "client") {
-	// 		navigate("/register-client");
-	// 	}
-	// }, []);
+	const navigate = useNavigate();
 
 	const [name, setName] = useState("");
 	const [email, setEmail] = useState("");
@@ -39,22 +32,20 @@ const SignUpFormClient = () => {
 		const body = {
 			name,
 			email,
-			validPassword,
+			password: validPassword,
 		};
 		axios
-			.post(`${import.meta.env.VITE_API_URL}/restaurante`,  body)
+			.post(`${import.meta.env.VITE_API_URL}/api/users`,  body)
 			.then((res) => {
-				// handleToSign();
-				console.log(res);
+				alert('Cadastro realizado com sucesso')
+				navigate('/')
 			})
 			.catch((err) => {
 				console.log(JSON.stringify(err));
 			});
 	}, [name, email, validPassword]);
 
-	const handleClick = () => {
-		handleSignUp();
-	};
+
 
 	return (
 		<Content>
@@ -98,7 +89,7 @@ const SignUpFormClient = () => {
 						onChange={(event) => setSecondPassword(event.target.value)}
 					/>
 				</Field>
-				<Button onClick={handleClick}>Cadastrar</Button>
+				<Button onClick={handleSignUp}>Cadastrar</Button>
 				<Text href="/">Já possui conta? entrar</Text>
 			</Form>
 		</Content>
