@@ -1,4 +1,4 @@
-import SignUpForm from "../../components/SignUpForm/index.jsx";
+import SignUpFormRestaurant from "../../components/SignUpFormRestaurant/index.jsx";
 import {
   Button,
   Container,
@@ -23,7 +23,7 @@ export default function RegisterPage() {
 				<Button>Clique Aqui</Button>
 			</OtherSignUp>
 			<SignUp>
-				<SignUpForm />
+				<SignUpFormRestaurant />
 			</SignUp>
 			<OtherSignUp/>
 		</Container>
