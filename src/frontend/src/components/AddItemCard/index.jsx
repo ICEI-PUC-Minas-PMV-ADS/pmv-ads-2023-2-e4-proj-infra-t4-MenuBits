@@ -33,7 +33,6 @@ const AddItemCard = ({description}) => (
             <Title>Alimento X</Title>
 
             <SelectionInput />
-                
             <SiAddthis color="#03AC32"/>
 
             <Description>Adicione um item já cadastrado ao menu selecionado</Description>

@@ -9,7 +9,6 @@ export const Container = styled.div`
     border-radius: 25px;
     padding-bottom: 1rem;
     padding-top: 1rem;
-
     > svg {
         justify-self: end;
         font-size: 3.5rem;
