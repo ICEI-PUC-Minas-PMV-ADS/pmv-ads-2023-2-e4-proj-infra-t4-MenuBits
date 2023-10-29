@@ -58,15 +58,9 @@ const SignUpFormClient = () => {
 
 	return (
 		<Content>
-			{profile === "restaurant" ? (
 				<ClientRegister>
 					<Title>Cadastro</Title>
 				</ClientRegister>
-			) : (
-				<ClientRegister>
-					<Title>Cadastro</Title>
-				</ClientRegister>
-			)}
 			<Form>
 				<Field>
 					<Label>Nome</Label>

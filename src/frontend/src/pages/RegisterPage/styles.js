@@ -1,26 +1,47 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const ContainerRestaurant = styled.div`
+	background-image: url("src/assets/backgroundRestaurant.png");
+	background-repeat: no-repeat;
+	background-size: cover;
 	width: 100%;
+	height: 100vh;
 	display: flex;
 	flex-direction: row;
 	gap: 10px;
-	padding-left: 2.5%;
-	padding-right: 2.5%;
-	margin-top: 60px;
 `;
+export const ContainerClient = styled.div`
+	background-image: url("src/assets/backgroundClient.png");
+	background-size: cover;
+	background-repeat: no-repeat;
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	flex-direction: row;
+`;
+
 export const SignUp = styled.div`
 	display: flex;
 	justify-content: center;
+	margin-top: 10px;
 `;
-
-export const OtherSignUp = styled.div`
+export const SignUpRestaurant = styled.div`
 	display: flex;
 	flex-direction: column;
 	margin-right: 100px;
 	align-items: center;
-	justify-content: end;
+	justify-content: center;
 	flex: 1;
+	margin-top: 400px;
+`;
+export const SignUpClient = styled.div`
+	display: flex;
+	flex-direction: column;
+	margin-right: 100px;
+	align-items: center;
+	justify-content: start;
+	flex: 1;
+	margin-top: 50px;
 `;
 
 export const Text = styled.text`
@@ -36,8 +57,15 @@ export const SignText = styled.text`
 export const RestaurantText = styled.text`
 	font-weight: 700;
 `;
-export const Button = styled.button`
+export const ButtonRestaurant = styled.button`
 	background-color: #f39d54;
+	color: white;
+	padding: 10px;
+	border-radius: 7px;
+	margin: 10px 10%;
+`;
+export const ButtonClient = styled.button`
+	background-color: #c60404;
 	color: white;
 	padding: 10px;
 	border-radius: 7px;
