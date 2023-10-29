@@ -10,6 +10,7 @@ export const Content = styled.div`
 	border: 2px solid #930000;
 	border-radius: 10px;
 	height: 70vh;
+	background-color: white;
 `;
 export const Form = styled.div`
 	margin-top: 30px;

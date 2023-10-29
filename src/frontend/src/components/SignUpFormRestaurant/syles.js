@@ -8,6 +8,7 @@ export const Content = styled.div`
 	flex-direction: column;
 	text-align: center;
 	border: 2px solid #f39d54;
+	background-color: white;
 	border-radius: 10px;
 	height: 80vh;
 `;

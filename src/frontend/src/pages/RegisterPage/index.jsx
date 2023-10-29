@@ -11,37 +11,37 @@ import {
   SignUp,
   SignUpClient,
   SignUpRestaurant,
-  Text,
+  Text
 } from "./styles";
 
-export default function RegisterPage({profile}) {
+export default function RegisterPage({ profile }) {
 	return (
 		<>
-			{ profile  === "client" ? (
-				<ContainerClient>
-					<SignUpRestaurant>
-						<Text>
-							Gostaria de <SignText>CADASTRAR</SignText>
-						</Text>
-						<Text>
-							seu
-							<RestaurantText> RESTAURANTE</RestaurantText>?
-						</Text>
-						<ButtonRestaurant>Clique Aqui</ButtonRestaurant>
-					</SignUpRestaurant>
-					<SignUp>
-						<SignUpFormClient />
-					</SignUp>
-					<SignUpRestaurant />
-				</ContainerClient>
+			{profile === "client" ? (
+					<ContainerClient>
+						<SignUpRestaurant>
+							<Text>
+								Gostaria de <SignText>CADASTRAR</SignText>
+							</Text>
+							<Text>
+								seu
+								<RestaurantText> RESTAURANTE</RestaurantText>?
+							</Text>
+							<ButtonRestaurant>Clique Aqui</ButtonRestaurant>
+						</SignUpRestaurant>
+						<SignUp>
+							<SignUpFormClient />
+						</SignUp>
+						<SignUpRestaurant />
+					</ContainerClient>
 			) : (
 				<ContainerRestaurant>
 					<SignUpClient>
 						<Text>
-							Gostaria de <SignText>CADASTRAR</SignText>
+							Gostaria de se <SignText>CADASTRAR</SignText>
 						</Text>
 						<Text>
-							seu
+							como
 							<RestaurantText> CLIENTE</RestaurantText>?
 						</Text>
 						<ButtonClient>Clique Aqui</ButtonClient>

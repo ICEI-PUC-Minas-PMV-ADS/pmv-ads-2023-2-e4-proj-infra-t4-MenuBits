@@ -1,42 +1,47 @@
 import styled from "styled-components";
 
 export const ContainerRestaurant = styled.div`
+	background-image: url("src/assets/backgroundRestaurant.png");
+	background-repeat: no-repeat;
+	background-size: cover;
 	width: 100%;
+	height: 100vh;
 	display: flex;
 	flex-direction: row;
 	gap: 10px;
-	padding-left: 2.5%;
-	padding-right: 2.5%;
-	margin-top: 60px;
 `;
 export const ContainerClient = styled.div`
+	background-image: url("src/assets/backgroundClient.png");
+	background-size: cover;
+	background-repeat: no-repeat;
 	width: 100%;
+	height: 100vh;
 	display: flex;
 	flex-direction: row;
-	gap: 10px;
-	padding-left: 2.5%;
-	padding-right: 2.5%;
-	margin-top: 60px;
 `;
+
 export const SignUp = styled.div`
 	display: flex;
 	justify-content: center;
+	margin-top: 10px;
 `;
 export const SignUpRestaurant = styled.div`
 	display: flex;
 	flex-direction: column;
 	margin-right: 100px;
 	align-items: center;
-	justify-content: end;
+	justify-content: center;
 	flex: 1;
+	margin-top: 400px;
 `;
 export const SignUpClient = styled.div`
 	display: flex;
 	flex-direction: column;
 	margin-right: 100px;
 	align-items: center;
-	justify-content: end;
+	justify-content: start;
 	flex: 1;
+	margin-top: 50px;
 `;
 
 export const Text = styled.text`
