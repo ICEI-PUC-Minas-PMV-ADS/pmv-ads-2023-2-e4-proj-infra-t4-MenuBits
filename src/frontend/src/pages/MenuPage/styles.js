@@ -11,6 +11,8 @@ export const Container = styled.div`
 
 export const Banner = styled.div`
 	background-image: url("src/assets/pizzaNostra.png");
+	background-position: center;
+
 	background-size: cover;
 	background-repeat: no-repeat;
 	width: 100%;
@@ -19,6 +21,7 @@ export const Banner = styled.div`
 	justify-content: center;
 	align-items: center;
 	flex-direction: row;
+	grid-template-rows: 1fr 1fr 1fr;
 `;
 export const TextBanner = styled.h1`
 color: white;
@@ -29,6 +32,8 @@ align-items: center;
 
 export const Title = styled.div`
 	margin-top: 20px;
+	display: flex;
+	justify-content: center;
 `;
 
 export const Text = styled.h1`
@@ -37,14 +42,24 @@ export const Text = styled.h1`
 	justify-content: center;
 `;
 
-export const SignUpRestaurant = styled.div`
+export const RestaurantButton = styled.div`
 	display: flex;
-	flex-direction: column;
-	margin-right: 100px;
-	align-items: center;
-	justify-content: center;
+	color: white;
+	margin-right: 10px;
+	align-items: end;
+	justify-content: end;
 	flex: 1;
-	margin-top: 400px;
+	margin-top: 200px;
+	align-items: center;
+
+`;
+export const Button = styled.button`
+	margin-left: 10px;
+	font-weight: 600;	
+	background-color: #c60404;
+	color: white;
+	padding: 10px;
+	border-radius: 7px;
 `;
 export const SignUpClient = styled.div`
 	display: flex;
@@ -70,10 +85,4 @@ export const ButtonRestaurant = styled.button`
 	border-radius: 7px;
 	margin: 10px 10%;
 `;
-export const ButtonClient = styled.button`
-	background-color: #c60404;
-	color: white;
-	padding: 10px;
-	border-radius: 7px;
-	margin: 10px 10%;
-`;
+

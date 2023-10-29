@@ -1,7 +1,15 @@
 import axios from "axios";
 import { useCallback, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Banner, Container, Text, Title, TextBanner } from "./styles.js";
+import {
+  Banner,
+  Container,
+  Text,
+  Title,
+  TextBanner,
+  RestaurantButton,
+  Button,
+} from "./styles.js";
 
 export default function MenuPage() {
   const [menuData, setMenuData] = useState();
@@ -38,18 +46,31 @@ export default function MenuPage() {
       });
   }, []);
 
-
   const handleClickCart = useCallback(() => {
     navigate("/cart");
+  }, [navigate]);
+
+  const handleClickRestaurant = useCallback(() => {
+    navigate("/");
   }, [navigate]);
 
   return (
     <Container>
       <Banner>
-        <TextBanner>{restaurantData && restaurantData.restaurant.name}</TextBanner>
+	  <RestaurantButton/>
+        <TextBanner>
+          {restaurantData && restaurantData.restaurant.name}
+        </TextBanner>
+		<RestaurantButton>
+          Ver mais sobre
+          <Button onClick={handleClickRestaurant}>
+            {restaurantData && restaurantData.restaurant.name}
+          </Button>
+        </RestaurantButton>
       </Banner>
+
       <Title>
-        <Text>Cardapio</Text>Cardapio
+        <Text>Cardapio</Text>
       </Title>
     </Container>
   );
