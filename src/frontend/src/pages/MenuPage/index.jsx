@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useCallback, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Cart from "../../assets/cart.png";
 import {
   Banner,
   Container,
@@ -9,7 +10,10 @@ import {
   TextBanner,
   RestaurantButton,
   Button,
+  ContainerCard,
+  ImageContent,
 } from "./styles.js";
+import CardItem from "../../components/CardItem";
 
 export default function MenuPage() {
   const [menuData, setMenuData] = useState();
@@ -37,7 +41,6 @@ export default function MenuPage() {
       .get(`${import.meta.env.VITE_API_URL}/api/restaurante/12`)
       .then((res) => {
         setRestaurantData(res.data);
-        console.log(res.data);
       })
       .catch((err) => {
         alert("Erro ao Carregar dados");
@@ -47,31 +50,50 @@ export default function MenuPage() {
   }, []);
 
   const handleClickCart = useCallback(() => {
-    navigate("/cart");
+    navigate("/");
   }, [navigate]);
 
   const handleClickRestaurant = useCallback(() => {
     navigate("/");
   }, [navigate]);
-
+  console.log(menuData, " tai");
   return (
     <Container>
       <Banner>
-	  <RestaurantButton/>
+        <RestaurantButton />
         <TextBanner>
           {restaurantData && restaurantData.restaurant.name}
         </TextBanner>
-		<RestaurantButton>
+        <RestaurantButton>
           Ver mais sobre
           <Button onClick={handleClickRestaurant}>
             {restaurantData && restaurantData.restaurant.name}
           </Button>
         </RestaurantButton>
       </Banner>
-
       <Title>
+        <ImageContent>
+          <img src={Cart} alt="Carrinho" onClick={handleClickCart} />
+          Pedidos
+        </ImageContent>
         <Text>Cardapio</Text>
+        <Text />
       </Title>
+      <ContainerCard>
+        {menuData &&
+          menuData.map((item) => {
+            return (
+              <CardItem
+                key={item.id}
+                image={item.imageUrl}
+                title={item.name}
+                description={item.description}
+                price={item.price}
+              />
+            );
+          })}
+     
+      </ContainerCard>
     </Container>
   );
 }

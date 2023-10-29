@@ -33,10 +33,13 @@ align-items: center;
 export const Title = styled.div`
 	margin-top: 20px;
 	display: flex;
-	justify-content: center;
+	flex-direction: row;
+	width: 100%;
+	grid-template-rows: 1fr 2fr 1fr;
+	gap: 10px;
 `;
 
-export const Text = styled.h1`
+export const Text = styled.div`
 	font-size: 24px;
 	padding: 5px;
 	justify-content: center;
@@ -61,19 +64,20 @@ export const Button = styled.button`
 	padding: 10px;
 	border-radius: 7px;
 `;
-export const SignUpClient = styled.div`
+export const ImageContent = styled.div`
 	display: flex;
 	flex-direction: column;
-	margin-right: 100px;
-	align-items: center;
+	align-items: start;
 	justify-content: start;
-	flex: 1;
-	margin-top: 50px;
 `;
 
-export const SignText = styled.text`
-	color: #f39d54;
+export const ContainerCard = styled.text`
 	font-weight: 700;
+	display: flex;
+	flex-direction: row;
+	grid-template-rows: 1fr 1fr 1fr;
+	gap:40px;
+	margin: 20px;
 `;
 export const RestaurantText = styled.text`
 	font-weight: 700;
