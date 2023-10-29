@@ -18,7 +18,9 @@ export default function Navbar() {
             <a href="/">
               Favoritos
             </a>
-
+            <a href="/cardapios">
+              Cardapios
+            </a>
             <a href="/restaurant-homepage">
               Meu Restaurante
             </a>

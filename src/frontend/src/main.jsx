@@ -6,11 +6,10 @@ import HomePage from './pages/Homepage'
 import MenuEditor from './pages/MenuEditor'
 import RegisterPage from './pages/RegisterPage'
 import RestaurantHomePage from './pages/RestaurantHomePage'
-
+import MeusPedidos from "./pages/cardapio"
 import './styles/index.css'
 
-
-ReactDOM.createRoot(document.getElementById('root')).render(
+ReactDOM.createRoot(document.getElementById("root")).render(
   <>
     <Navbar />
     <BrowserRouter>
@@ -20,12 +19,16 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path="/about" element={<About />} />
           <Route path="/register-client" element={<RegisterPage />} />
           <Route path="/register-restaurant" element={<RegisterPage  />} />
+        {/* Cliente */}
+        <Route path="/" element={<HomePage />} />
+        <Route path="/about" element={<About />} />
 
+        <Route path="/order" element={<MeusPedidos />} />
 
-          {/* Restaurante */}
-          <Route path="/menu-editor" element={<MenuEditor />} />
-          <Route path="/restaurant-homepage" element={<RestaurantHomePage />} />
+        {/* Restaurante */}
+        <Route path="/menu-editor" element={<MenuEditor />} />
+        <Route path="/restaurant-homepage" element={<RestaurantHomePage />} />
       </Routes>
     </BrowserRouter>
-  </>,
-)
+  </>
+);
