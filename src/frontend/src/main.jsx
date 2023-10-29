@@ -6,7 +6,7 @@ import HomePage from './pages/Homepage'
 import MenuEditor from './pages/MenuEditor'
 import RegisterPage from './pages/RegisterPage'
 import RestaurantHomePage from './pages/RestaurantHomePage'
-import MeusPedidos from "./pages/cardapio"
+import MeusPedidos from "./pages/pedidos"
 import './styles/index.css'
 
 ReactDOM.createRoot(document.getElementById("root")).render(
