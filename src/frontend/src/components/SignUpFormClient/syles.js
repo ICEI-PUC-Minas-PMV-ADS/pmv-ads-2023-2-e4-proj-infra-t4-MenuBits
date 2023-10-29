@@ -42,6 +42,17 @@ export const ClientRegister = styled.div`
 	height: 15%;
 	justify-content: center;
 `;
+export const RestaurantRegister = styled.div`
+	display: flex;
+	background-color: #930000;
+	align-items: center;
+	font-size: 25px;
+	color: white;
+	border-radius: 7px 7px 0 0;
+	width: 100%;
+	height: 15%;
+	justify-content: center;
+`;
 export const Title = styled.h1`
 	color: white;
 	font-weight: 700;
