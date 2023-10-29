@@ -8,6 +8,7 @@ import RegisterPage from './pages/RegisterPage'
 import RestaurantHomePage from './pages/RestaurantHomePage'
 import MeusPedidos from "./pages/pedidos"
 import './styles/index.css'
+import LoginPage from "./pages/LoginPage";
 
 
 ReactDOM.createRoot(document.getElementById("root")).render(
@@ -18,6 +19,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           {/* Cliente */}
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<About />} />
+          <Route path="/login-client" element={<LoginPage profile='client' />} />
+          <Route path="/login-restaurant" element={<LoginPage profile='restaurant' />} />
           <Route path="/register-client" element={<RegisterPage profile='client' />} />
           <Route path="/register-restaurant" element={<RegisterPage profile='restaurant' />} />
         {/* Cliente */}
