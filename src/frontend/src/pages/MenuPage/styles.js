@@ -35,14 +35,16 @@ export const Title = styled.div`
 	display: flex;
 	flex-direction: row;
 	width: 100%;
-	grid-template-rows: 1fr 2fr 1fr;
 	gap: 10px;
+	padding: 20px;
 `;
 
 export const Text = styled.div`
 	font-size: 24px;
 	padding: 5px;
 	justify-content: center;
+	flex:1;
+	text-align: center;
 `;
 
 export const RestaurantButton = styled.div`

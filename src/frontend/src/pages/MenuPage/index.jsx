@@ -77,7 +77,6 @@ export default function MenuPage() {
           Pedidos
         </ImageContent>
         <Text>Cardapio</Text>
-        <Text />
       </Title>
       <ContainerCard>
         {menuData &&
