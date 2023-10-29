@@ -1,3 +1,4 @@
+import Logo from '../../assets/logo.png';
 import { Button } from "../../components/Buttons";
 import './style.css';
 import { LoginArea, LoginEnter } from './syles';
@@ -8,7 +9,7 @@ export default function Navbar() {
       <div className="navbar-content">
         <div className='links'>
           <a href="/">
-            <img src="/logo.png" alt="Logo" />
+            <img src={Logo} alt="Logo" />
           </a>
 
             <a href="/">
