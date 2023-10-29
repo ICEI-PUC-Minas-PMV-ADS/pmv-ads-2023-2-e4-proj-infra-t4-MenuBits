@@ -9,6 +9,7 @@ import RestaurantHomePage from './pages/RestaurantHomePage'
 import MeusPedidos from "./pages/pedidos"
 import './styles/index.css'
 
+
 ReactDOM.createRoot(document.getElementById("root")).render(
   <>
     <Navbar />
