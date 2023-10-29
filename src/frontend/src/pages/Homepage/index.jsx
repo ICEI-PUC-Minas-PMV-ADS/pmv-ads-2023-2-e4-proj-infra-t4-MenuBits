@@ -1,6 +1,6 @@
 // import { Button } from "../../components/Buttons";
-import backgroundImage from "../../../public/logo2.png";
-import lupaImage from "../../../public/lupa.png";
+import backgroundImage from "../../assets/logo2.png";
+import lupaImage from "../../assets/lupa.png";
 
 export default function HomePage() {
   return (

@@ -1,4 +1,4 @@
-import backgroundImage from "../../../public/pizzaNostra.png";
+import backgroundImage from "../../assets/pizzaNostra.png";
 
 export default function MeusPedidos() {
   return (
@@ -15,18 +15,18 @@ export default function MeusPedidos() {
         <div className="p-10 flex items-center justify-center w-full border-b border-gray-500">
           <h3 className="text-3xl font-bold">Meus Pedidos</h3>
         </div>
-        <div 
+        <div
           className="bg-red-500 w-1/2 flex items-center justify-between p-4"
         >
           <button>Voltar ao Cardapio</button>
           <p>R$</p>
         </div>
-        <div 
+        <div
           className="w-1/2 flex items-center justify-between p-4"
         >
-          
+
         </div>
-        <div 
+        <div
           className="w-1/2 flex items-center justify-between p-4"
         >
           <p>Total</p>
