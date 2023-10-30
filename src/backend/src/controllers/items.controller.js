@@ -146,6 +146,24 @@ class ItemsController {
         }
     }
 
+
+    async findAllItensRestaurantId(request, response) {
+      try {
+
+        const items = await ItemsService.findItemsByRestaurantId(parseInt(request.params.restaurantId));
+        
+        return response.status(200).json({
+            status: 200,
+            success: true,
+            data: items
+        });
+
+    } catch (error) {
+        return response.status(500).json({
+            error: `Não foi possível localizar os itens do restaurante ${error.message}`
+        });
+    }
+  }
 }
 
 export default new ItemsController();

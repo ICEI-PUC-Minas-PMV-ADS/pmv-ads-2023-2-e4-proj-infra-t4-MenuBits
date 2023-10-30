@@ -12,14 +12,9 @@ export const Container = styled.div`
 
     > svg {
         justify-self: end;
-        font-size: 7.5rem;
+        font-size: 3.5rem;
         position: absolute;    
-        padding-bottom: 4.5rem;
-        padding-right: 3rem;
-
-        :hover {
-            cursor: pointer;
-        }
+        padding-bottom: 1.5rem;
     }
 
 `;
@@ -52,12 +47,6 @@ export const ImageArea = styled.div`
         font-size: 8rem;
         align-self: center;
     }
-
-    > img {
-        width: 100%;
-        height: 100%;
-        border-radius: 20px;
-    }
 `;
 
 export const Title = styled.h1`
@@ -80,3 +69,11 @@ export const Price = styled.h2`
     color: #2E2E2E;
     font-size: 2.0rem;
 `
+
+export const Button = styled.button`
+	background-color: #c60404;
+	color: white;
+	padding: 10px;
+	border-radius: 7px;
+	margin: 10px 10%;
+`;

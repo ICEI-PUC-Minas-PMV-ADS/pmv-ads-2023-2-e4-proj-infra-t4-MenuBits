@@ -9,7 +9,7 @@ export const InputTitle = styled.div`
 `;
 
 export const InputSelectionArea = styled.div`
-
+    width: 100%;
 `;
 
 export const Header = styled.header`
@@ -29,7 +29,7 @@ export const InputArea = styled.div`
     display: flex;
 
     > button {
-        width: 200px;
+        width: 300px;
         margin-left: 1rem;
         font-size: 0.9rem
     }
@@ -61,7 +61,7 @@ export const ModalMenu = styled.div`
 
 `
 
-export const ModalContent = styled.div`
+export const ModalContent = styled.form`
     display: flex;
     width: 30%; 
     height: 100px;
@@ -175,4 +175,13 @@ export const ModalDescriptionArea = styled.div`
     }
 `;
 
+export const ButtonArea = styled.div`
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+
+    > button {
+        width: 40%;
+    }
+`
 
