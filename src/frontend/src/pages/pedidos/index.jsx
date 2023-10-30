@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import p1 from "../../assets/p1.png";
+// import p1 from "../../assets/p1.png";
 import backgroundImage from "../../assets/pizzaNostra.png";
 import remove from "../../assets/remove.png";
 

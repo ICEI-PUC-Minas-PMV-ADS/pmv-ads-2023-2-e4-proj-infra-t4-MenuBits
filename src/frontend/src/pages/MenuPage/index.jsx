@@ -14,6 +14,7 @@ import {
   ImageContent,
 } from "./styles.js";
 import CardItem from "../../components/CardItem";
+import { useParams } from "react-router-dom";
 
 export default function MenuPage() {
   const [menuData, setMenuData] = useState();
@@ -34,12 +35,12 @@ export default function MenuPage() {
   setSelectedOrder(JSON.parse(localStorage.getItem('pedidos')) || []) 
  },[])
 
-  // const { menuId } = useParams()
+  const { menuId } = useParams()
   // Subistituir 1 da linha 15 por: e  adicionar ${menuId}
   const navigate = useNavigate();
   useEffect(() => {
     axios
-      .get(`${import.meta.env.VITE_API_URL}/api/items/menus/1`)
+      .get(`${import.meta.env.VITE_API_URL}/api/items/menus/${menuId}`)
       .then((res) => {
         setMenuData(res.data.data);
         console.log(res.data.data);
