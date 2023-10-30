@@ -1,35 +1,17 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import p1 from "../../assets/p1.png";
 import backgroundImage from "../../assets/pizzaNostra.png";
 import remove from "../../assets/remove.png";
 
 export default function MeusPedidos() {
-  const [order, setOrder] = useState([
-    {
-      id: 1,
-      price: 30,
-      img: p1,
-      name: "Calabresa",
-    },
-    {
-      id: 2,
-      price: 34.5,
-      img: p1,
-      name: "Quatro Queijos",
-    },
-    {
-      id: 3,
-      price: 56.9,
-      img: p1,
-      name: "Moda",
-    },
-    {
-      id: 5,
-      price: 64,
-      img: p1,
-      name: "Pizza Vegana",
-    },
-  ]);
+  const [order, setOrder] = useState([]);
+
+  useEffect(() => {
+    const local = localStorage.getItem("pedidos")
+    console.log(local)
+    setOrder(JSON.parse(local) || []);
+    
+  }, [])
 
   const handleRemove = (id) => {
     const copyOrder = [...order];
@@ -37,9 +19,6 @@ export default function MeusPedidos() {
     copyOrder.splice(pizzaIndex, 1);
     setOrder(copyOrder);
   };
-  const totalPrice = order.reduce((accumulator, item) => {
-    return accumulator + item.price;
-  }, 0);
 
   return (
     <div>
@@ -75,8 +54,8 @@ export default function MeusPedidos() {
           ))}
         </div>
         <div className="w-1/2 bg-red-600 p-4 flex items-center justify-between">
-          <p>TOTAL</p>
-          <p>R$ {totalPrice}</p>
+          {/* <p>TOTAL</p>
+          <p>R$ {totalPrice}</p> */}
         </div>
         <div className="pt-12">
           <a href="/cardapio" className="rounded-xl bg-red-600 p-4 text-white">VOLTAR AO CARDÁPIO</a>
