@@ -1,22 +1,39 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import {
   Form
 } from './style'
+import axios from 'axios';
 
-export default function SelectionInput() {
+export default function SelectionInput({arrayOptions, onChange}) {
   const [selectedOption, setSelectedOption] = useState('');
+  const [menus, setMenus] = useState([]);
+
+  useEffect(() => {
+    axios
+    .get(`http://localhost:8080/api/menus/restaurant/12`)
+    .then((response) => {
+      setMenus(response.data.menu);
+    });
+  
+  },[])
 
   const handleSelectChange = (event) => {
     setSelectedOption(event.target.value);
+    onChange(event.target.id)
+    console.log(event.target.id)
   };
+  
 
   return (
     <Form>
       <select value={selectedOption} onChange={handleSelectChange}>
-        <option value="">Cardápio X...</option>
-        <option value="option1">Cardápio Principal</option>
-        <option value="option2">Option 2</option>
+        <option value="">Selecione...</option>
+        {
+          menus.map(e => (
+            <option key={e.id} value={e.id}>{e.title}</option>
+          ))
+        }
       </select>
     </Form>
   );

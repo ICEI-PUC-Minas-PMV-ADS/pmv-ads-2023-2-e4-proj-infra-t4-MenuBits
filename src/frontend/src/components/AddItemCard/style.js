@@ -9,6 +9,7 @@ export const Container = styled.div`
     border-radius: 25px;
     padding-bottom: 1rem;
     padding-top: 1rem;
+    border:  1px solid #930000;
     > svg {
         justify-self: end;
         font-size: 3.5rem;
@@ -29,15 +30,19 @@ export const Content = styled.div`
     text-align: center;
 
     > button {
-        width: 80%;
-    }
-
-    > svg {
-        font-size: 4.5rem;
-        :hover {
+        width: 30%;
+        display: flex;
+        align-items: center;
+        justify-content: center; 
+        > svg {
+            font-size: 4.5rem;
+                :hover {
             cursor: pointer;
+            }
         }
     }
+
+
 `;
 
 export const ImageArea = styled.div`

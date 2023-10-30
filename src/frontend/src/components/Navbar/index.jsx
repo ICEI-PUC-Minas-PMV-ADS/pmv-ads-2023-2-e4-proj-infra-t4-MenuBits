@@ -39,7 +39,7 @@ export default function Navbar() {
               Criar Conta
             </LoginEnter>
             <Button $variant="secondary">
-                <a href="/">
+                <a href="/perfil-user">
                 Entrar
                 </a>
             </Button>
