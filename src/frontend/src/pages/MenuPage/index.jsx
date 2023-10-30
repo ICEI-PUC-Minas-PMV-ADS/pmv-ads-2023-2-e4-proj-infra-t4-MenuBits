@@ -18,6 +18,19 @@ import CardItem from "../../components/CardItem";
 export default function MenuPage() {
   const [menuData, setMenuData] = useState();
   const [restaurantData, setRestaurantData] = useState();
+  const [selectedOrder, setSelectedOrder] = useState([]);
+
+  
+  const handleClick = useCallback((item)=> {
+    const selectedOrderUpdated = [...selectedOrder, item]
+    setSelectedOrder(selectedOrderUpdated )
+    localStorage.setItem('pedidos', JSON.stringify(selectedOrderUpdated) )
+    alert('Adicionado Com sucesso!')
+ }, [selectedOrder])
+
+ useEffect(()=>{
+  setSelectedOrder(  JSON.parse(localStorage.getItem('pedidos')))
+ },[])
 
   // const { menuId } = useParams()
   // Subistituir 1 da linha 15 por: e  adicionar ${menuId}
@@ -88,6 +101,7 @@ export default function MenuPage() {
                 title={item.name}
                 description={item.description}
                 price={item.price}
+                handleClickAddOrder={() => handleClick(item)}
               />
             );
           })}

@@ -8,12 +8,7 @@ import {
     Title,Button
 } from "./style";
 
-const CardItem = ({image, price, title, description, }) => {
-    const items= {image, price, title, description}
- const handleClick = useCallback(()=>{
-    localStorage.setItem('pedidos', JSON.stringify(items) )
-    alert('Adicionado Com sucesso!')
- }, [])
+const CardItem = ({image, price, title, description, handleClickAddOrder }) => {
  
 return(
     <Container>
@@ -29,7 +24,7 @@ return(
             <Description>{description}</Description>
 
             <Price>{price}</Price>
-            <Button onClick={handleClick}> Adicionar pedido</Button>
+            <Button onClick={handleClickAddOrder}> Adicionar pedido</Button>
 
         </Content>
 
