@@ -15,7 +15,6 @@ import {
   LoginRestaurant,
   Text,
 } from "./styles";
-import LoginFormRestaurant from '../../components/LoginFormRestaurant';
 
 export default function LoginPage({ profile }) {
   const navigate = useNavigate();
