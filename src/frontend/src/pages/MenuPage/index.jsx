@@ -22,14 +22,16 @@ export default function MenuPage() {
 
   
   const handleClick = useCallback((item)=> {
+    console.log("PASSOU AQUI", selectedOrder)
     const selectedOrderUpdated = [...selectedOrder, item]
+    console.log("PASSOU AQUI 2", selectedOrder)
     setSelectedOrder(selectedOrderUpdated )
     localStorage.setItem('pedidos', JSON.stringify(selectedOrderUpdated) )
     alert('Adicionado Com sucesso!')
  }, [selectedOrder])
 
  useEffect(()=>{
-  setSelectedOrder(  JSON.parse(localStorage.getItem('pedidos')))
+  setSelectedOrder(JSON.parse(localStorage.getItem('pedidos')) || []) 
  },[])
 
   // const { menuId } = useParams()
