@@ -1,11 +1,38 @@
 # Plano de Testes de Usabilidade
 
-O teste de usabilidade permite avaliar a qualidade da interface com o usuário da aplicação interativa. O Plano de Testes de Software é gerado a partir da especificação do sistema e consiste em casos de testes que deverão ser executados quando a implementação estiver parcial ou totalmente pronta.
 
-As referências abaixo irão auxiliá-lo na geração do artefato "Plano de Testes de Usabilidade".
+* Tabela que mostra os níveis da urgência:
 
-> **Links Úteis**:
-> - [Teste De Usabilidade: O Que É e Como Fazer Passo a Passo (neilpatel.com)](https://neilpatel.com/br/blog/teste-de-usabilidade/)
-> - [Teste de usabilidade: tudo o que você precisa saber! | by Jon Vieira | Aela.io | Medium](https://medium.com/aela/teste-de-usabilidade-o-que-voc%C3%AA-precisa-saber-39a36343d9a6/)
-> - [Planejando testes de usabilidade: o que (e o que não) fazer | iMasters](https://imasters.com.br/design-ux/planejando-testes-de-usabilidade-o-que-e-o-que-nao-fazer/)
-> - [Ferramentas de Testes de Usabilidade](https://www.usability.gov/how-to-and-tools/resources/templates.html)
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t4-MenuBits/assets/105240089/94a8c74a-5c87-4692-9526-9f367d6a995e)
+
+
+<h1>Avaliação Estática</h1>
+
+Tela: Inicial (User-Homepage)
+
+
+Tela: Meu Restaurante (Restaurant-Homepage)
+
+
+Tela: Entrar (Login-User)
+
+
+Tela: Cadastro (Register-User)
+
+
+Tela: Últimos acessos (Menu-Editor)
+
+
+Tela: Perfil do Usuário (Perfil-User)
+
+
+Tela: Edição de Perfil do Usuário (Edit-Perfil-User)
+
+
+Tela: Sobre (About)
+
+  Nessa tela, há de ser mostrado um breve resumo explicando o que é e como usa o aplicativo criado.
+
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t4-MenuBits/assets/105240089/bfd15300-48cd-4c13-a14f-d45800537540)
+
+
