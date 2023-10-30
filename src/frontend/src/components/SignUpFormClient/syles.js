@@ -10,6 +10,7 @@ export const Content = styled.div`
 	border: 2px solid #930000;
 	border-radius: 10px;
 	height: 70vh;
+	background-color: white;
 `;
 export const Form = styled.div`
 	margin-top: 30px;
@@ -32,6 +33,17 @@ export const Input = styled.input`
 	margin: 10px 60px;
 `;
 export const ClientRegister = styled.div`
+	display: flex;
+	background-color: #930000;
+	align-items: center;
+	font-size: 25px;
+	color: white;
+	border-radius: 7px 7px 0 0;
+	width: 100%;
+	height: 15%;
+	justify-content: center;
+`;
+export const RestaurantRegister = styled.div`
 	display: flex;
 	background-color: #930000;
 	align-items: center;
