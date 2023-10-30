@@ -12,9 +12,14 @@ export const Container = styled.div`
 
     > svg {
         justify-self: end;
-        font-size: 3.5rem;
+        font-size: 7.5rem;
         position: absolute;    
-        padding-bottom: 1.5rem;
+        padding-bottom: 4.5rem;
+        padding-right: 3rem;
+
+        :hover {
+            cursor: pointer;
+        }
     }
 
 `;
@@ -46,6 +51,12 @@ export const ImageArea = styled.div`
     > svg {
         font-size: 8rem;
         align-self: center;
+    }
+
+    > img {
+        width: 100%;
+        height: 100%;
+        border-radius: 20px;
     }
 `;
 

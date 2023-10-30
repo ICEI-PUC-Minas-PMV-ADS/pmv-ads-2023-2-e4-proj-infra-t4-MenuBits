@@ -29,6 +29,7 @@ router.post("/api/user/auth", authUserController.authenticate);
 
 //Items endpoint
 router.get('/api/items/menus/:menuId', ItemsController.findAllItensByMenuId);
+router.get('/api/items/restaurant/:restaurantId', ItemsController.findAllItensRestaurantId);
 router.post('/api/items/', AuthMiddlewares, ItemsController.create);
 router.put('/api/items/:id', AuthMiddlewares, ItemsController.update);
 router.delete('/api/items/:id', AuthMiddlewares, ItemsController.delete);

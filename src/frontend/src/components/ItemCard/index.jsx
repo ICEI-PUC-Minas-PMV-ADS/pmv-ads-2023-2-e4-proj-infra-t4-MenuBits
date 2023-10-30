@@ -14,27 +14,31 @@ import {
     Price
 } from "./style"
 
-const ItemCard = ({description, editionMode = false, closeButtonDisplay}) => (
+const ItemCard = ({name, description, price, imageUrl, editionMode = false, closeButtonDisplay}) => (
     <Container>
-
-    {
-        editionMode? <>
-            {closeButtonDisplay ? <AiFillCloseCircle color="#C60404"/> : <></>}
-        </> : <></>
-    } 
+        {
+            editionMode ? <>
+                {closeButtonDisplay ? <AiFillCloseCircle color="#C60404"/> : <></>}
+            </> : <></>
+        } 
 
         <Content>
             <ImageArea>
 
-            {/* renderizar a imagem do banco */}
+                {
+                    imageUrl ? <img src={imageUrl} alt="imagem do alimento" /> :
+                    <img src={"https://th.bing.com/th/id/R.bcdd3f573efd44e6ab54866c4e89ba58?rik=LxjwIFXLGsKshw&pid=ImgRaw&r=0"} alt="imagem do alimento" />
+                }
+
+                
 
             </ImageArea>
 
-            <Title>Alimento X</Title>
+            <Title>{name}</Title>
 
             <Description>{description}</Description>
                 
-            <Price>R$ 50,00</Price>
+            <Price>R$ {price}</Price>
 
             {
                 editionMode? <>
