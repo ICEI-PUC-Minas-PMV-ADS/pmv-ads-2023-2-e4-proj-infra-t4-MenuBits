@@ -14,7 +14,6 @@ import './styles/index.css'
 import LoginPage from "./pages/LoginPage";
 
 
-=======
 // adicionar /:menuId? no menu-page e pegar por useParams
 ReactDOM.createRoot(document.getElementById("root")).render(
   <>
