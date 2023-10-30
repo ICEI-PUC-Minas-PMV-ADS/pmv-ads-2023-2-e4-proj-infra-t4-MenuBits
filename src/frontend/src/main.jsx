@@ -7,6 +7,8 @@ import MenuEditor from './pages/MenuEditor'
 import RegisterPage from './pages/RegisterPage'
 import RestaurantHomePage from './pages/RestaurantHomePage'
 import MeusPedidos from "./pages/pedidos"
+import PerfilUser from "../src/pages/Perfilpages/PerfilUser"
+import EditPerfilUser from "../src/pages/Perfilpages/EditPerfilUser"
 import './styles/index.css'
 
 
@@ -15,12 +17,11 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <Navbar />
     <BrowserRouter>
       <Routes>
-          {/* Cliente */}
-          <Route path="/" element={<HomePage />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/register-client" element={<RegisterPage />} />
-          <Route path="/register-restaurant" element={<RegisterPage  />} />
         {/* Cliente */}
+        <Route path="/" element={<HomePage />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/register-client" element={<RegisterPage />} />
+        <Route path="/register-restaurant" element={<RegisterPage />} />
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<About />} />
 
@@ -29,6 +30,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         {/* Restaurante */}
         <Route path="/menu-editor" element={<MenuEditor />} />
         <Route path="/restaurant-homepage" element={<RestaurantHomePage />} />
+        <Route path="/perfil-user" element={<PerfilUser />} />
+        <Route path="/edit-perfil-user" element={<EditPerfilUser />} />
+
       </Routes>
     </BrowserRouter>
   </>
