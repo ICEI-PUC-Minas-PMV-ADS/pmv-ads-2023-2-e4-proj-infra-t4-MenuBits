@@ -8,28 +8,28 @@
 
 <h1>Avaliação Estática</h1>
 
-Tela: Inicial (User-Homepage)
+<h2>Tela: Inicial (User-Homepage)</h2>
 
 
-Tela: Meu Restaurante (Restaurant-Homepage)
+<h2>Tela: Meu Restaurante (Restaurant-Homepage)</h2>
 
 
-Tela: Entrar (Login-User)
+<h2>Tela: Entrar (Login-User)</h2>
 
 
-Tela: Cadastro (Register-User)
+<h2>Tela: Cadastro (Register-User)</h2>
 
 
-Tela: Últimos acessos (Menu-Editor)
+<h2>Tela: Últimos acessos (Menu-Editor)</h2>
 
 
-Tela: Perfil do Usuário (Perfil-User)
+<h2>Tela: Perfil do Usuário (Perfil-User)</h2>
 
 
-Tela: Edição de Perfil do Usuário (Edit-Perfil-User)
+<h2>Tela: Edição de Perfil do Usuário (Edit-Perfil-User)</h2>
 
 
-Tela: Sobre (About)
+<h2>Tela: Sobre (About)</h2>
 
   Nessa tela, há de ser mostrado um breve resumo explicando o que é e como usa o aplicativo criado.
 
