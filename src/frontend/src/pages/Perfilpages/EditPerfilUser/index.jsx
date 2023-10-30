@@ -1,4 +1,5 @@
 import Input from '../../../components/Input'
+
 import {
     PerfilCard,
     Container,
@@ -7,7 +8,10 @@ import {
     Info,
     Label,
 } from '../EditPerfilUser/style'
+
 import {BsCheckLg} from 'react-icons/bs'
+
+
 
 export default function EditPerfilUser() {
     return (
