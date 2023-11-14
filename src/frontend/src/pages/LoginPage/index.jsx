@@ -14,6 +14,7 @@ import {
   LoginClient,
   LoginRestaurant,
   Text,
+  SignUp
 } from "./styles";
 
 export default function LoginPage({ profile }) {

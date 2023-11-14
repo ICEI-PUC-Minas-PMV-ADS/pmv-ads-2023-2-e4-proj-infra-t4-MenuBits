@@ -24,6 +24,10 @@ export const Login = styled.div`
 	justify-content: center;
 	margin-top: 60px;
 `;
+export const SignUp = styled.div`
+	justify-content: center;
+	margin-top: 60px;
+`;
 export const LoginRestaurant = styled.div`
 	display: flex;
 	flex-direction: column;

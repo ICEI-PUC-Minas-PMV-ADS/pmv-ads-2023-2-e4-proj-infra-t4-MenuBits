@@ -66,7 +66,7 @@ export default function MenuPage() {
   }, []);
 
   const handleClickCart = useCallback(() => {
-    navigate("/");
+    navigate("/order");
   }, [navigate]);
 
   const handleClickRestaurant = useCallback(() => {

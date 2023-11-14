@@ -1,10 +1,11 @@
 // import { Button } from "../../components/Buttons";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import backgroundImage from "../../assets/logo2.png";
 import lupaImage from "../../assets/lupa.png";
 import p1 from "../../assets/p1.png";
 import time from "../../assets/time.png";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 export default function HomePage() {
   const [id, setId] = useState("");
@@ -13,6 +14,15 @@ export default function HomePage() {
   const handleRedirect = () => {
     navigate(`/menu-page/${id}`);
   };
+  
+  
+
+  useEffect(() => {
+    axios.get(`${import.meta.env.VITE_API_URL}/api/restaurante`).then((response) => {
+      console.log(response.data)
+    })
+  });
+
   console.log(id);
   return (
     <div
