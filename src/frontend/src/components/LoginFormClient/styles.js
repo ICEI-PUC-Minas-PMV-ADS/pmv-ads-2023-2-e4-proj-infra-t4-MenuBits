@@ -9,7 +9,7 @@ export const Content = styled.div`
 	text-align: center;
 	border: 2px solid #930000;
 	border-radius: 10px;
-	height: 70vh;
+	height: 60%;
 	background-color: white;
 `;
 export const Form = styled.div`
@@ -82,4 +82,10 @@ export const Text = styled.a`
 export const Label = styled.label`
 	color: #f39d54;
 	font-weight: 400;
+`;
+
+export const MessageError = styled.label`
+	color: #930000;
+	font-weight: 700;
+	padding-bottom: 20px;
 `;

@@ -10,7 +10,7 @@ export const Content = styled.div`
 	border: 2px solid #f39d54;
 	background-color: white;
 	border-radius: 10px;
-	height: 80vh;
+	height: 60%;
 `;
 export const Form = styled.div`
 	margin-top: 30px;
@@ -72,4 +72,10 @@ export const Text = styled.a`
 export const Label = styled.label`
 	color: #f39d54;
 	font-weight: 400;
+`;
+
+export const MessageError = styled.label`
+	color: #930000;
+	font-weight: 700;
+	padding-bottom: 20px;
 `;
