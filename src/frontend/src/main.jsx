@@ -32,7 +32,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <Route path="/restaurant-homepage" element={<RestaurantHomePage />} />
         <Route path="/perfil-user" element={<PerfilUser />} />
         <Route path="/edit-perfil-user" element={<EditPerfilUser />} />
-
       </Routes>
     </BrowserRouter>
   </>

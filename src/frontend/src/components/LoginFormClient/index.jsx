@@ -11,6 +11,7 @@ import {
   Label,
   Text,
   Title,
+  MessageError
 } from "./styles";
 
 const LoginFormClient = () => {
@@ -18,6 +19,7 @@ const LoginFormClient = () => {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [message, setMessage] = useState("");
 
   const handleLogin = useCallback(async () => {
     const body = {
@@ -26,16 +28,25 @@ const LoginFormClient = () => {
     };
     
     try {
-      const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/user/auth`, body);
 
-      // Armazenando o token no Local Storage
-      localStorage.setItem('userToken', response.data.token);
+      if(email === "" || password === "") {
+        setMessage('Preencha os dados de login');
+      } else {
 
-      alert('Login realizado com sucesso');
-      navigate('/');
+        const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/user/auth`, body);
+
+        if(response.data.error = "User not found") {
+          setMessage('Email ou senha incorretos');
+        } else {
+          localStorage.setItem('userToken', response.data.token);
+          navigate('/');
+
+        }
+      }
+
     } catch (error) {
       console.error(error);
-      alert('Falha no login');
+      setMessage('Falha no login');
     }
   }, [email, password, navigate]);
 
@@ -45,6 +56,7 @@ const LoginFormClient = () => {
         <Title>LOGIN</Title>
       </ClientLogin>
       <Form>
+        <MessageError>{message}</MessageError>
         <Field>
           <Label>E-mail</Label>
           <Input
