@@ -11,6 +11,7 @@ import {
   RestaurantLogin,
   Text,
   Title,
+  MessageError
 } from "./syles";
 
 const LoginFormRestaurant = () => {
@@ -18,6 +19,7 @@ const LoginFormRestaurant = () => {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [message, setMessage] = useState("");
 
   const handleLogin = useCallback(async () => {
     const body = {
@@ -26,19 +28,24 @@ const LoginFormRestaurant = () => {
     };
 
     try {
-      const response = await axios.post(
-        `${import.meta.env.VITE_API_URL}/api/restaurant/auth`, // Ajustado para a rota correta do backend
-        body
-      );
 
-      // Armazenando o token do restaurante no localStorage
-      localStorage.setItem('restaurantToken', response.data.token);
+      if(email === "" || password === "") {
+        setMessage('Preencha os dados de login');
+      } else {
+        const response = await axios.post(
+          `${import.meta.env.VITE_API_URL}/api/restaurant/auth`, body
+        );
 
-      alert("Login realizado com sucesso");
-      navigate("/restaurant-homepage"); // Ajustado para redirecionar para a página inicial do restaurante
+        if(response.data.error = "User not found") {
+          setMessage('Email ou senha incorretos');
+        } else {
+          localStorage.setItem('restaurantToken', response.data.token);
+          navigate("/restaurant-homepage");
+        }
+      }
+
     } catch (error) {
-      console.error(error);
-      alert("Falha no login");
+      setMessage("Falha no login");
     }
   }, [email, password, navigate]);
 
@@ -48,6 +55,7 @@ const LoginFormRestaurant = () => {
         <Title>Login</Title>
       </RestaurantLogin>
       <Form>
+        <MessageError>{message}</MessageError>
         <Field>
           <Label>E-mail</Label>
           <Input
