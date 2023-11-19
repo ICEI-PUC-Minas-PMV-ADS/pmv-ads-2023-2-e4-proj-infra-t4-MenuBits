@@ -63,7 +63,7 @@ export const Description = styled.Text`
   overflow: hidden;
 `;
 
-export const Price = styled.h2`
+export const Price = styled.Text`
   font-weight: 600;
   color: #2e2e2e;
   font-size: 2rem;
