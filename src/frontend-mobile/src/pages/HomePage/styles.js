@@ -12,3 +12,20 @@ export const Input = styled.TextInput`
   background-color: #f0f0f0;
   padding: 10px;
 `;
+export const Button = styled.Pressable`
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  margin: 15px;
+  border-radius: 10px;
+  border: none;
+  background-color: #fe7216;
+`;
+
+export const TextButton = styled.Text`
+  color: white;
+  font-size: 14px;
+  font-weight: 800;
+  text-align: center;
+`;
