@@ -4,7 +4,7 @@ import React, { createContext, useContext, useState } from 'react';
 const MenuBitsContext = createContext();
 
 // Componente que vai prover o estado para os componentes filhos
-export const StateProvider = ({ children }) => {
+export const MenuBitsProvider = ({ children }) => {
     const [restaurantName, setRestaurantName] = useState('');
 
     const handleRestaurantNameChange = (value) => {
