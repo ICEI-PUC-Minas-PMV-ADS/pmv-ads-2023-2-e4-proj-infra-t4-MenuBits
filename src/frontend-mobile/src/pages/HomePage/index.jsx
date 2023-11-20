@@ -4,14 +4,14 @@ import { useState, useCallback } from 'react';
 import { Container, Input, Button, TextButton } from "./styles";
 
 const Home = () => {
-  const { handleRestaurantNameChange } = useMenuBitsState();
-  const [name, setName] = useState("");
+  const { dispatchRestaurantData } = useMenuBitsState();
+  const [id, setId] = useState("");
 
 	const handleRestaurantData = useCallback(() => {
 		axios
-		.get(`${import.meta.env.VITE_API_URL}/api/restaurante/id/${name}`)
+		.get(`${import.meta.env.VITE_API_URL}/api/restaurante/${id}`)
 		.then((res) => {
-			handleRestaurantNameChange(res.data.data);
+			dispatchRestaurantData(res.data.data);
 			console.log(res.data.data);
 		})
 		.catch((err) => {
@@ -24,7 +24,7 @@ const Home = () => {
   return (
     <Container>
       <Text> Pesquise o restaurante:</Text>
-      <Input onChangeText={setName} />
+      <Input onChangeText={setId} />
       <Button onPress={handleRestaurantData}>
 		<TextButton>Pesquisar</TextButton>
 	  </Button>
