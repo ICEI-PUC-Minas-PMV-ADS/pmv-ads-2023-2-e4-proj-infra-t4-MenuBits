@@ -20,7 +20,6 @@ const Home = () => {
 			console.log(JSON.stringify(err));
 		});
 	}, []);
-s
 
   return (
     <Container>
