@@ -7,12 +7,12 @@ const MenuBitsContext = createContext();
 export const MenuBitsProvider = ({ children }) => {
     const [restaurantData, setRestaurantData] = useState('');
 
-    const dispatchRestaurantData = (value) => {
+    const handleRestaurantData = (value) => {
       setRestaurantData(value);
     };
 
   return (
-    <MenuBitsContext.Provider value={{ dispatchRestaurantData, restaurantData }}>
+    <MenuBitsContext.Provider value={{ handleRestaurantData, restaurantData }}>
       {children}
     </MenuBitsContext.Provider>
   );
