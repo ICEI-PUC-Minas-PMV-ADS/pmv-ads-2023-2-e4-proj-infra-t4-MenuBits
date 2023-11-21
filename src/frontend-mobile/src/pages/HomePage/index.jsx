@@ -12,8 +12,9 @@ const Home = () => {
 		axios
 		.get(`https://menu-bits-backend.onrender.com/api/restaurante/${id}`)
 		.then((res) => {
-			console.log(String(res.data));
-			alert('dados carregados')
+			console.warn(JSON.stringify(res.data));
+			handleRestaurantData(res.data)
+			console.warn('dados carregados')
 		})
 		.catch((err) => {
 			alert("Erro ao Carregar dados");
