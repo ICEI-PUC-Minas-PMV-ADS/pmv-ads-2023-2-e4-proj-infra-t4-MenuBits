@@ -14,8 +14,8 @@ const Home = () => {
 		axios
 		.get(`https://menu-bits-backend.onrender.com/api/restaurante/${id}`)
 		.then((res) => {
-			console.warn(JSON.stringify(res));
-			handleRestaurantData(res.data);
+			console.warn(JSON.stringify(res.data.restaurant));
+			handleRestaurantData(res.data.restaurant);
 			navigation.navigate("RestaurantPage");
 		})
 		.catch((err) => {
