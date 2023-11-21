@@ -1,7 +1,6 @@
-import {
-  Container,
-  Text,
-} from "./styles.js";
+import { Container } from "./styles.js";
+import { Text } from "react-native";
+
 // import { useMenuBitsState } from "../../context/MenuBitsContext";
 
 
@@ -10,7 +9,7 @@ const RestaurantPage = () => {
 
   return (
     <Container>
-     <Text>Entrei nessa Page</Text>
+     <Text> Entrei EM OUTRA Page </Text>
     </Container>
   );
 }

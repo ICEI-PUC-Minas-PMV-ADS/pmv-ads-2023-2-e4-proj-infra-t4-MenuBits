@@ -5,7 +5,7 @@ const MenuBitsContext = createContext();
 
 // Componente que vai prover o estado para os componentes filhos
 export const MenuBitsProvider = ({ children }) => {
-    const [restaurantData, setRestaurantData] = useState('');
+    const [restaurantData, setRestaurantData] = useState({});
 
     const handleRestaurantData = (value) => {
       setRestaurantData(value);
