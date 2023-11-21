@@ -27,7 +27,7 @@ const Home = () => {
   return (
     <Container>
       <Text> Pesquise o restaurante:</Text>
-      <Input type='number' onChangeText={setId} />
+      <Input  onChangeText={setId} />
       <Button onPress={handleSearchRestaurant}>
 		<TextButton>Pesquisar</TextButton>
 	  </Button>

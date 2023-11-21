@@ -1,11 +1,12 @@
 import styled from "styled-components";
 
 export const Container = styled.View`
+  background-color: red;
   background-size: cover;
   width: 100%;
+  height: 100%;
   display: flex;
-  flex-direction: column;
-  gap: 10px;
+  gap: 15px;
 `;
 
 export const Text = styled.Text`

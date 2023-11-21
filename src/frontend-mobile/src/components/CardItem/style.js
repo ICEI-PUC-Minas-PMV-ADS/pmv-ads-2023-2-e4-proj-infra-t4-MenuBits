@@ -48,7 +48,7 @@ export const ImageArea = styled.View`
   }
 `;
 
-export const Title = styled.h1`
+export const Title = styled.Text`
   font-weight: 700;
   color: #2e2e2e;
   font-size: 1.5rem;
@@ -69,7 +69,7 @@ export const Price = styled.Text`
   font-size: 2rem;
 `;
 
-export const Button = styled.pressable`
+export const Button = styled.Pressable`
   background-color: #c60404;
   color: white;
   padding: 10px;
