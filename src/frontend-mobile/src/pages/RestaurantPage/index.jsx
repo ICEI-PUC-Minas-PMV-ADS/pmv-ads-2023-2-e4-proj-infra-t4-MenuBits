@@ -7,7 +7,7 @@ import axios from "axios";
 import { useNavigation } from "@react-navigation/native";
 
 const RestaurantPage = () => {
-  const { restaurantData } = useMenuBitsState();
+  const { restaurantData, setMenuId } = useMenuBitsState();
   const [menuData, setMenuData] = useState([]);
 
   const restaurantId = restaurantData.id;
@@ -20,7 +20,6 @@ const RestaurantPage = () => {
           `https://menu-bits-backend.onrender.com/api/menus/restaurant/${restaurantId}`
         )
         .then((res) => {
-          console.warn(JSON.stringify(res.data.menu));
           setMenuData(res.data.menu);
 
         })
@@ -31,15 +30,16 @@ const RestaurantPage = () => {
     }
   }, [restaurantId]);
 
-   const handleMenuClick = useCallback(() => {
+   const handleMenuClick = useCallback((menuId) => {
     navigation.navigate("MenuPage");
+    setMenuId(menuId);
 
    },[]);
 
   return (
     <Container>
      { menuData.map((item) => (
-      <CardItem title={item.title} handleMenuClick={()=>[]} />
+      <CardItem title={item.title} handleMenuClick={()=> handleMenuClick(item.id)} />
       ))}
     </Container>
   );
