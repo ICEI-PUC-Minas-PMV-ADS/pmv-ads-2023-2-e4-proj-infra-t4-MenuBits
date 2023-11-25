@@ -1,9 +1,8 @@
 import React from "react"
-import { Text } from 'react-native'
 
 import {
-    AiFillCloseCircle
-} from "react-icons/ai"
+    Image
+} from "react-native"
 import { Button } from "../Buttons";
 
 import { 
@@ -12,23 +11,27 @@ import {
     ImageArea,
     Title,
     Description,
-    Price
+    Price,
+    Text
 } from "./style"
 
 const ItemCard = ({name, description, price, imageUrl, editionMode = false, closeButtonDisplay}) => (
     <Container>
-        {/* {
-            editionMode ? <>
-                {closeButtonDisplay ? <AiFillCloseCircle color="#C60404"/> : <></>}
-            </> : <></>
-        }  */}
 
         <Content>
             <ImageArea>
 
                 {
-                    imageUrl ? <img src={imageUrl} alt="imagem do alimento" /> :
-                    <img src={"https://th.bing.com/th/id/R.bcdd3f573efd44e6ab54866c4e89ba58?rik=LxjwIFXLGsKshw&pid=ImgRaw&r=0"} alt="imagem do alimento" />
+                    imageUrl ? 
+                    <Image 
+                        source={{uri: imageUrl}} 
+                        style={{width: 260, height: 200, alignSelf: "center"}} 
+                    />
+                    :
+                    <Image 
+                        source={{uri: "https://th.bing.com/th/id/R.bcdd3f573efd44e6ab54866c4e89ba58?rik=LxjwIFXLGsKshw&pid=ImgRaw&r=0"}} 
+                        style={{width: 260, height: 200, alignSelf: "center"}} 
+                    />
                 }
 
                 

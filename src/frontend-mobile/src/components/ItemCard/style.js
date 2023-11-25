@@ -3,24 +3,13 @@ import styled from "styled-components/native"
 export const Container = styled.View`
     display: flex;
     flex-direction: column;
-    width: 21%;
-    height: 30rem;
+    width: 100%;
+    margin-top: 20px;
+    height: 500px;
     background-color: #FFECCC;
     border-radius: 25px;
-    padding-bottom: 1rem;
-    padding-top: 1rem;
-
-    > svg {
-        justify-self: end;
-        font-size: 7.5rem;
-        position: absolute;    
-        padding-bottom: 4.5rem;
-        padding-right: 3rem;
-
-        :hover {
-            cursor: pointer;
-        }
-    }
+    padding-bottom: 15px;
+    padding-top: 15px;
 
 `;
 
@@ -33,50 +22,42 @@ export const Content = styled.View`
     flex-direction: column;
     justify-content: space-between;
     text-align: center;
-
-    > button {
-        width: 80%;
-    }
 `;
 
 export const ImageArea = styled.View`
     width: 100%;
-    height: 35%;
+    height: 45%;
     background-color: #FFFBF2;
     border-radius: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-
-    > svg {
-        font-size: 8rem;
-        align-self: center;
-    }
-
-    > img {
-        width: 100%;
-        height: 100%;
-        border-radius: 20px;
-    }
 `;
 
 export const Title = styled.Text`
-    font-weight: 700;
+    font-family: Sora_700Bold;
     color: #2E2E2E;
-    font-size: 1.5rem;
+    font-size: 22px;
 `
 
 export const Description = styled.Text`
-    font-weight: 400;
-    font-size: 1rem;
+    font-family: Sora_400Regular;
+    font-size: 20px;
     color: #616161;
-    padding-bottom: 2rem;
+    padding-bottom: 10px;
+    text-align: center;
     height: 25%;
     overflow: hidden;
 `
 
 export const Price = styled.Text`
-    font-weight: 600;
+    font-size: Sora_600SemiBold;
     color: #2E2E2E;
-    font-size: 2.0rem;
+    font-size: 20px;
+`
+
+export const Text = styled.Text`
+    font-size: Sora_600SemiBold;
+    color: #2E2E2E;
+    font-size: 18px;
 `

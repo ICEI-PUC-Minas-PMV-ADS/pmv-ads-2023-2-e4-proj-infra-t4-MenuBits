@@ -28,9 +28,11 @@ export default function AddItemCard({ menuSelectedId, runAtualizator }) {
 
     useEffect(() => {
         axios
-            .get(`http://localhost:8080/api/items/restaurant/12`)
+            .get(`https://menu-bits-backend.onrender.com/api/items/restaurant/12`)
             .then((response) => {
                 setItems(response.data.data);
+            }).catch((e) => {
+                console.log(e)
             });
 
     }, [])
