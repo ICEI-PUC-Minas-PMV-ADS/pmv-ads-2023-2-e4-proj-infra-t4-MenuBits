@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import * as SplashScreen from "expo-splash-screen";
+import { MenuBitsProvider } from "./src/context/MenuBitsContext";
 import AppLoading from "expo-app-loading";
 import { Routes } from "./src/routes";
 
