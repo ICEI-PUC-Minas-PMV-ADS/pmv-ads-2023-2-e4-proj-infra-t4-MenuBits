@@ -6,11 +6,6 @@ export const Container = styled.Pressable`
     border-radius: 10px;
     padding-right: 10px;
     color: white;
-
-    :hover {
-        color: #ffc700;
-        transition: 0.35s;
-    }
     flex-direction: row;
     padding: 20px;
 

@@ -9,13 +9,6 @@ export const Container = styled.View`
   border-radius: 25px;
   padding-bottom: 1rem;
   padding-top: 1rem;
-
-  > svg {
-    justify-self: end;
-    font-size: 3.5rem;
-    position: absolute;
-    padding-bottom: 1.5rem;
-  }
 `;
 
 export const Content = styled.View`
@@ -27,10 +20,6 @@ export const Content = styled.View`
   flex-direction: column;
   justify-content: space-between;
   text-align: center;
-
-  > button {
-    width: 80%;
-  }
 `;
 
 export const ImageArea = styled.View`

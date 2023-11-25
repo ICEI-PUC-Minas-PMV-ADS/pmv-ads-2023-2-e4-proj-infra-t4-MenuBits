@@ -3,8 +3,8 @@ import { useEffect, useState } from 'react'
 import BigAddButton from '../../components/BigAddButton/index.jsx'
 import ItemCard from "../../components/ItemCard/index.jsx"
 import AddItemCard from '../../components/AddItemCard/index.jsx'
-import { Pressable, Text, View } from 'react-native'
-import {Picker} from '@react-native-picker/picker';
+import { Pressable, Text, ScrollView } from 'react-native'
+import { Picker } from '@react-native-picker/picker';
 import CheckBox from 'expo-checkbox';
 
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons.js'
@@ -71,7 +71,7 @@ const MenuEditor = () => {
 
     useEffect(() => {
         axios
-            .get(`http://localhost:8080/api/menus/restaurant/12`)
+            .get(`https://menu-bits-backend.onrender.com/api/menus/restaurant/12`)
             .then((response) => {
                 setMenus(response.data.menu);
             }).catch((e) => {
@@ -82,44 +82,41 @@ const MenuEditor = () => {
 
     useEffect(() => {
         axios
-            .get(`http://localhost:8080/api/menus/restaurant/12`)
-            .then((response) => {
-                setMenus(response.data.menu);
-            });
-
-    }, [])
-
-    useEffect(() => {
-        axios
-            .get(`http://localhost:8080/api/groups`)
+            .get(`https://menu-bits-backend.onrender.com/api/groups`)
             .then((response) => {
                 setGroups(response.data.data);
+            }).catch((e) => {
+                console.log(e)
             });
 
     }, [])
 
     useEffect(() => {
         axios
-            .get(`http://localhost:8080/api/items/menus/${selectedOption}`)
+            .get(`https://menu-bits-backend.onrender.com/api/items/menus/${selectedOption}`)
             .then((response) => {
                 setItems(response.data.data);
+            }).catch((e) => {
+                console.log(e)
             });
 
     }, [selectedOption, atualizator])
 
     const handleSelectChange = (event) => {
-        setSelectedOption(event.target.value);
+        setSelectedOption(event);
     };
 
     const handleSelectChangeGroup = (event) => {
-        setGroupSelected(event.target.value);
+        setGroupSelected(event);
     };
 
     useEffect(() => {
         axios
-            .get(`http://localhost:8080/api/menus`)
+            .get(`https://menu-bits-backend.onrender.com/api/menus`)
             .then((response) => {
                 setItems(response.data.data);
+            }).catch((e) => {
+                console.log(e)
             });
 
     }, [selectedOption, atualizator])
@@ -140,7 +137,7 @@ const MenuEditor = () => {
                             <ButtonArea>
                                 <MinorPressable onPress={
                                     () => {
-                                        axios.post(`http://localhost:8080/api/menus`, {
+                                        axios.post(`https://menu-bits-backend.onrender.com/api/menus`, {
                                             title: menuTitle,
                                             restaurantId: 12
                                         }, config)
@@ -166,63 +163,63 @@ const MenuEditor = () => {
                     <ModalMenu>
                         <ModalItemContent>
                             <ModalMainContent>
-                                    <ModalVerticalLine>
-                                        <TextInput>Nome do item:</TextInput>
-                                        <Input
-                                            placeholder="Nome"
-                                            type="text"
-                                            id="name"
-                                            value={nameItem}
-                                            onChange={(event) => setNameItem(event.target.value)} />
-                                    </ModalVerticalLine>
+                                <ModalVerticalLine>
+                                    <TextInput>Nome do item:</TextInput>
+                                    <Input
+                                        placeholder="Nome"
+                                        type="text"
+                                        id="name"
+                                        value={nameItem}
+                                        onChange={(event) => setNameItem(event.target.value)} />
+                                </ModalVerticalLine>
 
-                                    <ModalVerticalLine>
-                                        <TextInput>Preço unitário:</TextInput>
-                                        <Input
-                                            placeholder="Preço: R$ 00,00"
-                                            type="number"
-                                            id="price"
-                                            value={priceItem}
-                                            onChange={(event) => setPriceItem(event.target.value)} />
-                                    </ModalVerticalLine>
+                                <ModalVerticalLine>
+                                    <TextInput>Preço unitário:</TextInput>
+                                    <Input
+                                        placeholder="Preço: R$ 00,00"
+                                        type="number"
+                                        id="price"
+                                        value={priceItem}
+                                        onChange={(event) => setPriceItem(event.target.value)} />
+                                </ModalVerticalLine>
 
-                                    <ModalVerticalLine>
-                                        <TextInput>URL da imagem do item:</TextInput>
-                                        <Input
-                                            placeholder="https://image.png"
-                                            type="url"
-                                            id="url"
-                                            value={urlItem}
-                                            onChange={(event) => setUrlItem(event.target.value)} />
-                                    </ModalVerticalLine>
-                                    
-                                    <ModalVerticalLine>
-                                        <TextInput>Grupo do item:</TextInput>
-                                        <Form>
-                                            <Picker
-                                                selectedValue={selectedGroup}
-                                                onValueChange={handleSelectChangeGroup}
-                                            >
-                                                <Picker.Item key={0} label={"Selecione"} value={0} />
-                                                {
-                                                    groups.map(e => (
-                                                        <Picker.Item key={e.id} label={e.name} value={e.id} />
-                                                    ))
-                                                }
+                                <ModalVerticalLine>
+                                    <TextInput>URL da imagem do item:</TextInput>
+                                    <Input
+                                        placeholder="https://image.png"
+                                        type="url"
+                                        id="url"
+                                        value={urlItem}
+                                        onChange={(event) => setUrlItem(event.target.value)} />
+                                </ModalVerticalLine>
 
-                                            </Picker>
-                                        </Form>
-                                    </ModalVerticalLine>
+                                <ModalVerticalLine>
+                                    <TextInput>Grupo do item:</TextInput>
+                                    <Form>
+                                        <Picker
+                                            selectedValue={selectedGroup}
+                                            onValueChange={handleSelectChangeGroup}
+                                        >
+                                            <Picker.Item key={0} label={"Selecione"} value={0} />
+                                            {
+                                                groups.map(e => (
+                                                    <Picker.Item key={e.id} label={e.name} value={e.id} />
+                                                ))
+                                            }
 
-                                    <ModalVerticalLine>
-                                        <TextInput>Prato do dia:</TextInput>
+                                        </Picker>
+                                    </Form>
+                                </ModalVerticalLine>
+
+                                <ModalVerticalLine>
+                                    <TextInput>Prato do dia:</TextInput>
                                     <CheckBox
                                         color={'#C75B00'}
                                         value={mealOfDayItem}
-                                        style={{alignSelf: 'center'}}
+                                        style={{ alignSelf: 'center' }}
                                         onValueChange={() => setMealOfDayItem(!mealOfDayItem)}
                                     />
-                                    </ModalVerticalLine>
+                                </ModalVerticalLine>
 
                                 <ModalVerticalLine>
                                     <TextInput>Descrição:</TextInput>
@@ -237,7 +234,7 @@ const MenuEditor = () => {
                             <ButtonArea>
                                 <MinorPressable onPress={
                                     () => {
-                                        axios.post(`http://localhost:8080/api/items/`, {
+                                        axios.post(`https://menu-bits-backend.onrender.com/api/items/`, {
                                             name: nameItem,
                                             price: parseFloat(priceItem),
                                             imageUrl: urlItem,
@@ -263,72 +260,75 @@ const MenuEditor = () => {
                     </ModalMenu>
                     : <></>
             }
-            <Header>
-                <InputArea>
-                    <InputSelectionArea>
-                        <InputTitle>
-                            <Icon
-                                name='cursor-default-click'
-                                color="#930000"
-                            />
-                            <TextTitle>Selecione um cardápio</TextTitle>
-                        </InputTitle>
-                        <Form>
-                            <Picker
-                                selectedValue={selectedOption}
-                                onValueChange={handleSelectChange}
-                            >
-                                <Picker.Item key={0} label={"Selecione"} value={0} />
-                                {
-                                    menus.map(e => (
-                                        <Picker.Item key={e.id} label={e.title} value={e.id} />
-                                    ))
-                                }
+            <ScrollView>
+                <Header>
+                    <InputArea>
+                        <InputSelectionArea>
+                            <InputTitle>
+                                <Icon
+                                    name='cursor-default-click'
+                                    color="#930000"
+                                />
+                                <TextTitle>Selecione um cardápio</TextTitle>
+                            </InputTitle>
+                            <Form>
+                                <Picker
+                                    selectedValue={selectedOption}
+                                    onValueChange={handleSelectChange}
+                                >
+                                    <Picker.Item key={0} label={"Selecione"} value={0} />
+                                    {   
+                                        menus.map(e => (
+                                            <Picker.Item key={e.id} label={e.title} value={e.id} />
+                                        ))
+                                    }
 
-                            </Picker>
-                        </Form>
-                    </InputSelectionArea>
-                    <MinorPressable>
-                        <TextDefault>Visualizar cardápio como o cliente</TextDefault>
-                    </MinorPressable>
-                </InputArea>
-                <AddButtonsArea>
-                    <BigAddButton
-                        text="Adicionar um novo item"
-                        background="#C75B00"
-                        whenClick={setModalItemDisplay}
-                    />
-                    <BigAddButton
-                        text="Adicionar um novo cardápio"
-                        background="#930000"
-                        whenClick={setModalMenuDisplay}
-
-                    />
-                </AddButtonsArea>
-            </Header>
-
-            <ItemsArea>
-
-                <AddItemCard
-                    menuSelectedId={selectedOption}
-                    runAtualizator={() => { setAtualizator(!atualizator) }}
-                />
-
-                {
-                    items.map(e => (
-                        <ItemCard
-                            key={e.id}
-                            closeButtonDisplay={!modalItemDisplay}
-                            editionMode={true}
-                            name={e.name}
-                            description={e.description}
-                            price={e.price}
-                            imageUrl={e.imageUrl}
+                                </Picker>
+                            </Form>
+                        </InputSelectionArea>
+                        <MinorPressable>
+                            <TextDefault>Visualizar cardápio como o cliente</TextDefault>
+                        </MinorPressable>
+                    </InputArea>
+                    <AddButtonsArea>
+                        <BigAddButton
+                            text="Adicionar um novo item"
+                            background="#C75B00"
+                            whenClick={setModalItemDisplay}
                         />
-                    ))
-                }
-            </ItemsArea>
+                        <BigAddButton
+                            text="Adicionar um novo cardápio"
+                            background="#930000"
+                            whenClick={setModalMenuDisplay}
+
+                        />
+                    </AddButtonsArea>
+                </Header>
+
+                <ItemsArea>
+
+                    <AddItemCard
+                        menuSelectedId={selectedOption}
+                        runAtualizator={() => { setAtualizator(!atualizator) }}
+                    />
+
+                    {
+                        items.map(e => (
+                            <ItemCard
+                                key={e.id}
+                                closeButtonDisplay={!modalItemDisplay}
+                                editionMode={true}
+                                name={e.name}
+                                description={e.description}
+                                price={e.price}
+                                imageUrl={e.imageUrl}
+                            />
+                        ))
+                    }
+                </ItemsArea>
+            </ScrollView>
         </Content>
+
     )
 };
 
