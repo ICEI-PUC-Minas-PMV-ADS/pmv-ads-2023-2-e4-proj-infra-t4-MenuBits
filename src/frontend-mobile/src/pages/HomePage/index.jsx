@@ -1,10 +1,37 @@
 import { Text } from "react-native";
-import { Container } from "./styles";
+import { useMenuBitsState } from "../../context/MenuBitsContext";
+import { useState, useCallback } from 'react';
+import { useNavigation } from "@react-navigation/native";
+import { Container, Input, Button, TextButton } from "./styles";
+import axios from "axios";
 
 const Home = () => {
+  const { handleRestaurantData } = useMenuBitsState();
+  const [id, setId] = useState();
+  const navigation = useNavigation();
+
+  const handleSearchRestaurant = useCallback(() => {
+		axios
+		.get(`https://menu-bits-backend.onrender.com/api/restaurante/${id}`)
+		.then((res) => {
+			console.warn(JSON.stringify(res.data.restaurant));
+			handleRestaurantData(res.data.restaurant);
+			navigation.navigate("RestaurantPage");
+		})
+		.catch((err) => {
+			alert("Erro ao Carregar dados");
+			console.log(JSON.stringify(err));
+		});
+	}, [id]);
+
   return (
     <Container>
-      <Text> TA RODANDO HEIN!</Text>
+      <Text> Pesquise o restaurante:</Text>
+      <Input  onChangeText={setId} />
+      <Button onPress={handleSearchRestaurant}>
+		<TextButton>Pesquisar</TextButton>
+	  </Button>
+
     </Container>
   );
 };
