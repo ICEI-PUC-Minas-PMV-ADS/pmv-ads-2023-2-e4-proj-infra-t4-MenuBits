@@ -19,12 +19,11 @@ export const Container = styled.View`
 `;
 
 export const Content = styled.View`
-  width: 90%;
+  width: 70%;
   height: 100%;
   align-items: center;
   align-self: center;
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
   text-align: center;
 
@@ -43,7 +42,6 @@ export const ImageArea = styled.View`
   justify-content: center;
 
   > svg {
-    font-size: 8rem;
     align-self: center;
   }
 `;
@@ -51,14 +49,14 @@ export const ImageArea = styled.View`
 export const Title = styled.Text`
   font-weight: 700;
   color: #2e2e2e;
-  font-size: 1.5rem;
+  font-size: 12px;
 `;
 
 export const Description = styled.Text`
   font-weight: 400;
-  font-size: 1rem;
+  font-size: 12px;
   color: #616161;
-  padding-bottom: 2rem;
+  padding-bottom: 5px;
   height: 25%;
   overflow: hidden;
 `;
@@ -66,7 +64,7 @@ export const Description = styled.Text`
 export const Price = styled.Text`
   font-weight: 600;
   color: #2e2e2e;
-  font-size: 2rem;
+  font-size: 12px;
 `;
 
 export const Button = styled.Pressable`

@@ -39,7 +39,7 @@ const RestaurantPage = () => {
   return (
     <Container>
      { menuData.map((item) => (
-      <CardItem title={item.title} handleMenuClick={()=> handleMenuClick(item.id)} />
+      <CardItem key={item.id} title={item.title} handleMenuClick={()=> handleMenuClick(item.id)} />
       ))}
     </Container>
   );
