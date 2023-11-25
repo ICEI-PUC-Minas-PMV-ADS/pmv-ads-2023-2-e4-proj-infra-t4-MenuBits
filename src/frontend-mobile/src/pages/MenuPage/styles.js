@@ -73,10 +73,6 @@ export const ImageContent = styled.View`
 
 export const ContainerCard = styled.Text`
   font-weight: 700;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin: 5px;
 `;
 export const RestaurantText = styled.Text`
   font-weight: 700;

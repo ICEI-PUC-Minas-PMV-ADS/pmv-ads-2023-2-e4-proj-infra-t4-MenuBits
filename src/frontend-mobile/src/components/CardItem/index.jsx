@@ -24,7 +24,7 @@ const CardItem = ({
           <Image
             source={image}
             style={{ width: 200, height: 200 }} // Estilos opcionais para a imagem
-            resizeMode="contain" // Modo de redimensionamento da imagem (opcional)
+            resizeMode="cover" // Modo de redimensionamento da imagem (opcional)
           />
         </ImageArea>
 
