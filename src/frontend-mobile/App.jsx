@@ -6,23 +6,27 @@ import { Routes } from "./src/routes";
 import useFonts from "./src/hooks/useFonts";
 
 const App = () => {
-	const [IsReady, SetIsReady] = useState(false);
+  const [IsReady, SetIsReady] = useState(false);
 
-	const LoadFontsAndRestoreToken = async () => {
-		await useFonts();
-	};
+  const LoadFontsAndRestoreToken = async () => {
+    await useFonts();
+  };
 
-	if (!IsReady) {
-		return (
-			<AppLoading
-				startAsync={LoadFontsAndRestoreToken}
-				onFinish={() => SetIsReady(true)}
-				onError={() => {}}
-			/>
-		);
-	}
+  if (!IsReady) {
+    return (
+      <AppLoading
+        startAsync={LoadFontsAndRestoreToken}
+        onFinish={() => SetIsReady(true)}
+        onError={() => {}}
+      />
+    );
+  }
 
-	return <Routes />;
+  return (
+    <MenuBitsProvider>
+      <Routes />
+    </MenuBitsProvider>
+  );
 };
 
 export default App;

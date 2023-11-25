@@ -11,7 +11,6 @@ import {
   RestaurantButton,
   Button,
   ContainerCard,
-  ImageContent,
 } from "./styles.js";
 import CardItem from "../../components/CardItem";
 import { useMenuBitsState } from "../../context/MenuBitsContext";
@@ -19,33 +18,7 @@ import { useMenuBitsState } from "../../context/MenuBitsContext";
 export default function MenuPage() {
   const [menuData, setMenuData] = useState();
   const { menuId,restaurantData } = useMenuBitsState();
-  // const [selectedOrder, setSelectedOrder] = useState([]);
 
-//   const handleClick = useCallback((item)=> {
-//     console.log("PASSOU AQUI", selectedOrder)
-//     const selectedOrderUpdated = [...selectedOrder, item]
-//     console.log("PASSOU AQUI 2", selectedOrder)
-//     setSelectedOrder(selectedOrderUpdated )
-//     localStorage.setItem('pedidos', JSON.stringify(selectedOrderUpdated) )
-//     alert('Adicionado Com sucesso!')
-//  }, [selectedOrder])
-
-//  useEffect(()=>{
-//   setSelectedOrder(JSON.parse(localStorage.getItem('pedidos')) || []) 
-//  },[])
-
-  // useEffect(() => {
-  //   axios
-  //     .get(`${import.meta.env.VITE_API_URL}/api/restaurante/12`)
-  //     .then((res) => {
-  //       setRestaurantData(res.data);
-  //     })
-  //     .catch((err) => {
-  //       alert("Erro ao Carregar dados");
-
-  //       console.log(JSON.stringify(err));
-  //     });
-  // }, []);
   const navigation = useNavigation();
 
   useEffect(() => {
