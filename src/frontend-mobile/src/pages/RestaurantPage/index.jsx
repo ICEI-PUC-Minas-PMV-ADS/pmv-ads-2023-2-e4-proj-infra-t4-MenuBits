@@ -2,14 +2,16 @@ import { Container } from "./styles.js";
 import { Text } from "react-native";
 import CardItem from "../../components/CardMenu";
 import { useMenuBitsState } from "../../context/MenuBitsContext";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import axios from "axios";
+import { useNavigation } from "@react-navigation/native";
 
 const RestaurantPage = () => {
-  const { restaurantData } = useMenuBitsState();
+  const { restaurantData, setMenuId } = useMenuBitsState();
   const [menuData, setMenuData] = useState([]);
 
   const restaurantId = restaurantData.id;
+  const navigation = useNavigation();
 
   useEffect(() => {
     if (restaurantData) {
@@ -18,8 +20,8 @@ const RestaurantPage = () => {
           `https://menu-bits-backend.onrender.com/api/menus/restaurant/${restaurantId}`
         )
         .then((res) => {
-          console.warn(JSON.stringify(res.data.menu));
           setMenuData(res.data.menu);
+
         })
         .catch((err) => {
           console.warn("Erro ao Carregar menus");
@@ -28,10 +30,16 @@ const RestaurantPage = () => {
     }
   }, [restaurantId]);
 
+   const handleMenuClick = useCallback((menuId) => {
+    navigation.navigate("MenuPage");
+    setMenuId(menuId);
+
+   },[]);
+
   return (
     <Container>
      { menuData.map((item) => (
-      <CardItem title={item.title} handleMenuClick={()=>[]} />
+      <CardItem title={item.title} handleMenuClick={()=> handleMenuClick(item.id)} />
       ))}
     </Container>
   );
