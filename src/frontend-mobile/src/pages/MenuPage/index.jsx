@@ -2,20 +2,21 @@ import axios from "axios";
 import { useCallback, useEffect, useState } from "react";
 import { useNavigation } from "@react-navigation/native";
 import Cart from "../../assets/cart.png";
+import backgroundMenu from "../../assets/logo2.png";
+
 import {
-  Banner,
   Container,
   Text,
   Title,
-  TextBanner,
-  RestaurantButton,
-  Button,
-  ContainerCard,
+  Background,
+  OrderContainer,
+  OrderText,
 } from "./styles.js";
 import CardItem from "../../components/CardItem";
-import { useMenuBitsState } from "../../context/MenuBitsContext";
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import { Image } from "react-native";
 
+import { useMenuBitsState } from "../../context/MenuBitsContext";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export default function MenuPage() {
   const [menuData, setMenuData] = useState();
@@ -24,22 +25,27 @@ export default function MenuPage() {
 
   const navigation = useNavigation();
 
- const handleClick = useCallback(async (item) => {
-  try {
-    console.warn("PASSOU AQUI", selectedOrder);
-    const selectedOrderUpdated = [...selectedOrder, item];
-    console.warn("PASSOU AQUI 2", selectedOrderUpdated);
-    setSelectedOrder(selectedOrderUpdated);
-    
-    await AsyncStorage.setItem('pedidos', JSON.stringify(selectedOrderUpdated));
-    
-    alert('Adicionado Com sucesso!');
-  } catch (error) {
-    console.error('Erro ao adicionar o pedido:', error);
-    console.warn('Pedido não adicionado, tente novamente')
-  }
-}, [selectedOrder]);
+  const handleClick = useCallback(
+    async (item) => {
+      try {
+        console.warn("PASSOU AQUI", selectedOrder);
+        const selectedOrderUpdated = [...selectedOrder, item];
+        console.warn("PASSOU AQUI 2", selectedOrderUpdated);
+        setSelectedOrder(selectedOrderUpdated);
 
+        await AsyncStorage.setItem(
+          "pedidos",
+          JSON.stringify(selectedOrderUpdated)
+        );
+
+        alert("Adicionado Com sucesso!");
+      } catch (error) {
+        console.error("Erro ao adicionar o pedido:", error);
+        console.warn("Pedido não adicionado, tente novamente");
+      }
+    },
+    [selectedOrder]
+  );
 
   useEffect(() => {
     axios
@@ -55,15 +61,20 @@ export default function MenuPage() {
       });
   }, []);
 
-  const handleClickRestaurant = useCallback(() => {
-    navigation.navigate("RestaurantPage");
-    }, []);
+  const handleClickCart = useCallback(() => {
+    navigation.navigate("CartPage");
+  }, []);
 
   return (
-    <Container>
-      <Title>
-        <Text>Cardapio</Text>
-      </Title>
+    <Background source={backgroundMenu} resizeMode="cover">
+      <Container>
+        <OrderContainer onPress={handleClickCart}>
+          <Image source={Cart} style={{ height: 30, width: 30 }} />
+          <OrderText>Pedidos</OrderText>
+        </OrderContainer>
+        <Title>
+          <Text>Cardapio</Text>
+        </Title>
         {menuData &&
           menuData.map((item) => {
             return (
@@ -77,7 +88,7 @@ export default function MenuPage() {
               />
             );
           })}
-     
-    </Container>
+      </Container>
+    </Background>
   );
 }

@@ -1,8 +1,7 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import {
     Container,
-    BackgroundImage,
-    Title,
+    OrderContent,
     OrdersContainer,
     Header,
     HeaderText,
@@ -14,20 +13,22 @@ import {
     TotalContainer,
     TotalText,
     BackToMenuButton,
+    BackgroundImage,
     BackToMenuText,
+    Item,
   } from './styles';
-import backgroundImage from "../../assets/pizzaNostra.png";
+import backgroundImage from "../../assets/logo2.png";
 import remove from "../../assets/remove.png";
 import axios from "axios";
-import { View, Text, Image, TouchableOpacity } from 'react-native';
+import { Image, Pressable } from 'react-native';
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useMenuBitsState } from "../../context/MenuBitsContext";
+import { useNavigation } from "@react-navigation/native";
 
-export default function MeusPedidos() {
+export default function CartPage() {
   const [order, setOrder] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
-  const [restaurante, setRestaurantData] = useState();
-  const { restaurantData } = useMenuBitsState();
+  const navigation = useNavigation();
 
   useEffect(() => {
     const fetchOrder = async () => {
@@ -46,74 +47,69 @@ export default function MeusPedidos() {
 
     fetchOrder();
   }, []);
-  const id = restaurantData.id;
 
-  useEffect(() => {
-    axios
-      .get(`${import.meta.env.VITE_API_URL}/api/restaurante/${id}`)
-      .then((res) => {
-        setRestaurantData(res.data);
-      })
-      .catch((err) => {
-        alert("Erro ao Carregar dados");
-        console.log(JSON.stringify(err));
-      });
-  }, []);
+  const handleRemove = (index) => {
+    // console.warn("id:", id);
+    console.warn("order "+JSON.stringify(order.map(x=>x.id)));
 
-  const handleRemove = (id) => {
     const copyOrder = [...order];
-    const pizzaIndex = copyOrder.findIndex((item) => item.id === id);
-    copyOrder.splice(pizzaIndex, 1);
+    console.warn("copyOrder "+JSON.stringify(copyOrder.map(x=>x.id)));
+    // const pizzaIndex = copyOrder.findIndex((item) => item.id === id);
+    // console.warn("pizzaIndex: "+pizzaIndex)
+    copyOrder.splice(index, 1);
+    console.warn("copyOrder apos "+JSON.stringify(copyOrder.map(x=>x.id)));
+
     setOrder(copyOrder);
 
     // Recalcula o total da compra após a remoção do item
     const total = copyOrder.reduce((acc, item) => acc + item.price, 0);
     setTotalPrice(total);
   };
+  const navigateToMenuPage = useCallback(() => {
+    navigation.navigate("MenuPage");
+  }, []);
 
   return (
-    <Container source={backgroundImage} resizeMode="cover">
+    <BackgroundImage source={backgroundImage} resizeMode="cover">
       <Container>
-        <BackgroundImage source={{ uri: backgroundImage }}>
-          <Title>Nostra Pizza</Title>
-        </BackgroundImage>
         <OrdersContainer>
           <Header>
             <HeaderText>Meus Pedidos</HeaderText>
           </Header>
-          {order.length === 0 ? (
+          {order.length <= 0 ? (
             <EmptyCartText>CARRINHO VAZIO</EmptyCartText>
-          ) : (
-            <View style={{ backgroundColor: "#ffcc00" }}>
-              {/* Cor de fundo */}
-              {order.map((item) => (
-                <CartItem key={item.id}>
-                  <View style={{ flexDirection: "row", alignItems: "center" }}>
-                    <TouchableOpacity onPress={() => handleRemove(item.id)}>
+           ) : (
+            <OrderContent>
+              {order.map((item, index) => (
+                <CartItem key={index}>
+                  <Item>
+                    <Pressable onPress={() => handleRemove(index)}>
                       <Image
                         source={remove}
-                        style={{ width: 30, height: 30 }}
+                        style={{ width: 20, height: 20 }}
                       />
-                    </TouchableOpacity>
-                    <ItemImage source={{ uri: item.img }} />
+                      <HeaderText>Remover</HeaderText>
+                    </Pressable>
+                    <ItemImage source={{ uri: item.img }}                         style={{ width: 50, height: 20 }}
+ />
                     <ItemName>{item.name}</ItemName>
-                  </View>
-                  <ItemPrice>R$ {item.price}</ItemPrice>
+                  </Item>
+                  <ItemPrice>R${item.price}</ItemPrice>
                 </CartItem>
               ))}
-            </View>
-          )}
-          {order.length > 0 && (
+            </OrderContent>
+          )} 
+          {order && order.length > 0 && (
             <TotalContainer>
               <TotalText>TOTAL</TotalText>
               <TotalText>R$ {totalPrice}</TotalText>
             </TotalContainer>
           )}
           <BackToMenuButton onPress={navigateToMenuPage}>
-            <BackToMenuText>VOLTAR AO CARDÁPIO</BackToMenuText>
+            <BackToMenuText>Voltar ao Cardápio</BackToMenuText>
           </BackToMenuButton>
         </OrdersContainer>
       </Container>
-    </Container>
+    </BackgroundImage>
   );
 }

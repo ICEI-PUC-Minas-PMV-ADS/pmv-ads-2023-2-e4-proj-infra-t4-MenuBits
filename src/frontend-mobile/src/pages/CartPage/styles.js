@@ -1,3 +1,5 @@
+import styled from "styled-components";
+
 export const Container = styled.ScrollView`
   width: 100%;
   display: flex;
@@ -6,9 +8,8 @@ export const Container = styled.ScrollView`
 `;
 
 export const BackgroundImage = styled.ImageBackground`
-  flex: 1;
-  justify-content: center;
-  align-items: center;
+  width: 100%;
+  height: 100%;
 `;
 
 export const Title = styled.Text`
@@ -17,24 +18,40 @@ export const Title = styled.Text`
   font-weight: bold;
 `;
 
+export const Item = styled.View`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+`;
+
 export const OrdersContainer = styled.View`
   padding: 10px;
 `;
-
+export const OrderContent = styled.View`
+  background-color: #f39d54;
+`;
 export const Header = styled.View`
-  padding: 10px;
-  border-bottom-width: 1px;
-  border-bottom-color: #888888;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 10px;
+  padding: 20px;
 `;
 
 export const HeaderText = styled.Text`
   font-size: 24px;
+  padding: 5px;
+  justify-content: center;
+  flex: 1;
+  text-align: center;
   font-weight: bold;
 `;
 
 export const EmptyCartText = styled.Text`
   font-size: 20px;
-  margin-top: 10px;
+  margin: 20px;
+  text-align: center;
 `;
 
 export const CartItem = styled.View`
@@ -61,7 +78,7 @@ export const ItemPrice = styled.Text`
 
 export const TotalContainer = styled.View`
   padding: 10px;
-  background-color: #ff0000; /* Cor de fundo */
+  background-color: #c60404; /* Cor de fundo */
   flex-direction: row;
   justify-content: space-between;
 `;
@@ -74,9 +91,9 @@ export const TotalText = styled.Text`
 
 export const BackToMenuButton = styled.TouchableOpacity`
   border-radius: 10px;
-  background-color: #ff0000; /* Cor de fundo */
+  background-color: #c60404; /* Cor de fundo */
   padding: 10px;
-  margin-top: 20px;
+  margin: 20px 40px;
 `;
 
 export const BackToMenuText = styled.Text`
