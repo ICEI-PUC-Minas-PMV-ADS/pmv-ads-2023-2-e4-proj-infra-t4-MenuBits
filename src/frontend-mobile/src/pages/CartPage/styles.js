@@ -28,7 +28,8 @@ export const OrdersContainer = styled.View`
   padding: 10px;
 `;
 export const OrderContent = styled.View`
-  background-color: #f39d54;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.7);
 `;
 export const Header = styled.View`
   margin-top: 40px;
@@ -70,6 +71,7 @@ export const ItemImage = styled.Image`
 
 export const ItemName = styled.Text`
   font-size: 18px;
+  margin-left: 10px;
 `;
 
 export const ItemPrice = styled.Text`
@@ -81,6 +83,8 @@ export const TotalContainer = styled.View`
   background-color: #c60404; /* Cor de fundo */
   flex-direction: row;
   justify-content: space-between;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 `;
 
 export const TotalText = styled.Text`

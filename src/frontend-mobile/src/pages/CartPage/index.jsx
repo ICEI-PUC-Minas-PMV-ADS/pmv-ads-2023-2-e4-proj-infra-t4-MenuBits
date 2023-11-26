@@ -48,19 +48,14 @@ export default function CartPage() {
     fetchOrder();
   }, []);
 
-  const handleRemove = (index) => {
-    // console.warn("id:", id);
-    console.warn("order "+JSON.stringify(order.map(x=>x.id)));
-
+  const handleRemove = async(index) => {
     const copyOrder = [...order];
-    console.warn("copyOrder "+JSON.stringify(copyOrder.map(x=>x.id)));
-    // const pizzaIndex = copyOrder.findIndex((item) => item.id === id);
-    // console.warn("pizzaIndex: "+pizzaIndex)
     copyOrder.splice(index, 1);
-    console.warn("copyOrder apos "+JSON.stringify(copyOrder.map(x=>x.id)));
-
     setOrder(copyOrder);
-
+    await AsyncStorage.setItem(
+        "pedidos",
+        JSON.stringify(copyOrder)
+      );
     // Recalcula o total da compra após a remoção do item
     const total = copyOrder.reduce((acc, item) => acc + item.price, 0);
     setTotalPrice(total);
@@ -77,34 +72,31 @@ export default function CartPage() {
             <HeaderText>Meus Pedidos</HeaderText>
           </Header>
           {order.length <= 0 ? (
-            <EmptyCartText>CARRINHO VAZIO</EmptyCartText>
+            <EmptyCartText>Nenhum pedido foi feito :( </EmptyCartText>
            ) : (
             <OrderContent>
               {order.map((item, index) => (
                 <CartItem key={index}>
                   <Item>
-                    <Pressable onPress={() => handleRemove(index)}>
+                    <Image source={{ uri: item.imageUrl }}  style={{ width: 100, height: 100, borderRadius: 10, }} />
+                    <ItemName>{item.name}</ItemName>
+                  </Item>
+                  <ItemPrice>R$ {item.price.toFixed(2)}</ItemPrice>
+                  <Pressable onPress={() => handleRemove(index)}>
                       <Image
                         source={remove}
                         style={{ width: 20, height: 20 }}
                       />
-                      <HeaderText>Remover</HeaderText>
                     </Pressable>
-                    <ItemImage source={{ uri: item.img }}                         style={{ width: 50, height: 20 }}
- />
-                    <ItemName>{item.name}</ItemName>
-                  </Item>
-                  <ItemPrice>R${item.price}</ItemPrice>
                 </CartItem>
               ))}
-            </OrderContent>
-          )} 
-          {order && order.length > 0 && (
             <TotalContainer>
               <TotalText>TOTAL</TotalText>
-              <TotalText>R$ {totalPrice}</TotalText>
+              <TotalText>R$ {totalPrice.toFixed(2)}</TotalText>
             </TotalContainer>
-          )}
+            </OrderContent>
+          )} 
+          
           <BackToMenuButton onPress={navigateToMenuPage}>
             <BackToMenuText>Voltar ao Cardápio</BackToMenuText>
           </BackToMenuButton>

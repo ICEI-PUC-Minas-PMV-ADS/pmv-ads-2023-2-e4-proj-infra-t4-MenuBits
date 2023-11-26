@@ -25,13 +25,12 @@ export default function MenuPage() {
 
   const navigation = useNavigation();
 
-  const handleClick = useCallback(
+  const addOrder = useCallback(
     async (item) => {
       try {
-        console.warn("PASSOU AQUI", selectedOrder);
         const selectedOrderUpdated = [...selectedOrder, item];
-        console.warn("PASSOU AQUI 2", selectedOrderUpdated);
         setSelectedOrder(selectedOrderUpdated);
+        console.warn("selectedOrderUpdated "+ JSON.stringify(selectedOrderUpdated));
 
         await AsyncStorage.setItem(
           "pedidos",
@@ -76,15 +75,15 @@ export default function MenuPage() {
           <Text>Cardapio</Text>
         </Title>
         {menuData &&
-          menuData.map((item) => {
+          menuData.map((item, index) => {
             return (
               <CardItem
-                key={item.id}
+                key={index}
                 image={item.imageUrl}
                 title={item.name}
                 description={item.description}
                 price={item.price}
-                handleClickAddOrder={() => handleClick(item)}
+                handleClickAddOrder={() => addOrder(item)}
               />
             );
           })}
