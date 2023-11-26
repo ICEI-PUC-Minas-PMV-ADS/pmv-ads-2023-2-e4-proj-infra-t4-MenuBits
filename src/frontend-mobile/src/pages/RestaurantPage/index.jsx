@@ -1,4 +1,4 @@
-import { Container, Text, Content } from "./styles.js";
+import { Container, Text, Content,Line } from "./styles.js";
 import CardItem from "../../components/CardMenu";
 import { useMenuBitsState } from "../../context/MenuBitsContext";
 import { useCallback, useEffect, useState } from "react";
@@ -39,6 +39,7 @@ const RestaurantPage = () => {
     <Container>
       <Content>
       <Text>Menus</Text>
+      <Line/>
      { menuData.map((item) => (
       <CardItem key={item.id} title={item.title} handleMenuClick={()=> handleMenuClick(item.id)} />
       ))}
