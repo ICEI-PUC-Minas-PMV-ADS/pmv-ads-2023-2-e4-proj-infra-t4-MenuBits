@@ -38,7 +38,7 @@ export default function AddItemCard({ menuSelectedId, runAtualizator }) {
     }, [])
 
     const handleSelectChange = (event) => {
-        setSelectedOption(event.target.value);
+        setSelectedOption(event?.target?.value);
     };
 
     function getThePositionInArrayByID(array, id) {
@@ -76,7 +76,7 @@ export default function AddItemCard({ menuSelectedId, runAtualizator }) {
                     () => {
 
                         axios.post(`http://localhost:8080/api/items/api/menus/items`, {
-                            itemId: items[getThePositionInArrayByID(items, parseInt(selectedOption))].id,
+                            itemId: items?.[getThePositionInArrayByID(items, parseInt(selectedOption))].id,
                             menuId: parseInt(menuSelectedId)
                         }, config)
                             .then((response) => {

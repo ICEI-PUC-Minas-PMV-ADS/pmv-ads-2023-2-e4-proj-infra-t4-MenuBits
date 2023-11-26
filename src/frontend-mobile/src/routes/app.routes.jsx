@@ -3,6 +3,7 @@ import HomePage from "../pages/HomePage";
 import MenuPage from "../pages/MenuPage";
 import RestaurantPage from "../pages/RestaurantPage";
 import MenuEditor from "../pages/MenuEditor";
+import MyRestaurant from "../pages/MyRestaurant";
 
 const { Navigator, Screen } = createNativeStackNavigator();
 
@@ -18,8 +19,7 @@ export function AppRoutes() {
 			<Screen name="MenuEditor" component={MenuEditor} /> 
 			<Screen name="MenuPage" component={MenuPage} />
 			<Screen name="RestaurantPage" component={RestaurantPage} />
-
-
+			<Screen name="Meu Restaurante" component={MyRestaurant} />
 		</Navigator>
 	);
 }
