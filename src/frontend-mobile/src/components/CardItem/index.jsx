@@ -6,8 +6,9 @@ import {
   Price,
   Title,
   Button,
+  TextButton,
 } from "./style";
-import { Image , Text} from "react-native";
+import { Image } from "react-native";
 
 const CardItem = ({
   image = "../../assets/pizza.svg",
@@ -31,11 +32,11 @@ const CardItem = ({
 
         <Description>{description}</Description>
 
-        <Price>{price}</Price>
+        <Price>R$ {price.toFixed(2)}</Price>
         <Button onPress={handleClickAddOrder}> 
-          <Text>
+          <TextButton>
             Adicionar pedido
-          </Text>
+          </TextButton>
         </Button>
       </Content>
     </Container>

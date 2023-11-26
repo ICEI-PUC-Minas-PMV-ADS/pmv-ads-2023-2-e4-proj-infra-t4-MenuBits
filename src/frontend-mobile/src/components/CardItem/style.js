@@ -50,3 +50,8 @@ export const Button = styled.Pressable`
   border-radius: 7px;
   margin-top: 20px;
 `;
+
+export const TextButton = styled.Text`
+  color: white;
+  font-weight: 600;
+`;

@@ -6,6 +6,10 @@ export const Container = styled.ScrollView`
   flex-direction: column;
   gap: 10px;
 `;
+export const Background = styled.ImageBackground`
+  width: 100%;
+  height: 100%;
+`;
 
 export const Title = styled.View`
   margin-top: 20px;
@@ -24,6 +28,23 @@ export const Text = styled.Text`
   text-align: center;
 `;
 
+export const OrderText = styled.Text`
+  font-size: 18px;
+  margin-top: 5px;
+  margin-left: 10px;
+  font-weight: 700;
+  color: #c60404;
+`;
+
+export const OrderContainer = styled.Pressable`
+  margin: 60px 250px 0 15px;
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  border: 2px solid #f39d54;
+  border-radius: 7px;
+  background-color: #ffff;
+`;
 export const ContainerCard = styled.Text`
   font-weight: 700;
   display: flex;
