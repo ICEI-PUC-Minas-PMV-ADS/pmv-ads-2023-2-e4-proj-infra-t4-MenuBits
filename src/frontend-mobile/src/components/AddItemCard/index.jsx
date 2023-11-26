@@ -38,7 +38,7 @@ export default function AddItemCard({ menuSelectedId, runAtualizator, atualizati
     }, [atualization])
 
     const handleSelectChange = (event) => {
-        setSelectedOption(event);
+        setSelectedOption(event?.target?.value);
     };
 
     function getThePositionInArrayByID(array, id) {
@@ -76,7 +76,7 @@ export default function AddItemCard({ menuSelectedId, runAtualizator, atualizati
                     () => {
 
                         axios.post(`https://menu-bits-backend.onrender.com/api/menus/items`, {
-                            itemId: items[getThePositionInArrayByID(items, parseInt(selectedOption))].id,
+                            itemId: items?.[getThePositionInArrayByID(items, parseInt(selectedOption))].id,
                             menuId: parseInt(menuSelectedId)
                         }, config)
                             .then((response) => {

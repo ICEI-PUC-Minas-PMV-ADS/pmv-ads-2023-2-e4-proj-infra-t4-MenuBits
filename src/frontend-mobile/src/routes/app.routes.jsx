@@ -6,6 +6,7 @@ import EditPerfilUserMobile from "../pages/Perfilpages/EditPerfilUser"
 import EditPerfilRestaurantMobile from "../pages/Perfilpages/EditPerfilRestaurant"
 import MenuPage from "../pages/MenuPage";
 import RestaurantPage from "../pages/RestaurantPage";
+import MyRestaurant from "../pages/MyRestaurant";
 import MenuEditor from "../pages/menuEditor";
 
 const { Navigator, Screen } = createNativeStackNavigator();
@@ -26,7 +27,7 @@ export function AppRoutes() {
 			<Screen name="MenuEditor" component={MenuEditor} /> 
 			<Screen name="MenuPage" component={MenuPage} />
 			<Screen name="RestaurantPage" component={RestaurantPage} />
-
+			<Screen name="Meu Restaurante" component={MyRestaurant} />
 		</Navigator>
 	);
 }
