@@ -46,7 +46,7 @@ import {
 const MenuEditor = () => {
 
     const config = {
-        headers: { Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjIsImlhdCI6MTY5ODYxNDc4MiwiZXhwIjoxNjk4NzAxMTgyfQ.6MiLNhJrW1cEo0glX7VvQLSjcu0CkOLxZP7JCLCSM1E` },
+        headers: { Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjIsImlhdCI6MTcwMTAyMjYyOCwiZXhwIjoxNzAxMTA5MDI4fQ.u4bPPIZHBcFcxjMaTJM83mYPQZBqwWrnHNSfPhIZG_0` },
     };
 
     const [modalMenuDisplay, setModalMenuDisplay] = useState(false)
@@ -71,14 +71,14 @@ const MenuEditor = () => {
 
     useEffect(() => {
         axios
-            .get(`https://menu-bits-backend.onrender.com/api/menus/restaurant/12`)
+            .get(`https://menu-bits-backend.onrender.com/api/menus/restaurant/22`)
             .then((response) => {
                 setMenus(response.data.menu);
             }).catch((e) => {
                 console.log(e)
             });
 
-    }, [])
+    }, [modalMenuDisplay])
 
     useEffect(() => {
         axios
@@ -127,19 +127,19 @@ const MenuEditor = () => {
                 modalMenuDisplay ?
                     <ModalMenu>
                         <ModalContent>
-                            <Text>{errorMessage}</Text>
+                            <TextDefault>{errorMessage}</TextDefault>
                             <Input
                                 placeholder="Título do cardápio"
                                 type="text"
                                 id="name"
                                 value={menuTitle}
-                                onChange={(event) => setMenuTitle(event.target.value)} />
+                                onChangeText={(event) => setMenuTitle(event)} />
                             <ButtonArea>
                                 <MinorPressable onPress={
                                     () => {
                                         axios.post(`https://menu-bits-backend.onrender.com/api/menus`, {
                                             title: menuTitle,
-                                            restaurantId: 12
+                                            restaurantId: 22
                                         }, config)
                                             .then((response) => {
                                                 setModalMenuDisplay(false)
@@ -151,7 +151,10 @@ const MenuEditor = () => {
                                 }>
                                     <TextDefault>Adicionar</TextDefault>
                                 </MinorPressable>
-                                <MinorPressable onPress={() => setModalMenuDisplay(false)}><TextDefault>Voltar</TextDefault></MinorPressable>
+                                <MinorPressable onPress={() => {
+                                    setModalMenuDisplay(false),
+                                    setErrorMessage('')
+                                }}><TextDefault>Voltar</TextDefault></MinorPressable>
                             </ButtonArea>
                         </ModalContent>
                     </ModalMenu>
@@ -162,6 +165,7 @@ const MenuEditor = () => {
                 modalItemDisplay ?
                     <ModalMenu>
                         <ModalItemContent>
+                            <TextDefault>{errorMessage}</TextDefault>
                             <ModalMainContent>
                                 <ModalVerticalLine>
                                     <TextInput>Nome do item:</TextInput>
@@ -170,7 +174,7 @@ const MenuEditor = () => {
                                         type="text"
                                         id="name"
                                         value={nameItem}
-                                        onChange={(event) => setNameItem(event.target.value)} />
+                                        onChangeText={(event) => setNameItem(event)} />
                                 </ModalVerticalLine>
 
                                 <ModalVerticalLine>
@@ -180,7 +184,7 @@ const MenuEditor = () => {
                                         type="number"
                                         id="price"
                                         value={priceItem}
-                                        onChange={(event) => setPriceItem(event.target.value)} />
+                                        onChangeText={(event) => setPriceItem(event)} />
                                 </ModalVerticalLine>
 
                                 <ModalVerticalLine>
@@ -190,7 +194,7 @@ const MenuEditor = () => {
                                         type="url"
                                         id="url"
                                         value={urlItem}
-                                        onChange={(event) => setUrlItem(event.target.value)} />
+                                        onChangeText={(event) => setUrlItem(event)} />
                                 </ModalVerticalLine>
 
                                 <ModalVerticalLine>
@@ -228,7 +232,7 @@ const MenuEditor = () => {
                                         type="text"
                                         id="description"
                                         value={descriptionItem}
-                                        onChange={(event) => setDescriptionItem(event.target.value)} />
+                                        onChangeText={(event) => setDescriptionItem(event)} />
                                 </ModalVerticalLine>
                             </ModalMainContent>
                             <ButtonArea>
@@ -241,7 +245,7 @@ const MenuEditor = () => {
                                             description: descriptionItem,
                                             groupId: parseInt(selectedGroup),
                                             isItemOfDay: mealOfDayItem,
-                                            restaurantId: 12
+                                            restaurantId: 22
                                         }, config)
                                             .then((response) => {
                                                 setModalItemDisplay(false)
@@ -310,6 +314,7 @@ const MenuEditor = () => {
                     <AddItemCard
                         menuSelectedId={selectedOption}
                         runAtualizator={() => { setAtualizator(!atualizator) }}
+                        atualization={modalItemDisplay}
                     />
 
                     {

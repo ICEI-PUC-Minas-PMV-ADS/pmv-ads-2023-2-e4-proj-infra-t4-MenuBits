@@ -1,0 +1,82 @@
+import React, { useCallback, useEffect, useState } from "react";
+import { Pressable } from "react-native";
+import { useNavigation } from "@react-navigation/native";
+import axios from 'axios';
+
+import {
+    PerfilCard,
+    Container,
+    HeaderCard,
+    Header,
+    ContentCard,
+    Info,
+    Subheader,
+    Email,
+    Name,
+	Editar,
+	Clear,
+    Textedit
+} from './styles'
+
+
+
+const PerfilUserMobile = () => {
+
+    const config = {
+        headers: { Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiaWF0IjoxNzAxMDEwNzA4LCJleHAiOjE3MDEwOTcxMDh9.ED07aoiAhijLYhwrbkTJKFx8vLmPNuTw6uUFeOAnQQ4"
+    },
+    };
+
+	const navigation = useNavigation();
+
+	const handleToEditPerfilUserMobile = useCallback(() => {
+		navigation.navigate("EditPerfilUserMobile");
+	}, []);
+
+    const [perfil, setPerfil] = useState({})
+
+    useEffect(() => {
+        axios
+            .get(`https://menu-bits-backend.onrender.com/api/users/4`, config)
+            .then((response) => {
+                console.log(response.data)
+                setPerfil(response.data.data);
+            }).catch((e) => {
+                console.log(e)
+            });
+    }, [])
+
+    
+
+	return (
+
+        <Container>
+		<Clear></Clear>
+        <PerfilCard>
+            <HeaderCard>
+                <Header>Perfil</Header>
+            </HeaderCard>
+            <ContentCard>
+                <Info>
+                    <Subheader>E-MAIL</Subheader>
+                    <Email>{perfil.email}</Email>
+                </Info>
+                <Info>
+                    <Subheader>NOME</Subheader>
+                    <Name>{perfil.name}</Name>
+                </Info>
+            </ContentCard>
+            <Pressable onPress={handleToEditPerfilUserMobile}>
+				<Editar>
+					<Textedit>Editar</Textedit>
+				</Editar>
+            </Pressable>
+        </PerfilCard>
+		<Clear></Clear>
+    </Container>
+
+	);
+};
+
+export default PerfilUserMobile;
+
