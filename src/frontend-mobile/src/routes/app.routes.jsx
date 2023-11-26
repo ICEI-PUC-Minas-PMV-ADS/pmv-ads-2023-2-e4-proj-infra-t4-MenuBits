@@ -9,7 +9,7 @@ const { Navigator, Screen } = createNativeStackNavigator();
 export function AppRoutes() {
 	return (
 		<Navigator
-			initialRouteName="MenuEditor"
+			initialRouteName="HomePage"
 			screenOptions={{
 				headerShown: false,
 			}}
