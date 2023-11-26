@@ -7,12 +7,45 @@ import MenuPage from "../pages/MenuPage";
 import RestaurantPage from "../pages/RestaurantPage";
 import MenuEditor from "../pages/MenuEditor";
 import MyRestaurant from "../pages/MyRestaurant";
+import PerfilUserMobile from "../pages/Perfilpages/PerfilUser";
+import PerfilRestaurantMobile from "../pages/Perfilpages/PerfilRestaurant"
+import EditPerfilUserMobile from '../pages/Perfilpages/EditPerfilUser';
+import EditPerfilRestaurantMobile from '../pages/Perfilpages/EditPerfilRestaurant';
 
 const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
 
 
 const HeaderSidebar = () => {
+
+  function PerfilGroup() {
+    return (
+      <Stack.Navigator screenOptions={{headerLeft: () => null}}>
+        <Drawer.Screen name="Perfil" component={PerfilUserMobile} />
+        <Drawer.Screen name="EditPerfilUserMobile" component={EditPerfilUserMobile} />
+      </Stack.Navigator>
+    );
+  }
+
+  function PerfilRestaurantGroup() {
+    return (
+      <Stack.Navigator screenOptions={{headerLeft: () => null}}>
+        <Drawer.Screen name="Perfil do Restaurante" component={PerfilRestaurantMobile} />
+        <Drawer.Screen name="EditPerfilRestaurantMobile" component={EditPerfilRestaurantMobile} />
+      </Stack.Navigator>
+    );
+  }
+
+  function HomeGroup() {
+    return (
+      <Stack.Navigator screenOptions={{headerLeft: () => null}}>
+        <Drawer.Screen name="HomePage" component={HomePage} />
+        <Drawer.Screen name="RestaurantPage" component={RestaurantPage} />
+        <Drawer.Screen name="MenuPage" component={MenuPage} />
+      </Stack.Navigator>
+    );
+  }
+
   return (
     <NavigationContainer>
     <Stack.Navigator screenOptions={{ headerShown: false }}>
@@ -20,17 +53,34 @@ const HeaderSidebar = () => {
         {() => (
           <Drawer.Navigator 
           screenOptions={{
+            headerStyle: {
+              backgroundColor: '#930000',
+            },
+            headerTintColor: '#ffffff',
             drawerStyle:{
               backgroundColor:'#F39D54',
               width:230   
-            }
+            },
+            headerTitleStyle: {
+              fontWeight: 'bold',
+          },
           }}
           >
-            <Drawer.Screen name="HomePage" component={HomePage} />
-            <Drawer.Screen name="MenuEditor" component={MenuEditor} /> 
-            <Drawer.Screen name="MenuPage" component={MenuPage} />
-            <Drawer.Screen name="RestaurantPage" component={RestaurantPage} />
-            <Drawer.Screen name="Meu Restaurante" component={MyRestaurant} />
+
+            {/* telas do cliente */}
+
+              <Drawer.Screen name="Home" component={HomeGroup} />
+              <Stack.Screen name="Perfil" component={PerfilGroup} />
+
+
+            {/* telas do restaurante */}
+
+              <Drawer.Screen name="Meu Restaurante" component={MyRestaurant} />
+              <Drawer.Screen name="Editor de cardápio" component={MenuEditor} /> 
+
+
+            <Drawer.Screen name="Perfil do restaurante" component={PerfilRestaurantGroup} />
+
           </Drawer.Navigator>
         )}
       </Stack.Screen>

@@ -29,12 +29,10 @@ const EditPerfilUserMobile = () => {
     },
   };
 
-  const { Navigator, Screen } = createNativeStackNavigator();
-
   const navigation = useNavigation();
 
   const handleToPerfilUserMobile = useCallback(() => {
-    navigation.replace("PerfilUserMobile")
+    navigation.replace("Perfil")
   }, []);
 
   const [perfil, setPerfil] = useState({});
@@ -47,7 +45,6 @@ const EditPerfilUserMobile = () => {
     axios
       .get(`https://menu-bits-backend.onrender.com/api/users/4`, config)
       .then((response) => {
-        console.log(response.data.data)
         setPerfil(response.data.data);
       })
       .catch((e) => {

@@ -38,7 +38,7 @@ export default function AddItemCard({ menuSelectedId, runAtualizator, atualizati
     }, [atualization])
 
     const handleSelectChange = (event) => {
-        setSelectedOption(event?.target?.value);
+        setSelectedOption(event);
     };
 
     function getThePositionInArrayByID(array, id) {

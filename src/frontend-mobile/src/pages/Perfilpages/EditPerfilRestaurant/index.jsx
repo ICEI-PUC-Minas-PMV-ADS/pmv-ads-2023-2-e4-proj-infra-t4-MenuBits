@@ -37,7 +37,7 @@ const EditPerfilRestaurantMobile = () => {
 	const navigation = useNavigation();
 
     const handleToPerfilRestaurantMobile = useCallback(() => {
-        navigation.replace("PerfilRestaurantMobile")
+        navigation.replace("Edição de perfil restaurante")
       }, []);
 
 
@@ -61,7 +61,6 @@ const EditPerfilRestaurantMobile = () => {
          axios
              .get("https://menu-bits-backend.onrender.com/api/restaurante/22")
              .then((response) => {
-                 console.log(response.data.restaurant)
                  setPerfil(response.data.restaurant);
              }).catch((e) => {
                  console.log(e)
