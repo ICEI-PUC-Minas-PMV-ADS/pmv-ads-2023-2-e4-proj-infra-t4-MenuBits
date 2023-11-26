@@ -1,78 +1,52 @@
 import styled from "styled-components";
 
 export const Container = styled.View`
-  display: flex;
-  flex-direction: column;
-  width: 21%;
-  height: 30rem;
+  margin: 30px;
   background-color: #ffeccc;
   border-radius: 25px;
-  padding-bottom: 1rem;
-  padding-top: 1rem;
-
-  > svg {
-    justify-self: end;
-    font-size: 3.5rem;
-    position: absolute;
-    padding-bottom: 1.5rem;
-  }
+  align-items: center;
 `;
 
 export const Content = styled.View`
-  width: 90%;
-  height: 100%;
+  padding: 20px;
   align-items: center;
-  align-self: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  text-align: center;
-
-  > button {
-    width: 80%;
-  }
+  justify-content: center;
 `;
 
 export const ImageArea = styled.View`
   width: 100%;
-  height: 35%;
   background-color: #fffbf2;
   border-radius: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-  > svg {
-    font-size: 8rem;
-    align-self: center;
-  }
 `;
 
-export const Title = styled.h1`
+export const Title = styled.Text`
   font-weight: 700;
   color: #2e2e2e;
-  font-size: 1.5rem;
+  font-size: 18px;
+  margin-top: 15px;
+  text-align: center;
 `;
 
 export const Description = styled.Text`
   font-weight: 400;
-  font-size: 1rem;
+  font-size: 14px;
   color: #616161;
-  padding-bottom: 2rem;
-  height: 25%;
+  padding-bottom: 5px;
   overflow: hidden;
+  text-align: center;
 `;
 
-export const Price = styled.h2`
+export const Price = styled.Text`
   font-weight: 600;
   color: #2e2e2e;
-  font-size: 2rem;
+  font-size: 16px;
+  margin-top: 10px;
 `;
 
-export const Button = styled.pressable`
+export const Button = styled.Pressable`
   background-color: #c60404;
   color: white;
   padding: 10px;
   border-radius: 7px;
-  margin: 10px 10%;
+  margin-top: 20px;
 `;

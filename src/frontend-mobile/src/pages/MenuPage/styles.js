@@ -1,36 +1,13 @@
 import styled from "styled-components";
 
-export const Container = styled.view`
-  background-size: cover;
+export const Container = styled.ScrollView`
   width: 100%;
-  height: 100vh;
   display: flex;
   flex-direction: column;
   gap: 10px;
 `;
 
-export const Banner = styled.view`
-  background-image: url("src/assets/pizzaNostra.png");
-  background-position: center;
-
-  background-size: cover;
-  background-repeat: no-repeat;
-  width: 100%;
-  height: 40vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  grid-template-rows: 1fr 1fr 1fr;
-`;
-export const TextBanner = styled.h1`
-  color: white;
-  font-size: 40px;
-  justify-content: center;
-  align-items: center;
-`;
-
-export const Title = styled.view`
+export const Title = styled.View`
   margin-top: 20px;
   display: flex;
   flex-direction: row;
@@ -39,7 +16,7 @@ export const Title = styled.view`
   padding: 20px;
 `;
 
-export const Text = styled.view`
+export const Text = styled.Text`
   font-size: 24px;
   padding: 5px;
   justify-content: center;
@@ -47,7 +24,15 @@ export const Text = styled.view`
   text-align: center;
 `;
 
-export const RestaurantButton = styled.view`
+export const ContainerCard = styled.Text`
+  font-weight: 700;
+  display: flex;
+  flex: 1;
+  align-items: center; /* Ajuste conforme necessário */
+  justify-content: center; /* Ajuste conforme necessário */
+`;
+
+export const RestaurantButton = styled.View`
   display: flex;
   color: white;
   margin-right: 10px;
@@ -57,7 +42,7 @@ export const RestaurantButton = styled.view`
   margin-top: 200px;
   align-items: center;
 `;
-export const Button = styled.pressable`
+export const Button = styled.Pressable`
   margin-left: 10px;
   font-weight: 600;
   background-color: #c60404;
@@ -65,25 +50,17 @@ export const Button = styled.pressable`
   padding: 10px;
   border-radius: 7px;
 `;
-export const ImageContent = styled.view`
+export const ImageContent = styled.View`
   display: flex;
   flex-direction: column;
   align-items: start;
   justify-content: start;
 `;
 
-export const ContainerCard = styled.text`
-  font-weight: 700;
-  display: flex;
-  flex-direction: row;
-  grid-template-rows: 1fr 1fr 1fr;
-  gap: 40px;
-  margin: 20px;
-`;
-export const RestaurantText = styled.text`
+export const RestaurantText = styled.Text`
   font-weight: 700;
 `;
-export const ButtonRestaurant = styled.pressable`
+export const ButtonRestaurant = styled.Pressable`
   background-color: #f39d54;
   color: white;
   padding: 10px;

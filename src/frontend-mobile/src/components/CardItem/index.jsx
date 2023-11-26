@@ -1,35 +1,45 @@
 import {
-    Container,
-    Content,
-    Description,
-    ImageArea,
-    Price,
-    Title,Button
+  Container,
+  Content,
+  Description,
+  ImageArea,
+  Price,
+  Title,
+  Button,
 } from "./style";
+import { Image , Text} from "react-native";
 
-const CardItem = ({image, price, title, description, handleClickAddOrder }) => {
- 
-return(
+const CardItem = ({
+  image = "../../assets/pizza.svg",
+  price,
+  title,
+  description,
+  handleClickAddOrder,
+}) => {
+  return (
     <Container>
-        <Content>
-            <ImageArea>
+      <Content>
+        <ImageArea>
+          <Image
+            source={{uri: image}}
+            style={{ width: 150, height: 150, borderRadius: 20, }} 
+            resizeMode="cover" // Modo de redimensionamento da imagem (opcional)
+          />
+        </ImageArea>
 
-            <img src={image} alt="image" />
+        <Title>{title}</Title>
 
-            </ImageArea>
+        <Description>{description}</Description>
 
-            <Title>{title}</Title>
-
-            <Description>{description}</Description>
-
-            <Price>{price}</Price>
-            <Button onClick={handleClickAddOrder}> Adicionar pedido</Button>
-
-        </Content>
-
-
-
+        <Price>{price}</Price>
+        <Button onPress={handleClickAddOrder}> 
+          <Text>
+            Adicionar pedido
+          </Text>
+        </Button>
+      </Content>
     </Container>
-)}
+  );
+};
 
 export default CardItem;
