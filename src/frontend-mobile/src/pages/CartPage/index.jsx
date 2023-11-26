@@ -26,8 +26,9 @@ import { useMenuBitsState } from "../../context/MenuBitsContext";
 import { useNavigation } from "@react-navigation/native";
 
 export default function CartPage() {
-  const [order, setOrder] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
+  const {selectedOrder, setSelectedOrder } = useMenuBitsState();
+
   const navigation = useNavigation();
 
   useEffect(() => {
@@ -35,7 +36,7 @@ export default function CartPage() {
       try {
         const local = await AsyncStorage.getItem("pedidos");
         const parsedLocal = JSON.parse(local) || [];
-        setOrder(parsedLocal);
+        setSelectedOrder(parsedLocal);
 
         // Calcula o total da compra somando os preços de cada item no carrinho
         const total = parsedLocal.reduce((acc, item) => acc + item.price, 0);
@@ -49,9 +50,9 @@ export default function CartPage() {
   }, []);
 
   const handleRemove = async(index) => {
-    const copyOrder = [...order];
+    const copyOrder = [...selectedOrder];
     copyOrder.splice(index, 1);
-    setOrder(copyOrder);
+    setSelectedOrder(copyOrder);
     await AsyncStorage.setItem(
         "pedidos",
         JSON.stringify(copyOrder)
@@ -71,11 +72,11 @@ export default function CartPage() {
           <Header>
             <HeaderText>Meus Pedidos</HeaderText>
           </Header>
-          {order.length <= 0 ? (
+          {selectedOrder.length <= 0 ? (
             <EmptyCartText>Nenhum pedido foi feito :( </EmptyCartText>
            ) : (
             <OrderContent>
-              {order.map((item, index) => (
+              {selectedOrder.map((item, index) => (
                 <CartItem key={index}>
                   <Item>
                     <Image source={{ uri: item.imageUrl }}  style={{ width: 100, height: 100, borderRadius: 10, }} />
