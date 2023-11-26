@@ -1,31 +1,10 @@
 import styled from "styled-components";
 
 export const Container = styled.ScrollView`
-  background-size: cover;
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: 10px;
-`;
-
-export const Banner = styled.View`
-  background-image: url("src/assets/pizzaNostra.png");
-  background-position: center;
-
-  background-size: cover;
-  background-repeat: no-repeat;
-  width: 100%;
-  height: 40vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-`;
-export const TextBanner = styled.Text`
-  color: white;
-  font-size: 40px;
-  justify-content: center;
-  align-items: center;
 `;
 
 export const Title = styled.View`
@@ -43,6 +22,14 @@ export const Text = styled.Text`
   justify-content: center;
   flex: 1;
   text-align: center;
+`;
+
+export const ContainerCard = styled.Text`
+  font-weight: 700;
+  display: flex;
+  flex: 1;
+  align-items: center; /* Ajuste conforme necessário */
+  justify-content: center; /* Ajuste conforme necessário */
 `;
 
 export const RestaurantButton = styled.View`
@@ -70,9 +57,6 @@ export const ImageContent = styled.View`
   justify-content: start;
 `;
 
-export const ContainerCard = styled.Text`
-  font-weight: 700;
-`;
 export const RestaurantText = styled.Text`
   font-weight: 700;
 `;

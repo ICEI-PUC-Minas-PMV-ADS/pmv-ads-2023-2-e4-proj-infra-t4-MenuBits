@@ -44,7 +44,6 @@ export default function MenuPage() {
       <Title>
         <Text>Cardapio</Text>
       </Title>
-      <ContainerCard>
         {menuData &&
           menuData.map((item) => {
             return (
@@ -59,7 +58,6 @@ export default function MenuPage() {
             );
           })}
      
-      </ContainerCard>
     </Container>
   );
 }

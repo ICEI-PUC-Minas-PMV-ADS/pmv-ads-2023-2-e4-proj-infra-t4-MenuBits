@@ -7,7 +7,6 @@ import {
   Title,
   Button,
 } from "./style";
-import pizzaImage from "../../assets/pizza.svg";
 import { Image , Text} from "react-native";
 
 const CardItem = ({
@@ -23,7 +22,7 @@ const CardItem = ({
         <ImageArea>
           <Image
             source={{uri: image}}
-            style={{ width: 200, height: 200 }} // Estilos opcionais para a imagem
+            style={{ width: 150, height: 150, borderRadius: 20, }} 
             resizeMode="cover" // Modo de redimensionamento da imagem (opcional)
           />
         </ImageArea>
