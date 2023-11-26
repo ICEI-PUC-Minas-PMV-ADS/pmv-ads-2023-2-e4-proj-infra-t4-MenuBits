@@ -20,8 +20,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export default function MenuPage() {
   const [menuData, setMenuData] = useState();
-  const { menuId, restaurantData } = useMenuBitsState();
-  const [selectedOrder, setSelectedOrder] = useState([]);
+  const { menuId, restaurantData, selectedOrder, setSelectedOrder } = useMenuBitsState();
 
   const navigation = useNavigation();
 
