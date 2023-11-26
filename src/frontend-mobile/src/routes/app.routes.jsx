@@ -2,14 +2,14 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import HomePage from "../pages/HomePage";
 import MenuPage from "../pages/MenuPage";
 import RestaurantPage from "../pages/RestaurantPage";
-import MenuEditor from "../pages/MenuEditor";
+import MenuEditor from "../pages/menuEditor";
 
 const { Navigator, Screen } = createNativeStackNavigator();
 
 export function AppRoutes() {
 	return (
 		<Navigator
-			initialRouteName="HomePage"
+			initialRouteName="MenuEditor"
 			screenOptions={{
 				headerShown: false,
 			}}

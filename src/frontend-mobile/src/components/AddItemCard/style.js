@@ -17,7 +17,6 @@ export const Button = styled.Pressable`
     align-items: center;
 `
 
-
 export const Content = styled.View`
     width: 90%;
     height: 100%;
