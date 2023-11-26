@@ -6,6 +6,7 @@ import { Container, Input, Button, Title, Content, TextMessage, FormContainer } 
 import axios from "axios";
 import backgroundImage from "../../assets/restaurant.jpg";
 import lupa from "../../assets/lupabranca.png";
+import QRCodeScanner from "../QrCode";
 
 
 const Home = () => {
@@ -26,6 +27,7 @@ const Home = () => {
 		});
 	}, [id]);
 
+
   return (
     <Container source={backgroundImage} resizeMode='cover'>
 		<FormContainer>
@@ -45,6 +47,8 @@ const Home = () => {
             resizeMode="cover" // Modo de redimensionamento da imagem (opcional)
           />
 	  </Button>
+	
+	  <QRCodeScanner style={{ height: 150}}/>
 	  </Content>
 	  </FormContainer>
     </Container>
