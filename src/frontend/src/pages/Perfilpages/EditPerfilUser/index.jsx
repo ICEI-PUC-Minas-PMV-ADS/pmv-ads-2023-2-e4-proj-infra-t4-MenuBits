@@ -19,7 +19,7 @@ export default function EditPerfilUser() {
     <Container>
         <PerfilCard>
             <HeaderCard>
-                Perfil
+                Edição de Perfil
             </HeaderCard>
             <ContentCard>
                 <Info>
