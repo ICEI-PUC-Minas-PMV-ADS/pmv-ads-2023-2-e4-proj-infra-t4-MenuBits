@@ -39,7 +39,6 @@ const PerfilUserMobile = () => {
         axios
             .get(`https://menu-bits-backend.onrender.com/api/users/4`, config)
             .then((response) => {
-                console.log(response.data)
                 setPerfil(response.data.data);
             }).catch((e) => {
                 console.log(e)

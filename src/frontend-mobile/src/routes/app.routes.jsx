@@ -7,7 +7,7 @@ import EditPerfilRestaurantMobile from "../pages/Perfilpages/EditPerfilRestauran
 import MenuPage from "../pages/MenuPage";
 import RestaurantPage from "../pages/RestaurantPage";
 import MyRestaurant from "../pages/MyRestaurant";
-import MenuEditor from "../pages/menuEditor";
+import MenuEditor from "../pages/MenuEditor";
 
 const { Navigator, Screen } = createNativeStackNavigator();
 

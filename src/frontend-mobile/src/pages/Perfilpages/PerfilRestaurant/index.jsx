@@ -35,7 +35,6 @@ const PerfilRestaurantMobile = () => {
         axios
             .get(`https://menu-bits-backend.onrender.com/api/restaurante/22`)
             .then((response) => {
-                console.log(response.data.restaurant)
                 setPerfil(response.data.restaurant);
             }).catch((e) => {
                 console.log(e)
