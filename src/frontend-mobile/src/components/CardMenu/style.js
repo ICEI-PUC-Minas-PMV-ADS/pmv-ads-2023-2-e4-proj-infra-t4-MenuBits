@@ -7,7 +7,7 @@ export const Container = styled.View`
 export const Content = styled.Pressable`
   display: flex;
   align-self: center;
-  background-color: white;
+  background-color: rgba(255, 162, 0, 0.2);
   padding: 10px;
 `;
 
