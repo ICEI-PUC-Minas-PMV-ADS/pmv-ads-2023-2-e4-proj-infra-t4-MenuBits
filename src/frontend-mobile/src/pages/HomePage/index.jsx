@@ -1,9 +1,12 @@
-import { Text } from "react-native";
+import { Text, Image } from "react-native";
 import { useMenuBitsState } from "../../context/MenuBitsContext";
 import { useState, useCallback } from 'react';
 import { useNavigation } from "@react-navigation/native";
-import { Container, Input, Button, TextButton } from "./styles";
+import { Container, Input, Button, Title, Content, TextMessage, FormContainer } from "./styles";
 import axios from "axios";
+import backgroundImage from "../../assets/restaurant.jpg";
+import lupa from "../../assets/lupabranca.png";
+
 
 const Home = () => {
   const { setRestaurantData } = useMenuBitsState();
@@ -24,13 +27,26 @@ const Home = () => {
 	}, [id]);
 
   return (
-    <Container>
-      <Text> Pesquise o restaurante:</Text>
+    <Container source={backgroundImage} resizeMode='cover'>
+		<FormContainer>
+		<Content>
+
+		<Title>TÁ COM FOME DE QUE?</Title>
+	  <TextMessage> DIGITE O ID DO RESTAURANTE</TextMessage>
+	  </Content>
+
+	  <Content>
+
       <Input  onChangeText={setId} />
       <Button onPress={handleSearchRestaurant}>
-		<TextButton>Pesquisar</TextButton>
+	  <Image
+            source={lupa}
+            style={{ width: 20, height: 20 }} // Estilos opcionais para a imagem
+            resizeMode="cover" // Modo de redimensionamento da imagem (opcional)
+          />
 	  </Button>
-
+	  </Content>
+	  </FormContainer>
     </Container>
   );
 };

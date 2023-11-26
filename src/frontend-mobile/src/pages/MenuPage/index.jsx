@@ -17,7 +17,7 @@ import { useMenuBitsState } from "../../context/MenuBitsContext";
 
 export default function MenuPage() {
   const [menuData, setMenuData] = useState();
-  const { menuId,restaurantData } = useMenuBitsState();
+  const { menuId, restaurantData } = useMenuBitsState();
 
   const navigation = useNavigation();
 
@@ -41,18 +41,6 @@ export default function MenuPage() {
 
   return (
     <Container>
-      <Banner>
-        <RestaurantButton />
-        <TextBanner>
-          {restaurantData && restaurantData.restaurant.name}
-        </TextBanner>
-        <RestaurantButton>
-          Ver mais sobre
-          <Button onClick={handleClickRestaurant}>
-            {restaurantData && restaurantData.restaurant.name}
-          </Button>
-        </RestaurantButton>
-      </Banner>
       <Title>
         <Text>Cardapio</Text>
       </Title>
