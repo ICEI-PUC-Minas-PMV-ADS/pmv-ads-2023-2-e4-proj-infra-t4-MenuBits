@@ -1,5 +1,4 @@
-import { Container } from "./styles.js";
-import { Text } from "react-native";
+import { Container, Text, Content,Line } from "./styles.js";
 import CardItem from "../../components/CardMenu";
 import { useMenuBitsState } from "../../context/MenuBitsContext";
 import { useCallback, useEffect, useState } from "react";
@@ -38,9 +37,13 @@ const RestaurantPage = () => {
 
   return (
     <Container>
+      <Content>
+      <Text>Menus</Text>
+      <Line/>
      { menuData.map((item) => (
       <CardItem key={item.id} title={item.title} handleMenuClick={()=> handleMenuClick(item.id)} />
       ))}
+      </Content>
     </Container>
   );
 };
