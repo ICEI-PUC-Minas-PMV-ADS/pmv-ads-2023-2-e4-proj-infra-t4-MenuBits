@@ -101,7 +101,11 @@ export default function RegisterPage() {
           <ModalRestaurantTitle>
             Gostaria de ENTRAR como RESTAURANTE?
           </ModalRestaurantTitle>
-          <LoginTextBG>Clique Aqui</LoginTextBG>
+          <ButtonLogin title="Cadastrar" onPress={() => navigation.navigate("RestaurantRegister")}>
+            <Text style={{ color: "white" }}>ENTRAR COMO RESTAURANTE</Text>
+          </ButtonLogin>
+
+          {/* onPress={() => navigation.navigate("RestaurantRegister")} */}
         </ModalRestaurant>
       </Container>
     </View>

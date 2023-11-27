@@ -11,6 +11,8 @@ import LoginPage from "../pages/LoginPage";
 import RegisterPage from "../pages/RegisterPage";
 import CartPage from "../pages/CartPage";
 import MyRestaurant from "../pages/MyRestaurant"
+import RestaurantRegister from "../pages/RestaurantRegister";
+import RestaurantLogin from "../pages/RestaurantLogin";
 
 
 
@@ -24,6 +26,8 @@ export function AppRoutes() {
 				headerShown: false,
 			}}
 		>
+			<Screen name="RestaurantRegister" component={RestaurantRegister}/>
+			<Screen name="RestaurantLogin" component={RestaurantLogin} />
 			<Screen name="LoginPage" component={LoginPage}/>
 			<Screen name="RegisterPage" component={RegisterPage}/>
 			<Screen name="HomePage" component={HomePage} />

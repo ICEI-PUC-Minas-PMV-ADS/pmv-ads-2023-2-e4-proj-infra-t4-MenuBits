@@ -16,33 +16,36 @@ import {
 } from "./style";
 import axios from "axios";
 import { useNavigation } from "@react-navigation/native";
-import { saveUserData, getUserData } from "../../hooks/save-user";
+import { saveUserData } from "../../hooks/save-user";
 
-export default function LoginPage() {
+export default function RestaurantLogin() {
   const navigation = useNavigation();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [message, setMessage] = useState("");
 
-  const handleRegister = () => {
-    navigation.navigate("RegisterPage");
-  };
-
   const handleLogin = useCallback(async () => {
     const body = {
       email,
       password,
     };
+
     try {
+      console.log("TESTE 1");
       if (email === "" || password === "") {
         setMessage("Preencha os dados de login");
       } else {
+        console.log("TESTE 1.2");
         const response = await axios.post(
-          `https://menu-bits-backend.onrender.com/api/user/auth`,
+          `https://menu-bits-backend.onrender.com/api/restaurant/auth`,
           body
         );
+        console.log("TESTE 1.3");
+        console.log("TESTE 1.4");
         const userData = response.data;
+
+        console.log(userData);
         if (
           (userData.error == "Password invalid") |
           (userData.error == "User not found")
@@ -50,22 +53,32 @@ export default function LoginPage() {
           setMessage("Credenciais incorretas");
         } else {
           saveUserData(userData.authToken, {
-            nome: "Nome de usuario",
-            id: userData.user.id,
+            nome: "Nome de Restaurante",
+            id: userData.restaurant.id,
           });
-          navigation.navigate("HomePage");
+          console.log(userData);
+          console.log(saveUserData);
+          console.log("REDIRECT");
+          navigation.navigate("RestaurantHomePage");
         }
       }
+      // }
     } catch (error) {
+      console.error(error);
       setMessage("Falha no login");
     }
   }, [email, password]);
 
+  const config = {
+    headers: {
+      Authorization:
+        "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjIsImlhdCI6MTcwMTAyMjYyOCwiZXhwIjoxNzAxMTA5MDI4fQ.u4bPPIZHBcFcxjMaTJM83mYPQZBqwWrnHNSfPhIZG_0",
+    },
+  };
 
-
-  const handleLoginRestaurant = () => {
-    navigation.navigate("RestaurantLogin")
-  }
+  const handleRegister = () => {
+    navigation.navigate("RegisterPage");
+  };
 
   return (
     <View>
@@ -74,7 +87,7 @@ export default function LoginPage() {
           <ModalContainerTitle>
             <ModalTitle>Login</ModalTitle>
           </ModalContainerTitle>
-          <LoginText>NOME DE USUARIO</LoginText>
+          <LoginText>EMAIL DO ESTABELECIMENTO</LoginText>
           <Input
             placeholder="Email"
             type="text"
@@ -101,13 +114,7 @@ export default function LoginPage() {
 
           {error !== "" && <Text style={{ color: "red" }}>{error}</Text>}
         </ModalContainer>
-        <ModalRestaurant>
-          <LoginTextBG onPress={handleLoginRestaurant}>
-            <Text>
-              Gostaria de ENTRAR como RESTAURANTE? Clique Aqui
-            </Text>
-          </LoginTextBG>
-        </ModalRestaurant>
+        
       </Container>
     </View>
   );
