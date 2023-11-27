@@ -15,9 +15,6 @@ export const saveUserData = async (token, userData) => {
   }
 };
 
-// Chamada da função após o login
-saveUserData("seuTokenAqui", { nome: "exemplo", email: "exemplo@email.com" });
-
 export const getToken = async () => {
   try {
     const token = await AsyncStorage.getItem('token');

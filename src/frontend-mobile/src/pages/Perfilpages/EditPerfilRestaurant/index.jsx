@@ -37,7 +37,7 @@ const EditPerfilRestaurantMobile = () => {
 	const navigation = useNavigation();
 
     const handleToPerfilRestaurantMobile = useCallback(() => {
-        navigation.replace("Edição de perfil restaurante")
+        navigation.replace("PerfilRestaurantMobile")
       }, []);
 
 

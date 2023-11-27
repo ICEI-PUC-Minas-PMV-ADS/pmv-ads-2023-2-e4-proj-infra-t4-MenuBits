@@ -12,7 +12,7 @@ const Header = styled.View`
   padding: 15px;
   height: 80px;
   background-color: #930000;
-  border-radius: 20px 20px 0 0;
+  border-radius: 20px;
 `;
 
 const Title = styled.Text`

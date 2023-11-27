@@ -2,6 +2,7 @@ import React, { useCallback, useEffect, useState } from "react";
 import { Pressable } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import axios from 'axios';
+import { getUserData } from '../../../hooks/save-user'
 
 import {
     PerfilCard,
@@ -27,6 +28,8 @@ const PerfilUserMobile = () => {
     },
     };
 
+    
+
 	const navigation = useNavigation();
 
 	const handleToEditPerfilUserMobile = useCallback(() => {
@@ -39,6 +42,7 @@ const PerfilUserMobile = () => {
         axios
             .get(`https://menu-bits-backend.onrender.com/api/users/4`, config)
             .then((response) => {
+                console.log(getUserData())
                 setPerfil(response.data.data);
             }).catch((e) => {
                 console.log(e)

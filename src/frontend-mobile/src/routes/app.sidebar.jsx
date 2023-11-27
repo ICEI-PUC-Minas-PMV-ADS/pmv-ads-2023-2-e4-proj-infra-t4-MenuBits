@@ -11,6 +11,9 @@ import PerfilUserMobile from "../pages/Perfilpages/PerfilUser";
 import PerfilRestaurantMobile from "../pages/Perfilpages/PerfilRestaurant"
 import EditPerfilUserMobile from '../pages/Perfilpages/EditPerfilUser';
 import EditPerfilRestaurantMobile from '../pages/Perfilpages/EditPerfilRestaurant';
+import LoginPage from '../pages/LoginPage';
+import CartPage from '../pages/CartPage';
+import RegisterPage from '../pages/RegisterPage';
 
 const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
@@ -30,7 +33,7 @@ const HeaderSidebar = () => {
   function PerfilRestaurantGroup() {
     return (
       <Stack.Navigator screenOptions={{headerLeft: () => null}}>
-        <Drawer.Screen name="Perfil do Restaurante" component={PerfilRestaurantMobile} />
+        <Drawer.Screen name="PerfilRestaurantMobile" component={PerfilRestaurantMobile} />
         <Drawer.Screen name="EditPerfilRestaurantMobile" component={EditPerfilRestaurantMobile} />
       </Stack.Navigator>
     );
@@ -42,6 +45,7 @@ const HeaderSidebar = () => {
         <Drawer.Screen name="HomePage" component={HomePage} />
         <Drawer.Screen name="RestaurantPage" component={RestaurantPage} />
         <Drawer.Screen name="MenuPage" component={MenuPage} />
+        <Drawer.Screen name="CartPage" component={CartPage} />
       </Stack.Navigator>
     );
   }
@@ -67,19 +71,13 @@ const HeaderSidebar = () => {
           }}
           >
 
-            {/* telas do cliente */}
-
-              <Drawer.Screen name="Home" component={HomeGroup} />
-              <Stack.Screen name="Perfil" component={PerfilGroup} />
-
-
-            {/* telas do restaurante */}
-
-              <Drawer.Screen name="Meu Restaurante" component={MyRestaurant} />
-              <Drawer.Screen name="Editor de cardápio" component={MenuEditor} /> 
-
-
+            <Drawer.Screen name="Home" component={HomeGroup} />
+            <Stack.Screen name="Perfil" component={PerfilGroup} />
+            <Drawer.Screen name="Meu Restaurante" component={MyRestaurant} />
+            <Drawer.Screen name="Editor de cardápio" component={MenuEditor} /> 
             <Drawer.Screen name="Perfil do restaurante" component={PerfilRestaurantGroup} />
+            <Drawer.Screen name="Efetuar Login" component={LoginPage} />
+            <Drawer.Screen name="Registro Restaurante" component={RegisterPage} />
 
           </Drawer.Navigator>
         )}
