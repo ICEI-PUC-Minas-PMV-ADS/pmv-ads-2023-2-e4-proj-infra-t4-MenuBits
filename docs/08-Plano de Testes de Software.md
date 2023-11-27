@@ -10,4 +10,5 @@
 
 ![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t4-MenuBits/assets/105240089/71260cff-55db-4ea8-a8b0-f864ba8040ac)
 
-![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t4-MenuBits/assets/105240089/3efeb236-a2d2-463d-b6f7-6a537b131893)
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t4-MenuBits/assets/105240089/ffa0329a-8ce2-406e-a611-9a09c1c1904a)
+
