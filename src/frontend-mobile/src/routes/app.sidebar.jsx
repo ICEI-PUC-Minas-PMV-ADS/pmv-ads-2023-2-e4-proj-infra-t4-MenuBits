@@ -14,6 +14,8 @@ import EditPerfilRestaurantMobile from '../pages/Perfilpages/EditPerfilRestauran
 import LoginPage from '../pages/LoginPage';
 import CartPage from '../pages/CartPage';
 import RegisterPage from '../pages/RegisterPage';
+import RestaurantLogin from '../pages/RestaurantLogin';
+import RestaurantRegister from '../pages/RestaurantRegister';
 
 const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
@@ -77,7 +79,9 @@ const HeaderSidebar = () => {
             <Drawer.Screen name="Editor de cardápio" component={MenuEditor} /> 
             <Drawer.Screen name="Perfil do restaurante" component={PerfilRestaurantGroup} />
             <Drawer.Screen name="Efetuar Login" component={LoginPage} />
-            <Drawer.Screen name="Registro Restaurante" component={RegisterPage} />
+            <Drawer.Screen name="Efetuar Login Restaurante" component={RestaurantLogin} />
+            <Drawer.Screen name="Registro Usuário" component={RegisterPage} />
+            <Drawer.Screen name="Registro Restaurante" component={RestaurantRegister} />
 
           </Drawer.Navigator>
         )}
