@@ -143,7 +143,7 @@ export const ButtonCreateAccount = styled.Pressable`
 `;
 
 export const Container = styled.View`
-  height: 100%;
+  height: auto;
   width: 100%;
   background-color: #f0f0f0;
   padding-left: 5%;
@@ -179,7 +179,7 @@ export const LoginText = styled.Text`
   text-align: center;
 `;
 
-export const LoginTextBG = styled.Text`
+export const LoginTextBG = styled.Pressable`
   color: white;
   font-family: Sora_600SemiBold;
   padding: 6px;

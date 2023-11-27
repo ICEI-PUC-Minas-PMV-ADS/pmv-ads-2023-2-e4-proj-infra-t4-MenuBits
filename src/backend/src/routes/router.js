@@ -71,7 +71,7 @@ router.delete(
 );
 
 //Restaurants endpoints
-router.get("/api/restaurante", AuthMiddlewares, RestaurantController.findAll);
+router.get("/api/restaurante", RestaurantController.findAll);
 router.get("/api/restaurante/:id", RestaurantController.findById);
 router.get("/api/restaurante/name/:name", RestaurantController.findByName);
 router.post("/api/restaurante", RestaurantController.create);

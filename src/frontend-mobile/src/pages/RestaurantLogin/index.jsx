@@ -18,7 +18,7 @@ import axios from "axios";
 import { useNavigation } from "@react-navigation/native";
 import { saveUserData } from "../../hooks/save-user";
 
-export default function LoginPage() {
+export default function RestaurantLogin() {
   const navigation = useNavigation();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -38,7 +38,7 @@ export default function LoginPage() {
       } else {
         console.log("TESTE 1.2");
         const response = await axios.post(
-          `https://menu-bits-backend.onrender.com/api/user/auth`,
+          `https://menu-bits-backend.onrender.com/api/restaurant/auth`,
           body
         );
         console.log("TESTE 1.3");
@@ -53,13 +53,13 @@ export default function LoginPage() {
           setMessage("Credenciais incorretas");
         } else {
           saveUserData(userData.authToken, {
-            nome: "Nome de usuario",
-            id: userData.user.id,
+            nome: "Nome de Restaurante",
+            id: userData.restaurant.id,
           });
           console.log(userData);
           console.log(saveUserData);
           console.log("REDIRECT");
-          navigation.navigate("HomePage");
+          navigation.navigate("RestaurantHomePage");
         }
       }
       // }
@@ -80,10 +80,6 @@ export default function LoginPage() {
     navigation.navigate("RegisterPage");
   };
 
-  const handleLoginRestaurant = () => {
-    navigation.navigate("RestaurantLogin")
-  }
-
   return (
     <View>
       <Container>
@@ -91,7 +87,7 @@ export default function LoginPage() {
           <ModalContainerTitle>
             <ModalTitle>Login</ModalTitle>
           </ModalContainerTitle>
-          <LoginText>NOME DE USUARIO</LoginText>
+          <LoginText>EMAIL DO ESTABELECIMENTO</LoginText>
           <Input
             placeholder="Email"
             type="text"
@@ -118,13 +114,7 @@ export default function LoginPage() {
 
           {error !== "" && <Text style={{ color: "red" }}>{error}</Text>}
         </ModalContainer>
-        <ModalRestaurant>
-          <LoginTextBG onPress={handleLoginRestaurant}>
-            <Text>
-              Gostaria de ENTRAR como RESTAURANTE? Clique Aqui
-            </Text>
-          </LoginTextBG>
-        </ModalRestaurant>
+        
       </Container>
     </View>
   );

@@ -148,7 +148,7 @@ export const Container = styled.View`
   background-color: #f0f0f0;
   padding-left: 5%;
   padding-right: 5%;
-  padding-top: 50%;
+  padding-top: 10%;
 `;
 export const ModalContainer = styled.View`
   width: 100%;
@@ -179,7 +179,7 @@ export const LoginText = styled.Text`
   text-align: center;
 `;
 
-export const LoginTextBG = styled.Pressable`
+export const LoginTextBG = styled.Text`
   color: white;
   font-family: Sora_600SemiBold;
   padding: 6px;
