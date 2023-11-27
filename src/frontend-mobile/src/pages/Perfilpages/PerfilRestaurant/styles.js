@@ -22,7 +22,7 @@ export const Text = styled.Text`
 
 export const PerfilCard = styled.View`
     width: 80%;
-    height: 680px;
+    height: 600px;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
@@ -56,7 +56,7 @@ export const ContentCard = styled.View`
 `;
 
 export const Info = styled.View`
-    padding: 3% 0% 3% 10%;
+    padding: 2% 0% 2% 10%;
 `;
 
 export const Subheader = styled.Text`
