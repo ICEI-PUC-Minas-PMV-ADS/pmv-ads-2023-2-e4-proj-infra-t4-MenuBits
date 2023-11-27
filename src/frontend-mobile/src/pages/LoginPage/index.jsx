@@ -1,6 +1,5 @@
-
 import React, { useState } from "react";
-import { Text, View, TextInput, Button } from "react-native";
+import { Text, View } from "react-native";
 import {
   Container,
   ModalContainer,
@@ -8,31 +7,42 @@ import {
   ModalTitle,
   LoginText,
   Input,
-  ModalButton,
-  ButtonModal,
-  LoginTextBG,
-  ModalRestaurant,
-  ModalRestaurantTitle,
   ButtonLogin,
   ButtonCreateAccount,
+  ModalRestaurant,
+  ModalRestaurantTitle,
+  LoginTextBG,
 } from "./style";
 import axios from "axios";
 import { useNavigation } from "@react-navigation/native";
 
 export default function LoginPage() {
-   const navigation = useNavigation();
-  const [username, setUsername] = useState("");
+  const navigation = useNavigation();
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
 
-   const handleLogin = () => {
+  const handleLogin = () => {
+    axios
+      .get(`http://localhost:8080/api/users/email/${email}`)
+      .then((response) => {
+        const user = response.data;
 
-  }; 
+        if (user && user.password === password) {
+          navigation.navigate("HomePage");
+        } else {
+          setError("FALHA NO LOGIN. Verifique suas credenciais.");
+        }
+      })
+      .catch((error) => {
+        console.error("Erro ao realizar login:", error);
+        setError("Erro ao realizar login. Tente novamente.");
+      });
+  };
+
   const handleRegister = () => {
-    navigation.navigate("RegisterPage")
-  }
-
-
-  
+    navigation.navigate("RegisterPage");
+  };
 
   return (
     <View>
@@ -43,11 +53,11 @@ export default function LoginPage() {
           </ModalContainerTitle>
           <LoginText>NOME DE USUARIO</LoginText>
           <Input
-            placeholder="Nome de usuario"
+            placeholder="Email"
             type="text"
-            id="username"
-            value={username}
-            onChangeText={(event) => setUsername(event)}
+            id="email"
+            value={email}
+            onChangeText={(event) => setEmail(event)}
           />
           <LoginText>SENHA</LoginText>
           <Input
@@ -57,25 +67,15 @@ export default function LoginPage() {
             value={password}
             onChangeText={(event) => setPassword(event)}
           />
-          <ButtonLogin title="Entrar" onPress={() => handleLogin()}>
-            <Text
-              style={{
-                color: "white",
-              }}
-            >
-              ENTRAR
-            </Text>
+          <ButtonLogin title="Entrar" onPress={handleLogin}>
+            <Text style={{ color: "white" }}>ENTRAR</Text>
           </ButtonLogin>
 
-          <ButtonCreateAccount onPress={() => handleRegister()}>
-            <Text
-              style={{
-                color: "orange",
-              }}
-            >
-              CRIAR CONTA
-            </Text>
+          <ButtonCreateAccount onPress={handleRegister}>
+            <Text style={{ color: "orange" }}>CRIAR CONTA</Text>
           </ButtonCreateAccount>
+
+          {error !== "" && <Text style={{ color: "red" }}>{error}</Text>}
         </ModalContainer>
         <ModalRestaurant>
           <ModalRestaurantTitle>
