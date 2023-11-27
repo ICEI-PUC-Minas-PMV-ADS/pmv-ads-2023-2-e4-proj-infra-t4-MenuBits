@@ -16,4 +16,29 @@
 **CT-05** <br />
 ![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t4-MenuBits/assets/68014636/01931e08-ce6e-446f-81dd-53738d41c0f8)
 
+**CT-06** <br />
+
+*Teste 01* (alterando os dois dados)
+PERFIL
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t4-MenuBits/assets/105240089/ea800291-0c0a-49fc-a38a-8494a8b4372a)
+
+ALTERANDO DADOS DO PERFIL
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t4-MenuBits/assets/105240089/835efa03-35b3-45eb-9d58-694566c217b6)
+
+PERFIL APÓS A ALTERAÇÃO DE DADOS
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t4-MenuBits/assets/105240089/f0569a68-afbc-4a21-9d70-e5df28450f35)
+
+*Teste 02* (deixando os dois dados em branco)
+
+PERFIL
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t4-MenuBits/assets/105240089/f0569a68-afbc-4a21-9d70-e5df28450f35)
+
+ALTERANDO DADOS DO PERFIL
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t4-MenuBits/assets/105240089/fd63a0b4-c9bc-47d1-977c-184fd57afc49)
+
+PERFIL APÓS A ALTERAÇÃO DE DADOS
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t4-MenuBits/assets/105240089/4c557f18-c932-4035-bcef-63296181e3ad)
+
+OBS: Ele volta para os dados anteriores.
+
 **Também foram feitos testes de busca, update e delete.**
