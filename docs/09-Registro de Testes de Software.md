@@ -15,13 +15,31 @@
 <br />
 ![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t4-MenuBits/assets/105240089/2950dc09-2286-4383-83d7-a6e92300f6bd)
 <br />
+Inserindo dados
+<br />
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t4-MenuBits/assets/105240089/677c96d1-0062-49d9-bbec-2b610e37240b)
+<br />
+Inserindo dados
+<br />
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t4-MenuBits/assets/105240089/a43d0f3a-5882-4f3b-881c-6781d474f6e0)
 
 
 **CT-04** <br />
 ![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t4-MenuBits/assets/68014636/ec06ee4a-6c87-4ee9-9cdd-978f2a180011)
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t4-MenuBits/assets/105240089/b798a6a1-2373-4fe5-936d-3697986d53a6)
+
 
 **CT-05** <br />
 ![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t4-MenuBits/assets/68014636/01931e08-ce6e-446f-81dd-53738d41c0f8)
+<br />
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t4-MenuBits/assets/105240089/78265d48-7154-45e3-adfb-2742bb878835)
+<br />
+OBS: Cardápio: Cardápio de Testes / Item: Porçao de pasteis (basta clicar no botão "+" em verde e adiciona o item ao cardápio selecionado)
+<br />
+Visualizando Cardápio
+<br />
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t4-MenuBits/assets/105240089/bca26cc5-b4a7-4254-9c83-9a1adaab29be)
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t4-MenuBits/assets/105240089/06ce2c61-e3f6-4094-83d0-f51ef4e0abc5)
 
 **CT-06** <br />
 
