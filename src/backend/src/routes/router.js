@@ -19,6 +19,7 @@ router.get("/", (req, res) => {
 });
 
 router.get("/api/users", UserController.findAll);
+router.get("/api/users/email/:email", UserController.findUserByEmail);
 router.get("/api/users/:id" ,UserController.findById);
 router.post("/api/users", UserController.create);
 router.put("/api/users/:id", AuthMiddlewares, UserController.update);
