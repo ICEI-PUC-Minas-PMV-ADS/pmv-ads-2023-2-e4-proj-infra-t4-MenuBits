@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@react-navigation/native": "^6.1.9",
     "autoprefixer": "^10.4.16",
     "axios": "^1.6.0",
     "lucide-react": "^0.289.0",

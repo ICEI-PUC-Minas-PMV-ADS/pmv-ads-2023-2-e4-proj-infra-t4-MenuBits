@@ -18,8 +18,9 @@ router.get("/", (req, res) => {
   res.send("API MenuBits WORKING!!!");
 });
 
-router.get("/api/users", AuthMiddlewares, UserController.findAll);
-router.get("/api/users/:id", AuthMiddlewares ,UserController.findById);
+router.get("/api/users", UserController.findAll);
+router.get("/api/users/email/:email", UserController.findUserByEmail);
+router.get("/api/users/:id" ,UserController.findById);
 router.post("/api/users", UserController.create);
 router.put("/api/users/:id", AuthMiddlewares, UserController.update);
 router.delete("/api/users/:id",AuthMiddlewares, UserController.delete);

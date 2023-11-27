@@ -18,6 +18,19 @@ class UserController {
     }
   }
 
+  async findUserByEmail(request, response) {
+    try {
+      const user = await UserService.findByEmail(request.params.email);
+
+      return response.json({
+        success: true,
+        data: user,
+      });
+    } catch (error) {
+      return response.status(404).json({ error: error.message });
+    }
+  }
+
   async findById(request, response) {
     try {
       const user = await UserService.findById(request.params.id);
