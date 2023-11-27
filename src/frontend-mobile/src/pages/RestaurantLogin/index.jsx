@@ -77,7 +77,7 @@ export default function RestaurantLogin() {
   };
 
   const handleRegister = () => {
-    navigation.navigate("RegisterPage");
+    navigation.navigate("Registro Restaurante");
   };
 
   return (

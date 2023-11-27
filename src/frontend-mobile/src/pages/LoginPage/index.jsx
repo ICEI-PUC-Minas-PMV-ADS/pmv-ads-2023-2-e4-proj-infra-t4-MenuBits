@@ -64,7 +64,7 @@ export default function LoginPage() {
 
 
   const handleLoginRestaurant = () => {
-    navigation.navigate("RestaurantLogin")
+    navigation.navigate("Efetuar Login Restaurante")
   }
 
   return (

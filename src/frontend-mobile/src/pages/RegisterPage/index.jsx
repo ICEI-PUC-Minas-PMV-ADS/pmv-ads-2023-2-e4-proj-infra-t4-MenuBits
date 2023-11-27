@@ -93,7 +93,7 @@ export default function RegisterPage() {
             <Text style={{ color: "white" }}>CADASTRAR</Text>
           </ButtonLogin>
 
-          <ButtonCreateAccount onPress={() => navigation.navigate("LoginPage")}>
+          <ButtonCreateAccount onPress={() => navigation.navigate("Efetuar Login")}>
             <Text style={{ color: "orange" }}>Já possui conta? ENTRAR</Text>
           </ButtonCreateAccount>
         </ModalContainer>
@@ -101,11 +101,9 @@ export default function RegisterPage() {
           <ModalRestaurantTitle>
             Gostaria de ENTRAR como RESTAURANTE?
           </ModalRestaurantTitle>
-          <ButtonLogin title="Cadastrar" onPress={() => navigation.navigate("RestaurantRegister")}>
+          <ButtonLogin title="Cadastrar" onPress={() => navigation.navigate("Registro Restaurante")}>
             <Text style={{ color: "white" }}>ENTRAR COMO RESTAURANTE</Text>
           </ButtonLogin>
-
-          {/* onPress={() => navigation.navigate("RestaurantRegister")} */}
         </ModalRestaurant>
       </Container>
     </View>

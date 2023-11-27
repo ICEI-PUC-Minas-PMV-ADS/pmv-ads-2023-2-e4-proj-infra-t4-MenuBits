@@ -141,7 +141,7 @@ export default function RestaurantRegister() {
               </ButtonLogin>
 
               <ButtonCreateAccount
-                onPress={() => navigation.navigate("LoginRestaurant")}
+                onPress={() => navigation.navigate("Efetuar Login Restaurante")}
               >
                 <Text style={{ color: "orange" }}>Já possui conta? ENTRAR</Text>
               </ButtonCreateAccount>
