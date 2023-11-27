@@ -1,6 +1,7 @@
-import React, { useState } from "react";
-import { useNavigate } from "@react-navigation/native";
-import { Text, View, TextInput, Button } from "react-native";
+import React, { useEffect, useState } from "react";
+import { Text, View } from "react-native";
+import axios from "axios";
+import { useNavigation } from "@react-navigation/native";
 import {
   Container,
   ModalContainer,
@@ -8,24 +9,46 @@ import {
   ModalTitle,
   LoginText,
   Input,
-  ModalButton,
-  ButtonModal,
-  LoginTextBG,
-  ModalRestaurant,
-  ModalRestaurantTitle,
   ButtonLogin,
   ButtonCreateAccount,
+  ModalRestaurant,
+  ModalRestaurantTitle,
+  LoginTextBG,
 } from "./style";
-import axios from "axios";
 
 export default function RegisterPage() {
+  const navigation = useNavigation();
+  const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  // const navigation = useNavigation();
-  const handleRegister = () => {
-    
+  const [confirmPass, setConfirmPass] = useState("");
+
+  const validateFields = () => {
+    if (email.length === 0 || username.length === 0 || password !== confirmPass) {
+      alert("DADOS INCORRETOS");
+      return false;
+    }
+    return true;
   };
-  // const navigate = useNavigate();
+
+  const registerUser = () => {
+    if (validateFields()) {
+      axios
+        .post("https://menu-bits-backend.onrender.com/api/users", {
+          name: username,
+          email: email,
+          password: password,
+        })
+        .then((response) => {
+          // Lógica adicional após o registro, se necessário
+          navigation.navigate("LoginPage");
+        })
+        .catch((error) => {
+          console.error("Erro ao cadastrar usuário:", error);
+          // Lógica de tratamento de erro, se necessário
+        });
+    }
+  };
 
   return (
     <View>
@@ -34,13 +57,13 @@ export default function RegisterPage() {
           <ModalContainerTitle>
             <ModalTitle>Registrar</ModalTitle>
           </ModalContainerTitle>
-           <LoginText>E-MAIL</LoginText>
+          <LoginText>E-MAIL</LoginText>
           <Input
             placeholder="Email"
             type="text"
             id="email"
-            value={username}
-            onChangeText={(event) => setUsername(event)}
+            value={email}
+            onChangeText={(event) => setEmail(event)}
           />
           <LoginText>NOME</LoginText>
           <Input
@@ -58,32 +81,20 @@ export default function RegisterPage() {
             value={password}
             onChangeText={(event) => setPassword(event)}
           />
-           <LoginText>REPETIR SENHA</LoginText>
+          <LoginText>REPETIR SENHA</LoginText>
           <Input
             placeholder="Repetir senha"
             type="text"
             id="password"
-            value={password}
-            onChangeText={(event) => setPassword(event)}
+            value={confirmPass}
+            onChangeText={(event) => setConfirmPass(event)}
           />
-          <ButtonLogin title="Entrar" onPress={() => handleRegister()}>
-            <Text
-              style={{
-                color: "white",
-              }}
-            >
-              CADASTRAR
-            </Text>
+          <ButtonLogin title="Cadastrar" onPress={registerUser}>
+            <Text style={{ color: "white" }}>CADASTRAR</Text>
           </ButtonLogin>
 
-          <ButtonCreateAccount>
-            <Text
-              style={{
-                color: "orange",
-              }}
-            >
-              Já possui conta? ENTRAR
-            </Text>
+          <ButtonCreateAccount onPress={() => navigation.navigate("LoginPage")}>
+            <Text style={{ color: "orange" }}>Já possui conta? ENTRAR</Text>
           </ButtonCreateAccount>
         </ModalContainer>
         <ModalRestaurant>

@@ -9,6 +9,10 @@ import RestaurantPage from "../pages/RestaurantPage";
 import MenuEditor from "../pages/MenuEditor";
 import LoginPage from "../pages/LoginPage";
 import RegisterPage from "../pages/RegisterPage";
+import CartPage from "../pages/CartPage";
+import MyRestaurant from "../pages/MyRestaurant"
+
+
 
 const { Navigator, Screen } = createNativeStackNavigator();
 

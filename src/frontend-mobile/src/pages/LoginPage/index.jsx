@@ -1,4 +1,4 @@
-// import { useNavigate } from "@react-navigation/native";
+
 import React, { useState } from "react";
 import { Text, View, TextInput, Button } from "react-native";
 import {
@@ -17,14 +17,21 @@ import {
   ButtonCreateAccount,
 } from "./style";
 import axios from "axios";
+import { useNavigation } from "@react-navigation/native";
 
 export default function LoginPage() {
+   const navigation = useNavigation();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const navigate = useNavigate();
-   const handleRegister = () => {
-    // navigate.navigate("HomePage")
-  };
+
+   const handleLogin = () => {
+
+  }; 
+  const handleRegister = () => {
+    navigation.navigate("RegisterPage")
+  }
+
+
   
 
   return (
@@ -60,7 +67,7 @@ export default function LoginPage() {
             </Text>
           </ButtonLogin>
 
-          <ButtonCreateAccount>
+          <ButtonCreateAccount onPress={() => handleRegister()}>
             <Text
               style={{
                 color: "orange",
