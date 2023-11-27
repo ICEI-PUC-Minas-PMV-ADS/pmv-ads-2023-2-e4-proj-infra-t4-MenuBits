@@ -1,23 +1,7 @@
-import { Navigation } from "react-native";
-import React, { useState, useNavigation } from "react";
+import React, { useState } from "react";
+import { useNavigate } from "@react-navigation/native";
 import { Text, View, TextInput, Button } from "react-native";
 import {
-  InputTitle,
-  Header,
-  TextTitle,
-  InputSelectionArea,
-  InputArea,
-  AddButtonsArea,
-  ItemsArea,
-  ModalMenu,
-  ModalContent,
-  ModalItemContent,
-  ModalMainContent,
-  ModalVerticalLine,
-  ButtonArea,
-  TextDefault,
-  NavbarContent,
-  MinorPressable,
   Container,
   ModalContainer,
   ModalContainerTitle,
@@ -38,10 +22,13 @@ export default function RegisterPage() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   // const navigation = useNavigation();
-  const handleLogin = () => {
+  const handleRegister = () => {
     // navigation.navigate("HomePage");
     // navigation.navigate("HomePage");
+    // navigate.navigate("HomePage")
   };
+  // const navigate = useNavigate();
+
   return (
     <View>
       <Container>
@@ -81,7 +68,7 @@ export default function RegisterPage() {
             value={password}
             onChangeText={(event) => setPassword(event)}
           />
-          <ButtonLogin title="Entrar" onPress={() => handleLogin()}>
+          <ButtonLogin title="Entrar" onPress={() => handleRegister()}>
             <Text
               style={{
                 color: "white",
