@@ -21,13 +21,11 @@ import axios from "axios";
 export default function LoginPage() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  // const navigation = useNavigation();
+  const navigate = useNavigate();
    const handleRegister = () => {
-    // navigation.navigate("HomePage");
-    // navigation.navigate("HomePage");
     // navigate.navigate("HomePage")
   };
-  // const navigate = useNavigate();
+  
 
   return (
     <View>

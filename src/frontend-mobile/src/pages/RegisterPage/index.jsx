@@ -23,9 +23,7 @@ export default function RegisterPage() {
   const [password, setPassword] = useState("");
   // const navigation = useNavigation();
   const handleRegister = () => {
-    // navigation.navigate("HomePage");
-    // navigation.navigate("HomePage");
-    // navigate.navigate("HomePage")
+    
   };
   // const navigate = useNavigate();
 
