@@ -9,6 +9,13 @@
 
 **CT-03** <br />
 ![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t4-MenuBits/assets/68014636/c279120f-d6fe-4227-a9d8-68a9aba84c02)
+<br />
+*Teste 01* (criação de um item)<br />
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t4-MenuBits/assets/105240089/42b38ac8-3007-497f-a3db-44075a5e7b3b)
+<br />
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t4-MenuBits/assets/105240089/2950dc09-2286-4383-83d7-a6e92300f6bd)
+<br />
+
 
 **CT-04** <br />
 ![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t4-MenuBits/assets/68014636/ec06ee4a-6c87-4ee9-9cdd-978f2a180011)
