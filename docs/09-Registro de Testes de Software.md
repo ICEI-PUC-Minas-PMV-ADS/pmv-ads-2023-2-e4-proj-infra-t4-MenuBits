@@ -3,6 +3,13 @@
 
 **CT-01 AUTENTICAÇÃO DO RESTAURANTE** <br />
 ![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t4-MenuBits/assets/68014636/4a78583a-5f89-4dac-84e6-58cfd4ef4506)
+<br />
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t4-MenuBits/assets/105240089/e32bad4f-d88d-453c-9aed-77c5065dc093)
+<br />
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t4-MenuBits/assets/105240089/07bacb93-76fd-4ac4-a0c9-fb84a2dce764)
+<br />
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t4-MenuBits/assets/105240089/898a0b65-9402-4ae3-b628-9d47c87e9cfa)
+<br />
 
 **CT-02 AUTENTICAÇÃO DO CLIENTE** <br />
 ![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t4-MenuBits/assets/68014636/614f6789-7bf6-4e0c-88aa-b8166f3aade0)
