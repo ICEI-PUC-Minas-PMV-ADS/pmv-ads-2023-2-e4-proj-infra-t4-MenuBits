@@ -7,19 +7,25 @@ import EditPerfilRestaurantMobile from "../pages/Perfilpages/EditPerfilRestauran
 import MenuPage from "../pages/MenuPage";
 import RestaurantPage from "../pages/RestaurantPage";
 import MenuEditor from "../pages/MenuEditor";
+import LoginPage from "../pages/LoginPage";
+import RegisterPage from "../pages/RegisterPage";
 import CartPage from "../pages/CartPage";
-import MyRestaurant from "../pages/MyRestaurant";
+import MyRestaurant from "../pages/MyRestaurant"
+
+
 
 const { Navigator, Screen } = createNativeStackNavigator();
 
 export function AppRoutes() {
 	return (
 		<Navigator
-			initialRouteName="HomePage"
+			initialRouteName="LoginPage"
 			screenOptions={{
 				headerShown: false,
 			}}
 		>
+			<Screen name="LoginPage" component={LoginPage}/>
+			<Screen name="RegisterPage" component={RegisterPage}/>
 			<Screen name="HomePage" component={HomePage} />
 			<Screen name="PerfilUserMobile" component={PerfilUserMobile} />
 			<Screen name="PerfilRestaurantMobile" component={PerfilRestaurantMobile} />
