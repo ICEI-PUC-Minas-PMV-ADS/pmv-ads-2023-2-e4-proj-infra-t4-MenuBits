@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import { Text, View } from "react-native";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import {
   Container,
   ModalContainer,
@@ -15,29 +16,64 @@ import {
 } from "./style";
 import axios from "axios";
 import { useNavigation } from "@react-navigation/native";
+import { saveUserData } from "../../hooks/save-user";
 
 export default function LoginPage() {
   const navigation = useNavigation();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [message, setMessage] = useState("");
 
-  const handleLogin = () => {
-    axios
-      .get(`http://localhost:8080/api/users/email/${email}`)
-      .then((response) => {
-        const user = response.data;
+  const handleLogin = useCallback(async () => {
+    const body = {
+      email,
+      password,
+    };
 
-        if (user && user.password === password) {
-          navigation.navigate("HomePage");
+    try {
+      console.log("TESTE 1");
+      if (email === "" || password === "") {
+        setMessage("Preencha os dados de login");
+      } else {
+        console.log("TESTE 1.2");
+        const response = await axios.post(
+          `https://menu-bits-backend.onrender.com/api/user/auth`,
+          body
+        );
+        console.log("TESTE 1.3");
+        console.log("TESTE 1.4");
+        const userData = response.data;
+
+        console.log(userData);
+        if (
+          (userData.error == "Password invalid") |
+          (userData.error == "User not found")
+        ) {
+          setMessage("Credenciais incorretas");
         } else {
-          setError("FALHA NO LOGIN. Verifique suas credenciais.");
+          saveUserData(userData.authToken, {
+            nome: "Nome de usuario",
+            id: userData.user.id,
+          });
+          console.log(userData);
+          console.log(saveUserData);
+          console.log("REDIRECT");
+          navigation.navigate("HomePage");
         }
-      })
-      .catch((error) => {
-        console.error("Erro ao realizar login:", error);
-        setError("Erro ao realizar login. Tente novamente.");
-      });
+      }
+      // }
+    } catch (error) {
+      console.error(error);
+      setMessage("Falha no login");
+    }
+  }, [email, password]);
+
+  const config = {
+    headers: {
+      Authorization:
+        "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjIsImlhdCI6MTcwMTAyMjYyOCwiZXhwIjoxNzAxMTA5MDI4fQ.u4bPPIZHBcFcxjMaTJM83mYPQZBqwWrnHNSfPhIZG_0",
+    },
   };
 
   const handleRegister = () => {
@@ -67,6 +103,7 @@ export default function LoginPage() {
             value={password}
             onChangeText={(event) => setPassword(event)}
           />
+          {<Text>{message}</Text>}
           <ButtonLogin title="Entrar" onPress={handleLogin}>
             <Text style={{ color: "white" }}>ENTRAR</Text>
           </ButtonLogin>
