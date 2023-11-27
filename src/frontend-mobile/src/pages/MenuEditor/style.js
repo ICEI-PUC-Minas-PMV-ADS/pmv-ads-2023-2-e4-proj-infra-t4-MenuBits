@@ -55,7 +55,7 @@ export const ModalMenu = styled.View`
     margin-top: 15%;
     margin-bottom: 100%;
     width: 100%;
-    height: 50vh;
+    height: 100vh;
     align-items: center;
     justify-content: center;
     
@@ -64,10 +64,10 @@ export const ModalMenu = styled.View`
 export const ModalContent = styled.View`
     display: flex;
     width: 100%; 
-    height: 45%;
+    margin-bottom: 100%;
+    height: 52vh;
     background-color: #510000;
-    align-self: center;
-    justify-self: center;
+    justify-content: center;
     border-radius: 10px;
     align-items: center;
     padding: 20px;
@@ -76,6 +76,7 @@ export const ModalContent = styled.View`
 export const ModalItemContent = styled.View`
     display: flex;
     width: 100%; 
+    margin-bottom: 100%;
     height: 100vh;
     background-color: #510000;
     font-family: Sora_400Regular;

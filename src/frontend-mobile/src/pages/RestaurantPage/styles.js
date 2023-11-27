@@ -6,7 +6,6 @@ export const Container = styled.ScrollView`
   height: 100%;
   display: flex;
   padding: 10px;
-  gap: 15px;
 `;
 
 export const Content = styled.View`

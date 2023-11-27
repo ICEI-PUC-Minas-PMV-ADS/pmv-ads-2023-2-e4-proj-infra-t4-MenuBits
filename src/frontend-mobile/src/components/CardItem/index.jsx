@@ -6,12 +6,12 @@ import {
   Price,
   Title,
   Button,
+  TextButton,
 } from "./style";
-
-import { Image , Text} from "react-native";
+import { Image } from "react-native";
 
 const CardItem = ({
-  image,
+  image = "../../assets/pizza.svg",
   price,
   title,
   description,
@@ -22,8 +22,8 @@ const CardItem = ({
       <Content>
         <ImageArea>
           <Image
-            source={image}
-            style={{ width: 200, height: 200 }} // Estilos opcionais para a imagem
+            source={{uri: image}}
+            style={{ width: 150, height: 150, borderRadius: 20, }} 
             resizeMode="cover" // Modo de redimensionamento da imagem (opcional)
           />
         </ImageArea>
@@ -32,11 +32,11 @@ const CardItem = ({
 
         <Description>{description}</Description>
 
-        <Price>{price}</Price>
+        <Price>R$ {price.toFixed(2)}</Price>
         <Button onPress={handleClickAddOrder}> 
-          <Text>
+          <TextButton>
             Adicionar pedido
-          </Text>
+          </TextButton>
         </Button>
       </Content>
     </Container>

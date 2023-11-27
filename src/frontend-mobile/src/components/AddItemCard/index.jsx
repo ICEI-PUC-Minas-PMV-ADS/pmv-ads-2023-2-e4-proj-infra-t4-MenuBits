@@ -16,29 +16,29 @@ import IconAntDesign from 'react-native-vector-icons/AntDesign.js'
 
 import axios from "axios";
 
-export default function AddItemCard({ menuSelectedId, runAtualizator }) {
+export default function AddItemCard({ menuSelectedId, runAtualizator, atualization }) {
 
-    const [items, setItems] = useState([{ id: 0 }])
-    const [selectedOption, setSelectedOption] = useState('0');
+    const [items, setItems] = useState([])
+    const [selectedOption, setSelectedOption] = useState('');
     const [errorMessage, setErrorMessage] = useState('Adicione um item já cadastrado ao menu selecionado')
 
     const config = {
-        headers: { Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjIsImlhdCI6MTY5ODYxNDc4MiwiZXhwIjoxNjk4NzAxMTgyfQ.6MiLNhJrW1cEo0glX7VvQLSjcu0CkOLxZP7JCLCSM1E` },
+        headers: { Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjIsImlhdCI6MTcwMTAyMjYyOCwiZXhwIjoxNzAxMTA5MDI4fQ.u4bPPIZHBcFcxjMaTJM83mYPQZBqwWrnHNSfPhIZG_0` },
     };
 
     useEffect(() => {
         axios
-            .get(`https://menu-bits-backend.onrender.com/api/items/restaurant/12`)
+            .get(`https://menu-bits-backend.onrender.com/api/items/restaurant/22`)
             .then((response) => {
                 setItems(response.data.data);
             }).catch((e) => {
                 console.log(e)
             });
 
-    }, [])
+    }, [atualization])
 
     const handleSelectChange = (event) => {
-        setSelectedOption(event.target.value);
+        setSelectedOption(event?.target?.value);
     };
 
     function getThePositionInArrayByID(array, id) {
@@ -62,7 +62,7 @@ export default function AddItemCard({ menuSelectedId, runAtualizator }) {
                         selectedValue={selectedOption}
                         onValueChange={handleSelectChange}
                     >
-                        <Picker.Item key={1} label={"Selecione"} value={0} />
+                        <Picker.Item key={0} label={"Selecione"} value={0} />
                         {
                             items.map(e => (
                                 <Picker.Item key={e.id} label={e.name} value={e.id} />
@@ -75,8 +75,8 @@ export default function AddItemCard({ menuSelectedId, runAtualizator }) {
                 <Button onPress={
                     () => {
 
-                        axios.post(`http://localhost:8080/api/items/api/menus/items`, {
-                            itemId: items[getThePositionInArrayByID(items, parseInt(selectedOption))].id,
+                        axios.post(`https://menu-bits-backend.onrender.com/api/menus/items`, {
+                            itemId: items?.[getThePositionInArrayByID(items, parseInt(selectedOption))].id,
                             menuId: parseInt(menuSelectedId)
                         }, config)
                             .then((response) => {
@@ -91,7 +91,7 @@ export default function AddItemCard({ menuSelectedId, runAtualizator }) {
                     <IconAntDesign style={{fontSize: 60}} name="plussquare" color="#03AC32" />
                 </Button>
 
-
+                
                 <Description>{errorMessage}</Description>
 
 
