@@ -5,6 +5,7 @@ import About from './pages/About'
 import HomePage from './pages/Homepage'
 import MenuEditor from './pages/MenuEditor'
 import MenuPage from './pages/MenuPage'
+import RestaurantListPage from './pages/RestaurantListPage'
 import RegisterPage from './pages/RegisterPage'
 import RestaurantHomePage from './pages/RestaurantHomePage'
 import MeusPedidos from "./pages/pedidos"
@@ -12,11 +13,12 @@ import PerfilUser from "../src/pages/Perfilpages/PerfilUser"
 import EditPerfilUser from "../src/pages/Perfilpages/EditPerfilUser"
 import './styles/index.css'
 import LoginPage from "./pages/LoginPage";
+import { MenuBitsProvider } from "./../src/context/MenuBitsContext";
 
 
 // adicionar /:menuId? no menu-page e pegar por useParams
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <>
+  <MenuBitsProvider>
     <Navbar />
     <BrowserRouter>
       <Routes>
@@ -25,6 +27,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <Route path="/register-client" element={<RegisterPage profile='client' />} />
         <Route path="/register-restaurant" element={<RegisterPage profile='restaurant' />} />
         <Route path='/menu-page/:menuId?' element={<MenuPage />} />
+        <Route path='/restaurant-list-page/:restauratId?' element={<RestaurantListPage />} />
+
         <Route path="/order" element={<MeusPedidos />} />
         <Route path="/login-client" element={<LoginPage profile='client' />} />
         <Route path="/login-restaurant" element={<LoginPage profile='restaurant' />} />
@@ -34,5 +38,5 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <Route path="/edit-perfil-user" element={<EditPerfilUser />} />
       </Routes>
     </BrowserRouter>
-  </>
+  </MenuBitsProvider>
 );
