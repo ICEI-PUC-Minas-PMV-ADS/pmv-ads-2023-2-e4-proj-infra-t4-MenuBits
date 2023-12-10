@@ -50,7 +50,7 @@ export default function MenuPage() {
 
         console.log(JSON.stringify(err));
       });
-  }, [menuId]);
+  }, []);
 
   useEffect(() => {
     axios

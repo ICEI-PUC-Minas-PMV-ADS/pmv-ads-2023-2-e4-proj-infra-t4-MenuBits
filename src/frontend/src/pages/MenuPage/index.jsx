@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Cart from "../../assets/cart.png";
 import {
@@ -14,12 +14,21 @@ import {
   ImageContent,
 } from "./styles.js";
 import CardItem from "../../components/CardItem";
-import { useParams } from "react-router-dom";
+import { useMenuBitsState } from "../../context/MenuBitsContext";
 
 export default function MenuPage() {
-  const [menuData, setMenuData] = useState();
-  const [restaurantData, setRestaurantData] = useState();
-  const [selectedOrder, setSelectedOrder] = useState([]);
+  // const [menuData, setMenuData] = useState();
+
+  const { 
+    selectedOrder, 
+    setSelectedOrder,
+    restaurantData, 
+    setRestaurantData,
+    restaurantId,
+    menuId,
+    menuData,
+    setMenuData
+    } = useMenuBitsState();
 
   
   const handleClick = useCallback((item)=> {
@@ -29,15 +38,14 @@ export default function MenuPage() {
     setSelectedOrder(selectedOrderUpdated )
     localStorage.setItem('pedidos', JSON.stringify(selectedOrderUpdated) )
     alert('Adicionado Com sucesso!')
- }, [selectedOrder])
+ }, [selectedOrder, setSelectedOrder])
 
  useEffect(()=>{
   setSelectedOrder(JSON.parse(localStorage.getItem('pedidos')) || []) 
- },[])
+ },[setSelectedOrder])
 
-  const { menuId } = useParams()
-  // Subistituir 1 da linha 15 por: e  adicionar ${menuId}
   const navigate = useNavigate();
+
   useEffect(() => {
     axios
       .get(`${import.meta.env.VITE_API_URL}/api/items/menus/${menuId}`)
@@ -50,20 +58,20 @@ export default function MenuPage() {
 
         console.log(JSON.stringify(err));
       });
-  }, [menuId]);
+  }, [menuId, setMenuData]);
 
-  useEffect(() => {
-    axios
-      .get(`${import.meta.env.VITE_API_URL}/api/restaurante/12`)
-      .then((res) => {
-        setRestaurantData(res.data);
-      })
-      .catch((err) => {
-        alert("Erro ao Carregar dados");
+  // useEffect(() => {
+  //   axios
+  //     .get(`${import.meta.env.VITE_API_URL}/api/restaurant/${restaurantId}	`)
+  //     .then((res) => {
+  //       setRestaurantData(res.data);
+  //     })
+  //     .catch((err) => {
+  //       alert("Erro ao Carregar dados");
 
-        console.log(JSON.stringify(err));
-      });
-  }, []);
+  //       console.log(JSON.stringify(err));
+  //     });
+  // }, [restaurantId, setRestaurantData]);
 
   const handleClickCart = useCallback(() => {
     navigate("/order");
@@ -78,12 +86,12 @@ export default function MenuPage() {
       <Banner>
         <RestaurantButton />
         <TextBanner>
-          {restaurantData && restaurantData.restaurant.name}
+          {restaurantData && restaurantData.name}
         </TextBanner>
         <RestaurantButton>
           Ver mais sobre
           <Button onClick={handleClickRestaurant}>
-            {restaurantData && restaurantData.restaurant.name}
+            {restaurantData && restaurantData.name}
           </Button>
         </RestaurantButton>
       </Banner>
@@ -96,10 +104,10 @@ export default function MenuPage() {
       </Title>
       <ContainerCard>
         {menuData &&
-          menuData.map((item) => {
+          menuData.map((item, index) => {
             return (
               <CardItem
-                key={item.id}
+                key={index}
                 image={item.imageUrl}
                 title={item.name}
                 description={item.description}

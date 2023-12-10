@@ -1,5 +1,5 @@
 // import { Button } from "../../components/Buttons";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import backgroundImage from "../../assets/logo2.png";
 import lupaImage from "../../assets/lupa.png";
 import p1 from "../../assets/p1.png";
@@ -10,10 +10,10 @@ import axios from "axios";
 
 export default function HomePage() {
   const navigate = useNavigate();
-  const [menuData, setMenuData] = useState();
-  const { setRestaurantId, restaurantId } = useMenuBitsState();
+  const { setRestaurantId, restaurantId, setMenuData, menuData } = useMenuBitsState();
 
   useEffect(() => {
+    setMenuData([]);
     axios
     .get(
       `${import.meta.env.VITE_API_URL}/api/menus/restaurant/${restaurantId}`
@@ -25,10 +25,10 @@ export default function HomePage() {
       console.warn("Erro ao Carregar menus");
       console.log(JSON.stringify(err));
     });
-  }, [restaurantId]); 
+  }, [restaurantId, setMenuData, setRestaurantId]); 
   
   const handleRedirect = () => {
-    if(menuData.length > 0){
+    if(menuData && menuData.length > 0){
     navigate(`/restaurant-list-page/${restaurantId}`)
     }
     else {
@@ -36,8 +36,6 @@ export default function HomePage() {
     }
   };
   
-
-  console.log(restaurantId);
   return (
     <div
       className="h-screen bg-cover bg-center pt-6 "

@@ -1,37 +1,18 @@
 import { Container, TitleText, Content, Line } from "./styles.js";
 import CardItem from "../../components/CardMenu";
-import { useCallback, useEffect, useState } from "react";
-import axios from "axios";
+import { useCallback } from "react";
 import { useMenuBitsState } from "../../context/MenuBitsContext";
 import { useNavigate } from "react-router-dom";
 
 const RestaurantListPage = () => {
-  const [menuData, setMenuData] = useState([]);
-  // const [menuId, setMenuId] = useState([]);
+  const { menuData, setMenuId } = useMenuBitsState();
 
   const navigate = useNavigate();
-  // const { restaurantId } = useParams()
-  const { restaurantId } = useMenuBitsState();
-
-  useEffect(() => {
-      axios
-        .get(
-          `${import.meta.env.VITE_API_URL}/api/menus/restaurant/${restaurantId}`
-        )
-        .then((res) => {
-          setMenuData(res.data.menu);
-        })
-        .catch((err) => {
-          console.warn("Erro ao Carregar menus");
-          console.log(JSON.stringify(err));
-        });
-    
-  }, [restaurantId]);
 
    const handleMenuClick = useCallback((menuId) => {
+    setMenuId(menuId);
     navigate(`/menu-page/${menuId}`);
-    // setMenuId(menuId)
-   },[navigate]);
+   },[navigate, setMenuId]);
 
   return (
     <Container>
