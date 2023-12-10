@@ -24,6 +24,15 @@ export default function HomePage() {
   });
 
   console.log(id);
+
+  const onKeyDownHandler = (e) => {
+    if (e.keyCode === 13) {
+      handleRedirect();
+    }
+  };
+
+  
+
   return (
     <div
       className="h-screen bg-cover bg-center pt-6 "
@@ -37,15 +46,18 @@ export default function HomePage() {
         <p className="text-red-600 pb-4">PROCURE AQUI O SEU CARDÁPIO IDEAL</p>
 
         <div className="flex flex-row items-center gap-4 bg-white rounded-lg w-1/3">
-          <button onClick={handleRedirect}>
-            <img src={lupaImage} className="bg-white rounded-lg" alt="Lupa" />
-          </button>
-          <input
+        <input 
             type="text"
-            className="w-full outline-none text-center"
+            className="w-full outline-none text-center p-2"
             onChange={(e) => setId(e.target.value)}
+            onKeyDown={onKeyDownHandler}
           />
+          <button
+            className="pr-4"
+            onClick={handleRedirect}><img src={lupaImage} className="bg-white rounded-lg" alt="Lupa" /></button>
+            
         </div>
+        
 
         <div className="absolute right-0 top-36 p-6 flex flex-col gap-4">
           <div className="flex gap-2 items-center">
@@ -57,9 +69,9 @@ export default function HomePage() {
               <img src={p1} alt="Pizza" className="rounded-xl" />
               <p className="font-bold text-white">Nostra Pizza</p>
             </div>
-            <button className="p-2 bg-white rounded-xl">
-              Cardápio principal
-            </button>
+              <button className="p-2 bg-white rounded-xl">
+                Cardápio principal
+              </button>
           </div>
           <div className="bg-red-700 p-4 rounded-lg flex flex-col items-center gap-6">
             <div className="flex items-center gap-2">

@@ -10,6 +10,8 @@ import RestaurantHomePage from './pages/RestaurantHomePage'
 import MeusPedidos from "./pages/pedidos"
 import PerfilUser from "../src/pages/Perfilpages/PerfilUser"
 import EditPerfilUser from "../src/pages/Perfilpages/EditPerfilUser"
+import PerfilRestaurant from "../src/pages/Perfilpages/PerfilRestaurant"
+import EditPerfilRestaurant from "../src/pages/Perfilpages/EditPerfilRestaurant"
 import './styles/index.css'
 import LoginPage from "./pages/LoginPage";
 
@@ -32,6 +34,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <Route path="/restaurant-homepage" element={<RestaurantHomePage />} />
         <Route path="/perfil-user" element={<PerfilUser />} />
         <Route path="/edit-perfil-user" element={<EditPerfilUser />} />
+        <Route path="/perfil-restaurant" element={<PerfilRestaurant />} />
+        <Route path="/edit-perfil-restaurant" element={<EditPerfilRestaurant />} />
       </Routes>
     </BrowserRouter>
   </>

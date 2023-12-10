@@ -21,11 +21,8 @@ export const PerfilCard = styled.div`
         background-color:#C75B00;
         font-size: 18px;
         border-radius: 10px;
-        padding: 6px 20px 6px 20px;
+        padding: 12px 30px 12px 30px;
         margin-bottom: 30px;
-        > svg {
-            font-size: 30px;
-        }
     }
     
 `;
@@ -51,7 +48,7 @@ export const ContentCard = styled.div`
     margin: 5%;
 `;
 
-export const Label = styled.label`
+export const Subheader = styled.div`
 	color: #C75B00;
 	font-weight: 400;    
 `;
@@ -60,3 +57,10 @@ export const Info = styled.div`
     padding: 3% 10% 3% 10%;
 `;
 
+export const Email = styled.div`
+    padding-top: 2%;
+`;
+
+export const Name = styled.div`
+    padding-top: 2%;
+`;
