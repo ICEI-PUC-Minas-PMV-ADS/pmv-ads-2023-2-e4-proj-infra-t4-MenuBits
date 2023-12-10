@@ -35,6 +35,18 @@ export default function HomePage() {
       alert("Esse restaurante não possui menu cadastrado")
     }
   };
+
+  useEffect(() => {
+    axios.get(`${import.meta.env.VITE_API_URL}/api/restaurante`).then((response) => {
+      console.log(response.data)
+    })
+  });
+
+  const onKeyDownHandler = (e) => {
+    if (e.keyCode === 13) {
+      handleRedirect();
+    }
+  };
   
   return (
     <div
@@ -47,18 +59,19 @@ export default function HomePage() {
       <div className="flex flex-col items-center justify-center h-full">
         <h2 className="text-3xl font-bold text-red-600">TA COM FOME DE QUÊ?</h2>
         <p className="text-red-600 pb-4">DIGITE O CÓDIGO DO RESTAURANTE</p>
-
-        <div className="flex flex-row items-center gap-6 bg-white rounded-lg w-1/3 p-2">
-  
-          <input
+        <div className="flex flex-row items-center gap-4 bg-white rounded-lg w-1/3">
+        <input 
             type="text"
-            className="w-full outline-none text-center"
-            onChange={(e) => setRestaurantId(e.target.value)}
+            className="w-full outline-none text-center p-2"
+            onChange={(e) => setId(e.target.value)}
+            onKeyDown={onKeyDownHandler}
           />
-          <button onClick={handleRedirect}>
-          <img src={lupaImage} className="bg-white rounded-lg" alt="Lupa" />
-        </button>
+          <button
+            className="pr-4"
+            onClick={handleRedirect}><img src={lupaImage} className="bg-white rounded-lg" alt="Lupa" /></button>
+            
         </div>
+        
 
         <div className="absolute right-0 top-36 p-6 flex flex-col gap-4">
           <div className="flex gap-2 items-center">
@@ -70,9 +83,9 @@ export default function HomePage() {
               <img src={p1} alt="Pizza" className="rounded-xl" />
               <p className="font-bold text-white">Nostra Pizza</p>
             </div>
-            <button className="p-2 bg-white rounded-xl">
-              Cardápio principal
-            </button>
+              <button className="p-2 bg-white rounded-xl">
+                Cardápio principal
+              </button>
           </div>
           <div className="bg-red-700 p-4 rounded-lg flex flex-col items-center gap-6">
             <div className="flex items-center gap-2">

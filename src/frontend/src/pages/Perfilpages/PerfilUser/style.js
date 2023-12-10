@@ -48,7 +48,7 @@ export const ContentCard = styled.div`
     margin: 5%;
 `;
 
-export const Label = styled.label`
+export const Subheader = styled.div`
 	color: #C75B00;
 	font-weight: 400;
 `;
@@ -61,6 +61,6 @@ export const Email = styled.div`
     padding-top: 2%;
 `;
 
-export const Nome = styled.div`
+export const Name = styled.div`
     padding-top: 2%;
 `;

@@ -8,7 +8,7 @@ import { UserCircle2 } from 'lucide-react';
 export default function Navbar() {
 
   const [userVision, setUserVision] = useState(true)
-  const [userAuth, setUserAuth] = useState(true)
+  const [userAuth, setUserAuth] = useState('/perfil-user')
 
   
 
@@ -59,7 +59,11 @@ export default function Navbar() {
                 </Button>
 
                 
-            <a href="perfil-user">
+            <a href={userAuth} onKeyDown={(e) => {
+                  if (e.keyCode === 13) {
+                    setUserAuth('/perfil-restaurant');
+                  }}
+            }>
               <UserCircle2 size={48} />
             </a>
 
