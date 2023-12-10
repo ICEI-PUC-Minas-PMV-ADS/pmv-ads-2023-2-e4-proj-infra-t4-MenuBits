@@ -10,7 +10,7 @@ export const Container = styled.div`
 `;
 
 export const Banner = styled.div`
-  background-image: url("./src/assets/pizzaNostra.png");
+  background-image: url("src/assets/pizzaNostra.png");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -25,6 +25,7 @@ export const Banner = styled.div`
 export const TextBanner = styled.h1`
   color: white;
   font-size: 40px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Adiciona uma sombra para criar o efeito de relevo */
   justify-content: center;
   align-items: center;
 `;

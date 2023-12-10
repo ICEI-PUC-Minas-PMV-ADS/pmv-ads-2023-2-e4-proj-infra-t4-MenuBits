@@ -24,7 +24,9 @@ export default function MenuPage() {
     restaurantData, 
     menuId,
     menuData,
-    setMenuData
+    setMenuData,
+    setRestaurantData,
+    restaurantId
     } = useMenuBitsState();
 
   
@@ -41,6 +43,7 @@ export default function MenuPage() {
   setSelectedOrder(JSON.parse(localStorage.getItem('pedidos')) || []) 
  },[setSelectedOrder])
  const menuIdTreated = menuId || MenuIdParams;
+ 
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -48,7 +51,6 @@ export default function MenuPage() {
       .get(`${import.meta.env.VITE_API_URL}/api/items/menus/${menuIdTreated}`)
       .then((res) => {
         setMenuData(res.data.data);
-        console.log(res.data.data);
       })
       .catch((err) => {
         alert("Erro ao Carregar dados");
@@ -57,6 +59,18 @@ export default function MenuPage() {
       });
   }, [menuId, menuIdTreated, setMenuData]);
 
+  useEffect(() => {
+    axios
+      .get(`${import.meta.env.VITE_API_URL}/api/restaurante/${restaurantId}`)
+      .then((res) => {
+        setRestaurantData(res.data.restaurant);
+      })
+      .catch((err) => {
+        alert("Erro ao Carregar dados");
+
+        console.log(JSON.stringify(err));
+      });
+  }, [menuIdTreated, restaurantId, setRestaurantData]);
 
   const handleClickCart = useCallback(() => {
     navigate("/order");
@@ -65,7 +79,8 @@ export default function MenuPage() {
   const handleClickRestaurant = useCallback(() => {
     navigate("/");
   }, [navigate]);
-  console.log(menuData, " tai");
+console.log(restaurantData)
+
   return (
     <Container>
       <Banner>
@@ -74,9 +89,8 @@ export default function MenuPage() {
           {restaurantData && restaurantData.name}
         </TextBanner>
         <RestaurantButton>
-          Ver mais sobre
-          <Button onClick={handleClickRestaurant}>
-            {restaurantData && restaurantData.name}
+          <Button onClick={handleClickRestaurant}>          Voltar a Home 
+
           </Button>
         </RestaurantButton>
       </Banner>

@@ -10,7 +10,7 @@ import axios from "axios";
 
 export default function HomePage() {
   const navigate = useNavigate();
-  const { setRestaurantId, restaurantId, setRestaurantData, restaurantData } = useMenuBitsState();
+  const { setRestaurantId, restaurantId, setMenuData, menuData } = useMenuBitsState();
 
   useEffect(() => {
     axios
@@ -18,17 +18,17 @@ export default function HomePage() {
       `${import.meta.env.VITE_API_URL}/api/menus/restaurant/${restaurantId}`
     )
     .then((res) => {
-      setRestaurantData(res.data.menu);
-      
+      setMenuData(res.data.menu);
+            
     })
     .catch((err) => {
       console.warn("Erro ao Carregar menus");
       console.log(JSON.stringify(err));
     });
-  }, [restaurantId, setRestaurantData]); 
+  }, [restaurantId, setMenuData]); 
   
   const handleRedirect = () => {
-    if(restaurantData && restaurantData.length > 0){
+    if(menuData && menuData.length > 0){
     navigate(`/restaurant-list-page/${restaurantId}`)
     }
     else {
