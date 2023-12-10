@@ -1,21 +1,40 @@
 // import { Button } from "../../components/Buttons";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import backgroundImage from "../../assets/logo2.png";
 import lupaImage from "../../assets/lupa.png";
 import p1 from "../../assets/p1.png";
 import time from "../../assets/time.png";
 import { useNavigate } from "react-router-dom";
+import { useMenuBitsState } from "../../context/MenuBitsContext";
 import axios from "axios";
 
 export default function HomePage() {
-  const [id, setId] = useState("");
   const navigate = useNavigate();
+  const { setRestaurantId, restaurantId, setMenuData, menuData } = useMenuBitsState();
 
+  useEffect(() => {
+    axios
+    .get(
+      `${import.meta.env.VITE_API_URL}/api/menus/restaurant/${restaurantId}`
+    )
+    .then((res) => {
+      setMenuData(res.data.menu);
+            
+    })
+    .catch((err) => {
+      console.warn("Erro ao Carregar menus");
+      console.log(JSON.stringify(err));
+    });
+  }, [restaurantId, setMenuData]); 
+  
   const handleRedirect = () => {
-    navigate(`/menu-page/${id}`);
+    if(menuData && menuData.length > 0){
+    navigate(`/restaurant-list-page/${restaurantId}`)
+    }
+    else {
+      alert("Esse restaurante não possui menu cadastrado")
+    }
   };
-  
-  
 
   useEffect(() => {
     axios.get(`${import.meta.env.VITE_API_URL}/api/restaurante`).then((response) => {
@@ -23,16 +42,12 @@ export default function HomePage() {
     })
   });
 
-  console.log(id);
-
   const onKeyDownHandler = (e) => {
     if (e.keyCode === 13) {
       handleRedirect();
     }
   };
-
   
-
   return (
     <div
       className="h-screen bg-cover bg-center pt-6 "
@@ -43,8 +58,7 @@ export default function HomePage() {
     >
       <div className="flex flex-col items-center justify-center h-full">
         <h2 className="text-3xl font-bold text-red-600">TA COM FOME DE QUÊ?</h2>
-        <p className="text-red-600 pb-4">PROCURE AQUI O SEU CARDÁPIO IDEAL</p>
-
+        <p className="text-red-600 pb-4">DIGITE O CÓDIGO DO RESTAURANTE</p>
         <div className="flex flex-row items-center gap-4 bg-white rounded-lg w-1/3">
         <input 
             type="text"

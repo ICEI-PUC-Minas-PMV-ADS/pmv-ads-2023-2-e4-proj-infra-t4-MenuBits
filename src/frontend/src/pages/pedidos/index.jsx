@@ -1,44 +1,48 @@
 import { useEffect, useState } from "react";
 import backgroundImage from "../../assets/pizzaNostra.png";
 import remove from "../../assets/remove.png";
-import axios from "axios";
+import { useMenuBitsState } from "../../context/MenuBitsContext";
+import { useNavigate } from "react-router-dom";
 
 export default function MeusPedidos() {
-  const [order, setOrder] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
-  const [restaurante, setRestaurantData] = useState();
+  const { menuId, selectedOrder, setSelectedOrder  } = useMenuBitsState();
 
+  const navigate = useNavigate();
   useEffect(() => {
-    const local = localStorage.getItem("pedidos");
-    const parsedLocal = JSON.parse(local) || [];
-    setOrder(parsedLocal);
+    const fetchOrder = async () => {
+      try {
+        const local = localStorage.getItem("pedidos");
+        const parsedLocal = JSON.parse(local) || [];
+        setSelectedOrder(parsedLocal);
 
-    // Calcula o total da compra somando os preços de cada item no carrinho
-    const total = parsedLocal.reduce((acc, item) => acc + item.price, 0);
-    setTotalPrice(total);
-  }, []);
+        // Calcula o total da compra somando os preços de cada item no carrinho
+        const total = parsedLocal.reduce((acc, item) => acc + item.price, 0);
+        setTotalPrice(total);
+      } catch (error) {
+        console.error("Erro ao buscar os pedidos:", error);
+      }
+    };
 
-  useEffect(() => {
-    axios
-      .get(`${import.meta.env.VITE_API_URL}/api/restaurante/12`)
-      .then((res) => {
-        setRestaurantData(res.data);
-      })
-      .catch((err) => {
-        alert("Erro ao Carregar dados");
-        console.log(JSON.stringify(err));
-      });
-  }, []);
+    fetchOrder();
+  }, [setSelectedOrder]);
 
-  const handleRemove = (id) => {
-    const copyOrder = [...order];
-    const pizzaIndex = copyOrder.findIndex((item) => item.id === id);
-    copyOrder.splice(pizzaIndex, 1);
-    setOrder(copyOrder);
-
+  
+  const handleRemove = async(index) => {
+    const copyOrder = [...selectedOrder];
+    copyOrder.splice(index, 1);
+    setSelectedOrder(copyOrder);
+    localStorage.setItem(
+        "pedidos",
+        JSON.stringify(copyOrder)
+      );
     // Recalcula o total da compra após a remoção do item
     const total = copyOrder.reduce((acc, item) => acc + item.price, 0);
     setTotalPrice(total);
+  };
+
+  const handleBackMenu = () => {
+    navigate(`/menu-page/${menuId}`)
   };
 
   return (
@@ -55,13 +59,13 @@ export default function MeusPedidos() {
         <div className="p-10 flex items-center justify-center w-full border-b border-gray-500">
           <h3 className="text-3xl font-bold">Meus Pedidos</h3>
         </div>
-        {order.length === 0 ? (
+        {selectedOrder.length === 0 ? (
           <p className="text-2xl mt-4">CARRINHO VAZIO</p>
         ) : (
           <div className="w-1/2 bg-amber-100">
-            {order.map((item) => (
+            {selectedOrder.map((item, index) => (
               <div
-                key={item.id}
+                key={index}
                 className="flex w-full items-center justify-between p-4"
               >
                 <div className="flex items-center gap-4">
@@ -78,14 +82,14 @@ export default function MeusPedidos() {
             ))}
           </div>
         )}
-        {order.length > 0 && (
+        {selectedOrder.length > 0 && (
           <div className="w-1/2 bg-red-600 p-4 flex items-center justify-between">
             <p>TOTAL</p>
             <p>R$ {totalPrice}</p>
           </div>
         )}
         <div className="pt-12">
-          <a href="/menu-page" className="rounded-xl bg-red-600 p-4 text-white">
+          <a onClick={handleBackMenu} className="rounded-xl bg-red-600 p-4 text-white">
             VOLTAR AO CARDÁPIO
           </a>
         </div>

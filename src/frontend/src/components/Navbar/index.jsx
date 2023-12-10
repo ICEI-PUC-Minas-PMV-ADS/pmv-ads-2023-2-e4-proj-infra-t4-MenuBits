@@ -25,10 +25,6 @@ export default function Navbar() {
                   Início
                 </a>
 
-                <a href="/">
-                  Favoritos
-                </a>
-
                 <a href="/order">
                   Meus pedidos
                 </a>
@@ -40,7 +36,6 @@ export default function Navbar() {
                 <a href="/menu-editor">
                   Editor de cardápio
                 </a>
-
 
                 <a href="/about">
                   Sobre

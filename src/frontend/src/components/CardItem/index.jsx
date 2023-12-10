@@ -15,7 +15,9 @@ return(
         <Content>
             <ImageArea>
 
-            <img src={image} alt="image" />
+            <img src={image} alt="image" style={{ width: '100%', height: '100%',   borderRadius: '20px',
+ }} // Defina os valores de largura e altura desejados
+/>
 
             </ImageArea>
 
