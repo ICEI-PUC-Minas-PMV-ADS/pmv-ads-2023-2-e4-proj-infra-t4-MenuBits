@@ -1,4 +1,4 @@
-import { Container, TitleText, Content, Line } from "./styles.js";
+import { Container, TitleText, Content, Line, Grid } from "./styles.js";
 import CardItem from "../../components/CardMenu";
 import { useCallback } from "react";
 import { useMenuBitsState } from "../../context/MenuBitsContext";
@@ -19,9 +19,11 @@ const RestaurantListPage = () => {
       <Content>
       <TitleText>Menus</TitleText>
       <Line/>
-     { menuData.map((item, index) => (
-      <CardItem key={index} title={item.title} handleMenuClick={()=> handleMenuClick(item.id)} />
-      ))}
+      <Grid>
+        { menuData.map((item, index) => (
+        <CardItem key={index} title={item.title} handleMenuClick={()=> handleMenuClick(item.id)} />
+        ))}
+      </Grid>
       </Content>
     </Container>
   );

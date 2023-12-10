@@ -30,3 +30,10 @@ export const Line = styled.hr`
   margin: 10px 70px;
   background-color: rgba(0, 0, 0, 0.2);
 `;
+
+export const Grid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 120px;
+  gap: 10px;
+`;
