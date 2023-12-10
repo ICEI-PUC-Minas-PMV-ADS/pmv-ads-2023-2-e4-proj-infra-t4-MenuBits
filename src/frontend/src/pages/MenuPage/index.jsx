@@ -17,7 +17,6 @@ import CardItem from "../../components/CardItem";
 import { useMenuBitsState } from "../../context/MenuBitsContext";
 
 export default function MenuPage() {
-  // const [menuData, setMenuData] = useState();
  const { menuId: MenuIdParams } = useParams();	
   const { 
     selectedOrder, 

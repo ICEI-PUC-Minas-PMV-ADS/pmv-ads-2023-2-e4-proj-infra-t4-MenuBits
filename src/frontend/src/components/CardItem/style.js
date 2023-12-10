@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  width: 21%;
+  width: 15%;
   height: 30rem;
   background-color: #ffeccc;
   border-radius: 25px;
@@ -35,7 +35,7 @@ export const Content = styled.div`
 
 export const ImageArea = styled.div`
   width: 100%;
-  height: 35%;
+  height: 30%;
   background-color: #fffbf2;
   border-radius: 20px;
   display: flex;
@@ -53,7 +53,7 @@ export const ImageArea = styled.div`
 export const Title = styled.h1`
   font-weight: 700;
   color: #2e2e2e;
-  font-size: 1.5rem;
+  font-size: 1rem;
 `;
 
 export const Description = styled.p`
@@ -68,7 +68,7 @@ export const Description = styled.p`
 export const Price = styled.h2`
   font-weight: 600;
   color: #2e2e2e;
-  font-size: 2rem;
+  font-size: 1.5rem;
 `;
 
 export const Button = styled.button`

@@ -5,7 +5,7 @@ import { useMenuBitsState } from "../../context/MenuBitsContext";
 import { useNavigate } from "react-router-dom";
 
 const RestaurantListPage = () => {
-  const { menuData, setMenuId } = useMenuBitsState();
+  const { restaurantData, setMenuId } = useMenuBitsState();
 
   const navigate = useNavigate();
 
@@ -19,7 +19,7 @@ const RestaurantListPage = () => {
       <Content>
       <TitleText>Menus</TitleText>
       <Line/>
-     { menuData.map((item, index) => (
+     { restaurantData.map((item, index) => (
       <CardItem key={index} title={item.title} handleMenuClick={()=> handleMenuClick(item.id)} />
       ))}
       </Content>
