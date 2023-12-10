@@ -19,8 +19,8 @@ const RestaurantListPage = () => {
       <Content>
       <TitleText>Menus</TitleText>
       <Line/>
-     { menuData.map((item) => (
-      <CardItem key={item.id} title={item.title} handleMenuClick={()=> handleMenuClick(item.id)} />
+     { menuData.map((item, index) => (
+      <CardItem key={index} title={item.title} handleMenuClick={()=> handleMenuClick(item.id)} />
       ))}
       </Content>
     </Container>

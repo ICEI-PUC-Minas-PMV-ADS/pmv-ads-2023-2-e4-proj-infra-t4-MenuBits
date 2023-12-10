@@ -23,8 +23,6 @@ export default function MenuPage() {
     selectedOrder, 
     setSelectedOrder,
     restaurantData, 
-    setRestaurantData,
-    restaurantId,
     menuId,
     menuData,
     setMenuData
@@ -60,18 +58,6 @@ export default function MenuPage() {
       });
   }, [menuId, setMenuData]);
 
-  // useEffect(() => {
-  //   axios
-  //     .get(`${import.meta.env.VITE_API_URL}/api/restaurant/${restaurantId}	`)
-  //     .then((res) => {
-  //       setRestaurantData(res.data);
-  //     })
-  //     .catch((err) => {
-  //       alert("Erro ao Carregar dados");
-
-  //       console.log(JSON.stringify(err));
-  //     });
-  // }, [restaurantId, setRestaurantData]);
 
   const handleClickCart = useCallback(() => {
     navigate("/order");

@@ -9,9 +9,11 @@ export const MenuBitsProvider = ({ children }) => {
     const [restaurantId, setRestaurantId] = useState('');
     const [menuId, setMenuId] = useState('');
     const [selectedOrder, setSelectedOrder] = useState([]);
+    const [menuData, setMenuData] = useState([]);
+
 
   return (
-    <MenuBitsContext.Provider value={{ setRestaurantData, restaurantData, setMenuId, menuId, selectedOrder, setSelectedOrder, restaurantId, setRestaurantId }}>
+    <MenuBitsContext.Provider value={{ setRestaurantData, restaurantData, setMenuId, menuId, selectedOrder, setSelectedOrder, restaurantId, setRestaurantId, menuData, setMenuData}}>
       {children}
     </MenuBitsContext.Provider>
   );
