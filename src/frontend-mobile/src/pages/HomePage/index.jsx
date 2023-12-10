@@ -27,6 +27,9 @@ const Home = () => {
 		});
 	}, [id]);
 
+	const handleBarCodeScanned = ({ type, data }) => {
+		setId(data);
+	};
 
   return (
     <Container source={backgroundImage} resizeMode='cover'>
@@ -39,7 +42,7 @@ const Home = () => {
 
 	  <Content>
 
-      <Input  onChangeText={setId} />
+      <Input  onChangeText={setId} value={id} />
       <Button onPress={handleSearchRestaurant}>
 	  <Image
             source={lupa}
@@ -48,7 +51,7 @@ const Home = () => {
           />
 	  </Button>
 	
-	  <QRCodeScanner style={{ height: 150}}/>
+	  <QRCodeScanner style={{ height: 150 }} handleBarCodeScanned={handleBarCodeScanned} />
 	  </Content>
 	  </FormContainer>
     </Container>
