@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useCallback, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Cart from "../../assets/cart.png";
 import {
   Banner,
@@ -18,7 +18,7 @@ import { useMenuBitsState } from "../../context/MenuBitsContext";
 
 export default function MenuPage() {
   // const [menuData, setMenuData] = useState();
-
+ const { menuId: MenuIdParams } = useParams();	
   const { 
     selectedOrder, 
     setSelectedOrder,
@@ -41,12 +41,12 @@ export default function MenuPage() {
  useEffect(()=>{
   setSelectedOrder(JSON.parse(localStorage.getItem('pedidos')) || []) 
  },[setSelectedOrder])
-
+ const menuIdTreated = menuId || MenuIdParams;
   const navigate = useNavigate();
 
   useEffect(() => {
     axios
-      .get(`${import.meta.env.VITE_API_URL}/api/items/menus/${menuId}`)
+      .get(`${import.meta.env.VITE_API_URL}/api/items/menus/${menuIdTreated}`)
       .then((res) => {
         setMenuData(res.data.data);
         console.log(res.data.data);
@@ -56,7 +56,7 @@ export default function MenuPage() {
 
         console.log(JSON.stringify(err));
       });
-  }, [menuId, setMenuData]);
+  }, [menuId, menuIdTreated, setMenuData]);
 
 
   const handleClickCart = useCallback(() => {

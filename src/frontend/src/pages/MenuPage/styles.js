@@ -12,11 +12,10 @@ export const Container = styled.div`
 export const Banner = styled.div`
   background-image: url("src/assets/pizzaNostra.png");
   background-position: center;
-
   background-size: cover;
   background-repeat: no-repeat;
   width: 100%;
-  height: 40vh;
+  height: 30vh;
   display: flex;
   justify-content: center;
   align-items: center;

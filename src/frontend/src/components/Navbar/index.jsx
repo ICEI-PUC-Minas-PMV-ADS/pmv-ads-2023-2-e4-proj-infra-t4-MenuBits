@@ -33,10 +33,6 @@ export default function Navbar() {
                   Meus pedidos
                 </a>
 
-                <a href="/menu-page">
-                  Cardápios
-                </a>
-
                 <a href="/restaurant-homepage">
                   Visão do restaurante
                 </a>
