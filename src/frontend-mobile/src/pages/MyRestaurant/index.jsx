@@ -19,13 +19,13 @@ const RestaurantHomePage = () => {
 
   useEffect(() => {
     axios
-      .get(`https://menu-bits-backend.onrender.com/api/restaurante/22`)
+      .get(`https://menu-bits-backend.onrender.com/api/restaurante/28`)
       .then((response) => {
         setRestaurantData(response.data.restaurant);
       });
 
     axios
-      .get(`https://menu-bits-backend.onrender.com/api/menus/restaurant/22`)
+      .get(`https://menu-bits-backend.onrender.com/api/menus/restaurant/28`)
       .then(async (response) => {
         setMenus((menus) => [...menus, ...response.data.menu]);
 

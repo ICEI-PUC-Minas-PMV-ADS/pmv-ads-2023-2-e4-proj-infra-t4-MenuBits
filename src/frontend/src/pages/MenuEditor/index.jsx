@@ -44,7 +44,7 @@ import {
 export default function MenuEditor() {
 
   const config = {
-    headers: { Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjIsImlhdCI6MTY5ODYxNDc4MiwiZXhwIjoxNjk4NzAxMTgyfQ.6MiLNhJrW1cEo0glX7VvQLSjcu0CkOLxZP7JCLCSM1E` },
+    headers: { Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjgsImlhdCI6MTcwMjIzMDUwMiwiZXhwIjoxNzAyMzE2OTAyfQ.fQXEHpsUYSWUWPWsWCJ8szkQIoRFtu1ZONlGqdePwhc` },
   };
 
   const [modalMenuDisplay, setModalMenuDisplay] = useState(false)
@@ -69,7 +69,7 @@ export default function MenuEditor() {
 
   useEffect(() => {
     axios
-      .get(`${import.meta.env.VITE_API_URL}/api/menus/restaurant/12`)
+      .get(`${import.meta.env.VITE_API_URL}/api/menus/restaurant/28`)
       .then((response) => {
         setMenus(response.data.menu);
       });
@@ -78,7 +78,7 @@ export default function MenuEditor() {
 
   useEffect(() => {
     axios
-      .get(`${import.meta.env.VITE_API_URL}/api/menus/restaurant/12`)
+      .get(`${import.meta.env.VITE_API_URL}/api/menus/restaurant/28`)
       .then((response) => {
         setMenus(response.data.menu);
       });
@@ -139,7 +139,7 @@ export default function MenuEditor() {
                 () => {
                   axios.post(`${import.meta.env.VITE_API_URL}/api/menus`, {
                     title: menuTitle,
-                    restaurantId: 12
+                    restaurantId: 28
                   }, config)
                     .then((response) => {
                       setModalMenuDisplay(false)
@@ -240,7 +240,7 @@ export default function MenuEditor() {
                       description: descriptionItem,
                       groupId: parseInt(selectedGroup),
                       isItemOfDay: mealOfDayItem,
-                      restaurantId: 12
+                      restaurantId: 28
                     }, config)
                       .then((response) => {
                         setModalItemDisplay(false)

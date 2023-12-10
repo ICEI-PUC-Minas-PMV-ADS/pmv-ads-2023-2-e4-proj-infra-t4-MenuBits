@@ -72,7 +72,7 @@ export default function RestaurantLogin() {
   const config = {
     headers: {
       Authorization:
-        "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjIsImlhdCI6MTcwMTAyMjYyOCwiZXhwIjoxNzAxMTA5MDI4fQ.u4bPPIZHBcFcxjMaTJM83mYPQZBqwWrnHNSfPhIZG_0",
+        "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjgsImlhdCI6MTcwMjIzMDUwMiwiZXhwIjoxNzAyMzE2OTAyfQ.fQXEHpsUYSWUWPWsWCJ8szkQIoRFtu1ZONlGqdePwhc",
     },
   };
 

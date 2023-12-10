@@ -99,7 +99,7 @@ console.log(restaurantData)
           <img src={Cart} alt="Carrinho" onClick={handleClickCart} />
           Pedidos
         </ImageContent>
-        <Text>Cardapio</Text>
+        <Text>Cardápio</Text>
       </Title>
       <ContainerCard>
         {menuData &&

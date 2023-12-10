@@ -25,7 +25,7 @@ export default function EditPerfilRestaurant() {
   const config = {
     headers: {
       Authorization:
-        "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjIsImlhdCI6MTcwMTI5MzQ1NSwiZXhwIjoxNzAxMzc5ODU1fQ.6rFjTmvLCsEuYPhL0vw6a5Uz7Q5QVmMxMN_UdOiPzxE",
+        "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjgsImlhdCI6MTcwMjIzMDUwMiwiZXhwIjoxNzAyMzE2OTAyfQ.fQXEHpsUYSWUWPWsWCJ8szkQIoRFtu1ZONlGqdePwhc",
     },
   };
 
@@ -56,7 +56,7 @@ export default function EditPerfilRestaurant() {
 
      useEffect(() => {
          axios
-             .get("https://menu-bits-backend.onrender.com/api/restaurante/22")
+             .get("https://menu-bits-backend.onrender.com/api/restaurante/28")
              .then((response) => {
                  setPerfil(response.data.restaurant);
              }).catch((e) => {

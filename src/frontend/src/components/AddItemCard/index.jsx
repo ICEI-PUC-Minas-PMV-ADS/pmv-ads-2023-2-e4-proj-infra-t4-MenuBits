@@ -32,12 +32,12 @@ export default function AddItemCard({menuSelectedId, runAtualizator}) {
     const [errorMessage, setErrorMessage] = useState('Adicione um item já cadastrado ao menu selecionado')
 
     const config = {
-        headers: { Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjIsImlhdCI6MTY5ODYxNDc4MiwiZXhwIjoxNjk4NzAxMTgyfQ.6MiLNhJrW1cEo0glX7VvQLSjcu0CkOLxZP7JCLCSM1E` }, 
+        headers: { Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjgsImlhdCI6MTcwMjIzMDUwMiwiZXhwIjoxNzAyMzE2OTAyfQ.fQXEHpsUYSWUWPWsWCJ8szkQIoRFtu1ZONlGqdePwhc` }, 
     };
 
     useEffect(() => {
         axios
-        .get(`${import.meta.env.VITE_API_URL}/api/items/restaurant/12`)
+        .get(`${import.meta.env.VITE_API_URL}/api/items/restaurant/28`)
         .then((response) => {
             setItems(response.data.data);
         });

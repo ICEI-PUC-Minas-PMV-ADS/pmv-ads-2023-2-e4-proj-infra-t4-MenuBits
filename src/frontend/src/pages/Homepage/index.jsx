@@ -63,7 +63,7 @@ export default function HomePage() {
         <input 
             type="text"
             className="w-full outline-none text-center p-2"
-            onChange={(e) => setId(e.target.value)}
+            onChange={(e) => setRestaurantId(e.target.value)}
             onKeyDown={onKeyDownHandler}
           />
           <button

@@ -25,7 +25,7 @@ return(
 
             <Description>{description}</Description>
 
-            <Price>{price}</Price>
+            <Price>R$ {price}</Price>
             <Button onClick={handleClickAddOrder}> Adicionar pedido</Button>
 
         </Content>

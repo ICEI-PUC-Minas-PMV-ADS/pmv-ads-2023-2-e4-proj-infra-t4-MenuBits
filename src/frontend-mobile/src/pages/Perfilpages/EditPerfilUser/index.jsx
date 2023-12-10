@@ -25,7 +25,7 @@ const EditPerfilUserMobile = () => {
   const config = {
     headers: {
       Authorization:
-        "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiaWF0IjoxNzAxMDEwNzA4LCJleHAiOjE3MDEwOTcxMDh9.ED07aoiAhijLYhwrbkTJKFx8vLmPNuTw6uUFeOAnQQ4",
+        "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTUsImlhdCI6MTcwMjIzMDgzNiwiZXhwIjoxNzAyMzE3MjM2fQ.UdZ0iVP9Hnw03Y2mMiE3TtECgfE3BnE0FJJ1el93UH0",
     },
   };
 
@@ -43,7 +43,7 @@ const EditPerfilUserMobile = () => {
 
   useEffect(() => {
     axios
-      .get(`https://menu-bits-backend.onrender.com/api/users/4`, config)
+      .get(`https://menu-bits-backend.onrender.com/api/users/15`, config)
       .then((response) => {
         setPerfil(response.data.data);
       })
@@ -84,7 +84,7 @@ const EditPerfilUserMobile = () => {
         </ContentCard>
           <Editar onPress={() => {
                 axios
-                .put(`https://menu-bits-backend.onrender.com/api/users/4`,{
+                .put(`https://menu-bits-backend.onrender.com/api/users/15`,{
                     name: name === "" ? perfil.name : name,
                     email: email === "" ? perfil.email : email,
                     password: perfil.password

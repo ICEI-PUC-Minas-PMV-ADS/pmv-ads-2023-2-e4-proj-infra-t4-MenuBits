@@ -46,7 +46,7 @@ import {
 const MenuEditor = () => {
 
     const config = {
-        headers: { Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjIsImlhdCI6MTcwMTAyMjYyOCwiZXhwIjoxNzAxMTA5MDI4fQ.u4bPPIZHBcFcxjMaTJM83mYPQZBqwWrnHNSfPhIZG_0` },
+        headers: { Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjgsImlhdCI6MTcwMjIzMDUwMiwiZXhwIjoxNzAyMzE2OTAyfQ.fQXEHpsUYSWUWPWsWCJ8szkQIoRFtu1ZONlGqdePwhc` },
     };
 
     const [modalMenuDisplay, setModalMenuDisplay] = useState(false)
@@ -71,7 +71,7 @@ const MenuEditor = () => {
 
     useEffect(() => {
         axios
-            .get(`https://menu-bits-backend.onrender.com/api/menus/restaurant/22`)
+            .get(`https://menu-bits-backend.onrender.com/api/menus/restaurant/28`)
             .then((response) => {
                 setMenus(response.data.menu);
             }).catch((e) => {
@@ -139,7 +139,7 @@ const MenuEditor = () => {
                                     () => {
                                         axios.post(`https://menu-bits-backend.onrender.com/api/menus`, {
                                             title: menuTitle,
-                                            restaurantId: 22
+                                            restaurantId: 28
                                         }, config)
                                             .then((response) => {
                                                 setModalMenuDisplay(false)
@@ -245,7 +245,7 @@ const MenuEditor = () => {
                                             description: descriptionItem,
                                             groupId: parseInt(selectedGroup),
                                             isItemOfDay: mealOfDayItem,
-                                            restaurantId: 22
+                                            restaurantId: 28
                                         }, config)
                                             .then((response) => {
                                                 setModalItemDisplay(false)

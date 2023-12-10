@@ -11,7 +11,7 @@ export default function SelectionInput({arrayOptions, onChange}) {
 
   useEffect(() => {
     axios
-    .get(`http://localhost:8080/api/menus/restaurant/12`)
+    .get(`http://localhost:8080/api/menus/restaurant/28`)
     .then((response) => {
       setMenus(response.data.menu);
     });
